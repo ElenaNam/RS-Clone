@@ -78,8 +78,8 @@ export default const answers = [
                 и мне нужно отвезти ей лекарства. Это будет сложная дорога через лес. Мне страшно, потому что я пойду одна.`,
                 `Не ваше дело! Иду и иду…`,
                 `К бабушке.`,
-                ``,
-                ``
+                `Просто гуляю.`,
+                `Я иду на остановку`
             ],
             interpretation: [
                 ``,
@@ -93,11 +93,13 @@ export default const answers = [
 
         en: {
             answer: [
-                ``,
-                ``,
-                ``,
-                ``,
-                ``
+                `My mom and dad will be at work all day, and my grandma is sick. She lives in a very remote remote village,
+                and I need to take her medicine.
+                It will be a difficult road through the forest. I'm scared because I'm going alone.`,
+                `Not your business! Coming and going...`,/* ????  */
+                `To grandma.`,
+                `Just walking`,
+                `I'm going to the bus stop`
             ],
             interpretation: [
                 ``,
@@ -117,11 +119,14 @@ export default const answers = [
                 ``
             ],
             interpretation: [
-                ``,
-                ``,
-                ``,
-                ``,
-                ``
+                `Meine Mutter und mein Vater werden den ganzen Tag bei der Arbeit sein,
+                und meine Großmutter ist krank. Sie lebt in einem sehr Fernen Tauben Dorf,
+                und ich muss Ihr Medikamente bringen. Es wird ein schwieriger Weg durch den Wald. 
+                Ich habe Angst, weil ich allein gehen werde.`,
+                `Es geht Sie nichts an! Ich gehe und gehe…`,
+                `Zu Oma.`,
+                `Ich gehe nur spazieren.`,
+                `Ich gehe zur Haltestelle`
             ]
         }
 

@@ -2,6 +2,7 @@ export const links = [
   {
     id: '0',
     link: '/home',
+    colorIcon: 'secondary',
     ru: 'Главная',
     en: 'Home',
     de: 'Startseite',
@@ -9,6 +10,7 @@ export const links = [
   {
     id: '1',
     link: '/newgame',
+    colorIcon: 'primary',
     ru: 'Новая игра',
     en: 'New Game',
     de: 'Neues Spiel',
@@ -17,12 +19,14 @@ export const links = [
     id: '2',
     ru: 'Продолжить',
     link: '/newgame' /* исправить */,
+    colorIcon: 'secondary',
     en: 'Continue',
     de: 'Weiterspielen',
   },
   {
     id: '3',
     link: '/manual',
+    colorIcon: 'primary',
     ru: 'Инструкция',
     en: 'Manual',
     de: 'Anleitung',
@@ -30,6 +34,7 @@ export const links = [
   {
     id: '4',
     link: '/settings',
+    colorIcon: 'secondary',
     ru: 'Настройки',
     en: 'Settings',
     de: 'Einstellungen',
@@ -37,6 +42,7 @@ export const links = [
   {
     id: '5',
     link: '/information',
+    colorIcon: 'primary',
     ru: 'О разработчиках',
     en: 'About the developers',
     de: 'Über Entwickler',

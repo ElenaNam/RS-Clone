@@ -1,28 +1,14 @@
 import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
-import HeaderMainMenu from './components/header-main-menu/header-main-menu';
+import HeaderMainMenu from './components/HeaderMenu/HeaderMainMenu';
+import MainLayout from './components/MainLayout/MainLayout';
 
-function App() {
+function App(): JSX.Element {
   return (
     <div className="App">
       <HeaderMainMenu />
-      <header className="App-header">
-
-        {/* <div className="first-table">jh</div> */}
-        {/* <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a> */}
-      </header>
+      <MainLayout />
     </div>
   );
 }

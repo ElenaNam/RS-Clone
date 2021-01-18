@@ -6,6 +6,9 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import DoneOutlineRoundedIcon from '@material-ui/icons/DoneOutlineRounded';
 import { useTheme } from '@material-ui/core/styles';
+import SvgIcon from '@material-ui/core/SvgIcon/SvgIcon';
+import Box from '@material-ui/core/Box';
+import logoRs from '../../assets/images/logo_rs.svg';
 
 export default function ListMenu(props): JSX.Element {
   const theme = useTheme();
@@ -28,6 +31,11 @@ export default function ListMenu(props): JSX.Element {
           <ListItemText primary={item.ru} />
         </ListItem>
       ))}
+      <ListItem>
+        <Box>
+          <img src={logoRs} alt="logo_rsschool" />
+        </Box>
+      </ListItem>
     </List>
   );
 }

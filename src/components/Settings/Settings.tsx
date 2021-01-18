@@ -1,3 +1,4 @@
+import Container from '@material-ui/core/Container';
 import React from 'react';
 import { HotKeys } from 'react-hotkeys';
 
@@ -12,9 +13,9 @@ const keyMap = {
 export default function Settings(): JSX.Element {
   return (
     <HotKeys keyMap={keyMap}>
-      <div>
+      <Container>
         <SwitchTheme />
-      </div>
+      </Container>
     </HotKeys>
   );
 }

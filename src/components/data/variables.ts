@@ -36,7 +36,11 @@ export const locations: object[] = [
   },
 ];
 
+<<<<<<< HEAD
 export const assistant = ''; //помощник, который появляется после каждого ответа и объясняет ответ
+=======
+export const assistant: object = {}; //помощник, который появляется после каждого ответа и объясняет ответ
+>>>>>>> a5fedc1f8163ecd9348eeb400ccecb0b864e81a4
 
 export const buttons: object[] = [
   {

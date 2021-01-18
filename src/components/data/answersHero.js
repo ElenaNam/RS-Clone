@@ -165,11 +165,13 @@ export default const answers = [
 
         en: {
             answer: [
-                ``,
-                ``,
-                ``,
-                ``,
-                ``
+                `Hello there! Thanks! Yes, come on. I have a long way to go.`,
+                `Hello there! Yes, far away-to my grandmother. 
+                She's sick. I carry her medicine because her parents are at work all day.`,
+                `Hello there! No, thanks`,
+                `Hello there! No, my mother sent to the nearby store for bread. 
+                Give me some ice cream, please!`,
+                `Yes, I want the most expensive one!`
             ],
             interpretation: [
                 ``,
@@ -182,11 +184,13 @@ export default const answers = [
 
         de: {
             answer: [
-                ``,
-                ``,
-                ``,
-                ``,
-                ``
+                `Hallo! Danke! Ja, kommt schon, sonst muss ich weit fahren.`,
+                `Hallo! Ja, weit Weg-zu Oma. Sie ist krank und ich bringe Ihr Medikamente,
+                weil meine Eltern den ganzen Tag bei der Arbeit sind.`,
+                `Hallo! Nein, danke.`,
+                `Hallo! Nein, meine Mutter schickte in den Laden nebenan, um Brot zu holen.
+                Geben Sie mir ein Eis, bitte!`,
+                `Ja, ich will das, das teuerste!`
             ],
             interpretation: [
                 ``,
@@ -234,11 +238,12 @@ export default const answers = [
 
         en: {
             answer: [
-                ``,
-                ``,
-                ``,
-                ``,
-                ``
+                `No, thank you. I'll wait for the bus.`,
+                `How great! I'm going to the Village.
+                *gets in the car`,
+                `No, thank you! I'm waiting for Dad to come here now.`,
+                `What else! I know - you will take my to the forest!..`,
+                `*Ignores`
             ],
             interpretation: [
                 ``,
@@ -251,11 +256,12 @@ export default const answers = [
 
         de: {
             answer: [
-                ``,
-                ``,
-                ``,
-                ``,
-                ``
+                `Nein, danke. Ich warte noch auf den Bus.`,
+                `Wie toll! Ich gehe ins Dorf.
+                *steigt ins Auto`,
+                `Nein, danke! Ich warte, Papa kommt hierher`,
+                `Was? Ich kenne solche – Sie werden in den Wald mich wegbringen!..`,
+                `*Ignoriert`
             ],
             interpretation: [
                 ``,
@@ -303,11 +309,14 @@ export default const answers = [
 
         en: {
             answer: [
-                ``,
-                ``,
-                ``,
-                ``,
-                ``
+                `Oh, thank you, Uncle Forester! I'll just look at them through 
+                a crack in the fence with one eye,
+                And I won't go in – I need to hurry`,
+                `Cool! I'm really tired, I won't give up tea.`,
+                `Come on, foxes are boring. I've seen them a thousand times on the Internet.
+                 And give me some tea. Do you have a chocolate bar for tea?`,
+                `Can I stop by on my way back?" I'm in a hurry right now...`,
+                `I love foxes! Can I take a picture of them?`
             ],
             interpretation: [
                 ``,
@@ -320,11 +329,13 @@ export default const answers = [
 
         de: {
             answer: [
-                ``,
-                ``,
-                ``,
-                ``,
-                ``
+                `Danke, Onkel Förster! Ich will sie nur mit einem Auge sehen durch die Lauge im Zaun,
+                aber ich werde nicht reinkommen - ich muss mich beeilen`,
+                `Wie toll! Ich bin wirklich müde, ich werde Tee nicht aufgeben.`,
+                `Ja, Füchse sind langweilig. Ich habe Sie tausendmal im Internet gesehen.
+                Ich nehme Tee. Hast du Schokolade zum Tee?`,
+                `Darf ich auf dem Rückweg vorbeischauen? Denn jetzt bin ich in Eile...`,
+                `Ich liebe Fuchs! Könne ich ein Foto machen?`
             ],
             interpretation: [
                 ``,
@@ -371,11 +382,12 @@ export default const answers = [
 
         en: {
             answer: [
-                ``,
-                ``,
-                ``,
-                ``,
-                ``
+                `No, I'm very busy.`,
+                `I love strawberries, let's go soon! I need to get to my grandmother.`,
+                `I'm sorry, my parents forbade me to be distracted. Good luck with the strawberries!`,
+                `Dina, hi! And my name is ${namePlayer}. Look, I can't right now.
+                Let's exchange phones, and next time we go get a strawberry together.`,
+                `And on the contrary, you will come with me, and on the way we will collect strawberries.`
             ],
             interpretation: [
                 ``,
@@ -388,11 +400,13 @@ export default const answers = [
 
         de: {
             answer: [
-                ``,
-                ``,
-                ``,
-                ``,
-                ``
+                `Nein, ich bin sehr beschäftigt.`,
+                `Ich liebe Erdbeeren, komm schon! Ich muss zu meiner Großmutter.`,
+                `Tut mir Leid, meine Eltern haben mir verboten, 
+                abgelenkt zu werden. Viel Glück mit Erdbeeren!`,
+                `Dina, hallo! Und ich heisse ${namePlayer}. Hör zu, ich kann jetzt nicht.
+                Lass uns die Telefone austauschen und das nächste Mal gehen wir zusammen Erdbeeren holen.`,
+                `Aber im Gegenteil-du gehst mit mir, und auf dem Weg werden wir Erdbeeren sammeln.`
             ],
             interpretation: [
                 ``,
@@ -434,11 +448,12 @@ export default const answers = [
     
         en: {
                 answer: [
-                    ``,
-                    ``,
-                    ``,
-                    ``,
-                    ``
+                    `Thank you, no need. I know the way well.`,
+                    `Yes, of course, let's go together.`,
+                    `What else! So much one has passed and then I can cope without you!`,
+                    `Hello, thank you. You do not need to see me off, 
+                    it is better to tell me what time it is?`,
+                    `Yes, come on. Do you have a real gun?" Can I see it?`
                 ],
                 interpretation: [
                     ``,
@@ -448,14 +463,15 @@ export default const answers = [
                     ``
                 ]
         },
-    
+
         de: {
                 answer: [
-                    ``,
-                    ``,
-                    ``,
-                    ``,
-                    ``
+                    `Danke, nicht nötig. Ich kenne den Weg gut.`,
+                    `Ja, natürlich, kommen wir zusammen.`,
+                    `Was? So viel ging und weiter, ohne Sie zu bewältigen!`,
+                    `Hallo, danke. Es ist nicht notwendig zu begleiten,
+                    es ist besser zu sagen, wie spät es ist?`,
+                    `Ja, kommen Sie. Ist die Waffe echt? Darf ich das sehen?`
                 ],
                 interpretation: [
                     ``,
@@ -482,7 +498,8 @@ export default const answers = [
                     `Я иду к бабушке, она меня уже ждет.`,
                     `Я ${namePlayer}, моя бабушка -  Марья Ивановна. Иду к ней в гости, она меня уже ждет.`,
                     `А вам какое дело? Меня учили никому ничего не рассказывать!`,
-                    `А вы, правда, полицейский? Родители объясняли мне, что не каждый человек в форме может быть полицейским и ему можно доверять.`,
+                    `А вы, правда, полицейский? Родители объясняли мне, что не каждый человек в форме
+                    может быть полицейским и ему можно доверять.`,
                     `Я ${namePlayer}. Я не в первый раз сюда в одиночку иду. И вообще без родителей я часто хожу.`
                 ],
                 interpretation: [
@@ -497,11 +514,14 @@ export default const answers = [
     
         en: {
                 answer: [
-                    ``,
-                    ``,
-                    ``,
-                    ``,
-                    ``
+                    `I'm going to grandma's, she's waiting for me.`,
+                    `I ${namePlayer}, my grandmother is Marya Ivanovna.
+                    I'm going to visit her, she's waiting for me.`,
+                    `What do you care? I was taught not to tell anyone anything!`,
+                    `Are you really a cop? Parents explained to me that not every person
+                    in uniform can be a cop and can be trusted.`,
+                    `I am ${nameplayer}. It's not the first time I've come here alone.
+                    And I often go without my parents.`
                 ],
                 interpretation: [
                     ``,
@@ -514,11 +534,14 @@ export default const answers = [
     
         de: {
                 answer: [
-                    ``,
-                    ``,
-                    ``,
-                    ``,
-                    ``
+                    `Ich gehe zu meiner Großmutter, sie wartet schon auf mich.`,
+                    `Ich ${namePlayer}, meine Großmutter - Marija Iwanowna.
+                    Ich gehe zu ihr, sie wartet schon auf mich.`,
+                    `Was kümmert es Sie? Mir wurde beigebracht, niemandem etwas zu sagen!`,
+                    `Sind Sie wirklich ein Polizist? Die Eltern erklärten mir, dass nicht jeder in Form ist
+                    vielleicht ein Polizist und man kann ihm vertrauen.`,
+                    `Ich bin ${namePlayer}. Ich bin nicht das erste mal hier allein.
+                    Und im Allgemeinen gehe ich oft ohne Eltern.`
                 ],
                 interpretation: [
                     ``,
@@ -560,11 +583,12 @@ export default const answers = [
     
         en: {
                 answer: [
-                    ``,
-                    ``,
-                    ``,
-                    ``,
-                    ``
+                    `No, leave me alone!`,
+                    `Thank you, with great pleasure. I'll take my meds to
+                    my grandmother right now and go home to you.`,
+                    `Thank you for the invitation! I'm going to go to my grandmother and ask her permission.`,
+                    `We'll meet at school when class starts.`,
+                    `What subject are you a teacher in? I'm not good at math. Will you help me?"`
                 ],
                 interpretation: [
                     ``,
@@ -577,11 +601,14 @@ export default const answers = [
     
         de: {
             answer: [
-                ``,
-                ``,
-                ``,
-                ``,
-                ``
+                `Nein, lasst mich in Ruhe!`,
+                `Danke, mit viel Vergnügen. Ich bringe meiner Großmutter
+                die Medikamente und komme zu Ihnen nach Hause.`,
+                `Danke für die Einladung! Ich gehe zu meiner Großmutter
+                und Frage Sie um Erlaubnis.`,
+                `Wir lernen uns in der Schule kennen, wenn der Unterricht beginnt.`,
+                `Sind Sie ein Lehrer in welchem Fach? Ich bin nicht gut in Mathe.
+                Können Sie mir helfen?`
             ],
             interpretation: [
                 ``,
@@ -623,11 +650,12 @@ export default const answers = [
         
         en: {
             answer: [
-                ``,
-                ``,
-                ``,
-                ``,
-                ``
+                `Hello! All right, I'll take it. Just don't come in,
+                I'll wait here. You'll take me the basket here, please.`,
+                `No, I'm in too much of a hurry.`,
+                `And the apples are delicious? Can I try it first?`,
+                `Hello there! Okay. Can I sit here for a while while I wait?" My legs are tired.`,
+                `No, let me go to Grandma's first. And then I'll come running to you. You will just type the basket.`
             ],
             interpretation: [
                 ``,
@@ -640,11 +668,15 @@ export default const answers = [
         
         de: {
             answer: [
-                ``,
-                ``,
-                ``,
-                ``,
-                ``
+                `Hallo! Okay, ich bringe es. Ich komme nicht rein,
+                ich warte hier. Sie bringen mir den Korb hierher, bitte.`,
+                `Nein, ich habe es zu eilig.`,
+                `Sind äpfel lecker? Kann ich es zuerst versuchen?`,
+                `Hallo! Okay. Ich kann mich ein wenig bei Ihnen setzen, 
+                während ich warte. Und dann sind die Beine müde.`,
+                `Nein, ich gehe zuerst zu meiner Großmutter.
+                Und dann werde ich auf Sie zurückgreifen. 
+                Sie werden gerade einen Korb sammeln.`
             ],
             interpretation: [
                 ``,

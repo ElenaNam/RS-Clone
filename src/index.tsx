@@ -4,6 +4,8 @@ import { Router } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import './index.css';
 import App from './App';
+import Layout from './components/Layout/Layout';
+
 import reportWebVitals from './reportWebVitals';
 
 const history = createBrowserHistory();
@@ -11,7 +13,9 @@ const history = createBrowserHistory();
 ReactDOM.render(
   <React.StrictMode>
     <Router history={history}>
-      <App />
+      <Layout>
+        <App />
+      </Layout>
     </Router>
   </React.StrictMode>,
   document.getElementById('root')

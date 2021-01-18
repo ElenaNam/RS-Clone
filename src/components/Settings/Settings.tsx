@@ -1,12 +1,20 @@
-import { Container } from '@material-ui/core';
 import React from 'react';
+import { HotKeys } from 'react-hotkeys';
+
 import './Settings.module.css';
 import SwitchTheme from './SwitchTheme';
 
+const keyMap = {
+  LIGHT_THEME: 'o',
+  DARK_THEME: 'p',
+};
+
 export default function Settings(): JSX.Element {
   return (
-    <Container>
-      <SwitchTheme />
-    </Container>
+    <HotKeys keyMap={keyMap}>
+      <div>
+        <SwitchTheme />
+      </div>
+    </HotKeys>
   );
 }

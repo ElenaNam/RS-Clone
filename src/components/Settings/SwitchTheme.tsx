@@ -1,18 +1,30 @@
 import { Button } from '@material-ui/core';
 import React from 'react';
+import { HotKeys } from 'react-hotkeys';
 import './Settings.module.css';
 
-export default function Settings(): JSX.Element {
+export default function SwitchTheme(): JSX.Element {
+  const clickLight = () => {
+    window.localStorage.setItem('theme', 'light');
+    window.location.reload();
+  };
+  const clickDark = () => {
+    window.localStorage.setItem('theme', 'dark');
+    window.location.reload();
+  };
+
+  const handlers = {
+    LIGHT_THEME: clickLight,
+    DARK_THEME: clickDark,
+  };
+
   return (
-    <div>
+    <HotKeys handlers={handlers}>
       <Button
         style={{ margin: 30 }}
         variant="contained"
         color="secondary"
-        onClick={() => {
-          window.localStorage.setItem('theme', 'light');
-          window.location.reload();
-        }}
+        onClick={clickLight}
       >
         Светлая тема
       </Button>
@@ -21,13 +33,10 @@ export default function Settings(): JSX.Element {
         style={{ margin: 30 }}
         variant="contained"
         color="primary"
-        onClick={() => {
-          window.localStorage.setItem('theme', 'dark');
-          window.location.reload();
-        }}
+        onClick={clickDark}
       >
         Тёмная тема
       </Button>
-    </div>
+    </HotKeys>
   );
 }

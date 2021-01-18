@@ -88,7 +88,7 @@ const useStyles = makeStyles((theme) => ({
 export default function HeaderMenu(): JSX.Element {
   const classes = useStyles();
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState<boolean>(false);
 
   const handleDrawerOpen = () => {
     setOpen(true);

@@ -1,6 +1,6 @@
 import { hero, namePlayer } from './variables';
 
-export const personage = [
+export const personage: object[] = [
   {
     id: '0', //ГОРОД
     ru: {

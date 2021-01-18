@@ -1,11 +1,11 @@
 import { string } from 'yargs';
 
-export const namePlayer = {
+export const namePlayer: object = {
   ru: string,
   lat: string /* ????? */,
 };
 
-export const hero = [
+export const hero: object[] = [
   {
     ru: 'Мальчик',
     en: 'Boy',
@@ -18,7 +18,7 @@ export const hero = [
   },
 ];
 
-export const locations = [
+export const locations: object[] = [
   {
     ru: 'ГОРОД',
     en: 'CITY',
@@ -38,7 +38,7 @@ export const locations = [
 
 export const assistant = ''; //помощник, который появляется после каждого ответа и объясняет ответ
 
-export const buttons = [
+export const buttons: object[] = [
   {
     id: '0',
     ru: 'НАЧАТЬ ИГРУ',

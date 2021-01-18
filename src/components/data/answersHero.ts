@@ -1,6 +1,6 @@
 import { namePlayer } from './variables';
 
-export const answers = [
+export const answers: object[] = [
   {
     id: '0', // мама
     score: ['', '', '', '', ''],

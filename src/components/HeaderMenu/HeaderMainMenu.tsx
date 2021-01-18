@@ -9,7 +9,7 @@ function HeaderMainMenu() {
   b += 2; */
   return (
     <div className="header-block">
-      <HeaderMenu />;
+      <HeaderMenu />
     </div>
   );
 }

@@ -1,6 +1,4 @@
 import React from 'react';
-import { Router, Switch, Route, Link, Redirect } from 'react-router-dom';
-import { createBrowserHistory } from 'history';
 
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
@@ -8,32 +6,19 @@ import Drawer from '@material-ui/core/Drawer';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import List from '@material-ui/core/List';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import { amber, orange, teal, lightBlue } from '@material-ui/core/colors';
+import { amber } from '@material-ui/core/colors';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import DoneOutlineRoundedIcon from '@material-ui/icons/DoneOutlineRounded';
-import MailIcon from '@material-ui/icons/Mail';
 import { Box } from '@material-ui/core';
+
 import logo from '../../assets/images/logo_lf.png';
-
 import { links } from '../data/menu';
-import ListMenu from './ListMenu';
 
-import Home from '../Home/Home';
-import NewGame from '../NewGame/NewGame';
-/* import Game from '../NewGame/NewGame'; */
-import Manual from '../Manual/Manual';
-import Settings from '../Settings/Settings';
-import Information from '../Information/Information';
+import ListMenu from './ListMenu';
 
 const drawerWidth = 240;
 
@@ -79,6 +64,7 @@ const useStyles = makeStyles((theme) => ({
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
     justifyContent: 'flex-end',
+    backgroundColor: 'grey',
   },
   content: {
     flexGrow: 1,
@@ -88,6 +74,7 @@ const useStyles = makeStyles((theme) => ({
       duration: theme.transitions.duration.leavingScreen,
     }),
     marginLeft: -drawerWidth,
+    backgroundColor: 'grey',
   },
   contentShift: {
     transition: theme.transitions.create('margin', {
@@ -97,8 +84,6 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: 0,
   },
 }));
-
-const history = createBrowserHistory();
 
 export default function HeaderMenu(): JSX.Element {
   const classes = useStyles();

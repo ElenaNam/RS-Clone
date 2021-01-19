@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 import { namePlayer } from './variables';
 
-=======
->>>>>>> a5fedc1f8163ecd9348eeb400ccecb0b864e81a4
 export const answers: object[] = [
   {
     id: '0', // мама
@@ -30,11 +27,7 @@ export const answers: object[] = [
     ru: {
       answer: [
         `Мои мама и папа будут весь день на работе, а бабушка заболела. Она живет в очень далекой глухой деревне, 
-<<<<<<< HEAD
         и мне нужно отвезти ей лекарства. Это будет сложная дорога через лес. Мне страшно, потому что я пойду одна.`,
-=======
-                и мне нужно отвезти ей лекарства. Это будет сложная дорога через лес. Мне страшно, потому что я пойду одна.`,
->>>>>>> a5fedc1f8163ecd9348eeb400ccecb0b864e81a4
         `Не ваше дело! Иду и иду…`,
         `К бабушке.`,
         `Просто гуляю.`,
@@ -46,13 +39,8 @@ export const answers: object[] = [
     en: {
       answer: [
         `My mom and dad will be at work all day, and my grandma is sick. She lives in a very remote remote village,
-<<<<<<< HEAD
         and I need to take her medicine.
         It will be a difficult road through the forest. I'm scared because I'm going alone.`,
-=======
-                and I need to take her medicine.
-                It will be a difficult road through the forest. I'm scared because I'm going alone.`,
->>>>>>> a5fedc1f8163ecd9348eeb400ccecb0b864e81a4
         `Not your business! Coming and going...` /* ????  */,
         `To grandma.`,
         `Just walking`,
@@ -65,15 +53,9 @@ export const answers: object[] = [
       answer: [``, ``, ``, ``, ``],
       interpretation: [
         `Meine Mutter und mein Vater werden den ganzen Tag bei der Arbeit sein,
-<<<<<<< HEAD
         und meine Großmutter ist krank. Sie lebt in einem sehr Fernen Tauben Dorf,
         und ich muss Ihr Medikamente bringen. Es wird ein schwieriger Weg durch den Wald. 
         Ich habe Angst, weil ich allein gehen werde.`,
-=======
-                und meine Großmutter ist krank. Sie lebt in einem sehr Fernen Tauben Dorf,
-                und ich muss Ihr Medikamente bringen. Es wird ein schwieriger Weg durch den Wald. 
-                Ich habe Angst, weil ich allein gehen werde.`,
->>>>>>> a5fedc1f8163ecd9348eeb400ccecb0b864e81a4
         `Es geht Sie nichts an! Ich gehe und gehe…`,
         `Zu Oma.`,
         `Ich gehe nur spazieren.`,
@@ -101,9 +83,6 @@ export const answers: object[] = [
     },
 
     en: {
-<<<<<<< HEAD
-      answer: [``, ``, ``, ``, ``],
-=======
       answer: [
         `Hello there! Thanks! Yes, come on. I have a long way to go.`,
         `Hello there! Yes, far away-to my grandmother. 
@@ -113,14 +92,10 @@ export const answers: object[] = [
                 Give me some ice cream, please!`,
         `Yes, I want the most expensive one!`,
       ],
->>>>>>> a5fedc1f8163ecd9348eeb400ccecb0b864e81a4
       interpretation: [``, ``, ``, ``, ``],
     },
 
     de: {
-<<<<<<< HEAD
-      answer: [``, ``, ``, ``, ``],
-=======
       answer: [
         `Hallo! Danke! Ja, kommt schon, sonst muss ich weit fahren.`,
         `Hallo! Ja, weit Weg-zu Oma. Sie ist krank und ich bringe Ihr Medikamente,
@@ -130,7 +105,6 @@ export const answers: object[] = [
                 Geben Sie mir ein Eis, bitte!`,
         `Ja, ich will das, das teuerste!`,
       ],
->>>>>>> a5fedc1f8163ecd9348eeb400ccecb0b864e81a4
       interpretation: [``, ``, ``, ``, ``],
     },
   },
@@ -156,9 +130,6 @@ export const answers: object[] = [
     },
 
     en: {
-<<<<<<< HEAD
-      answer: [``, ``, ``, ``, ``],
-=======
       answer: [
         `No, thank you. I'll wait for the bus.`,
         `How great! I'm going to the Village.
@@ -167,14 +138,10 @@ export const answers: object[] = [
         `What else! I know - you will take my to the forest!..`,
         `*Ignores`,
       ],
->>>>>>> a5fedc1f8163ecd9348eeb400ccecb0b864e81a4
       interpretation: [``, ``, ``, ``, ``],
     },
 
     de: {
-<<<<<<< HEAD
-      answer: [``, ``, ``, ``, ``],
-=======
       answer: [
         `Nein, danke. Ich warte noch auf den Bus.`,
         `Wie toll! Ich gehe ins Dorf.
@@ -183,7 +150,6 @@ export const answers: object[] = [
         `Was? Ich kenne solche – Sie werden in den Wald mich wegbringen!..`,
         `*Ignoriert`,
       ],
->>>>>>> a5fedc1f8163ecd9348eeb400ccecb0b864e81a4
       interpretation: [``, ``, ``, ``, ``],
     },
   },
@@ -194,13 +160,8 @@ export const answers: object[] = [
     ru: {
       answer: [
         `Ой, спасибо, дядя лесник! Я только одним глазком через щелочку в заборе на них посмотрю,
-<<<<<<< HEAD
         а заходить не буду – мне торопиться нужно.
         `,
-=======
-                а заходить не буду – мне торопиться нужно.
-                `,
->>>>>>> a5fedc1f8163ecd9348eeb400ccecb0b864e81a4
 
         `Как здорово! Я действительно устала, от чая не откажусь.`,
 
@@ -214,9 +175,6 @@ export const answers: object[] = [
     },
 
     en: {
-<<<<<<< HEAD
-      answer: [``, ``, ``, ``, ``],
-=======
       answer: [
         `Oh, thank you, Uncle Forester! I'll just look at them through 
                 a crack in the fence with one eye,
@@ -227,14 +185,10 @@ export const answers: object[] = [
         `Can I stop by on my way back?" I'm in a hurry right now...`,
         `I love foxes! Can I take a picture of them?`,
       ],
->>>>>>> a5fedc1f8163ecd9348eeb400ccecb0b864e81a4
       interpretation: [``, ``, ``, ``, ``],
     },
 
     de: {
-<<<<<<< HEAD
-      answer: [``, ``, ``, ``, ``],
-=======
       answer: [
         `Danke, Onkel Förster! Ich will sie nur mit einem Auge sehen durch die Lauge im Zaun,
                 aber ich werde nicht reinkommen - ich muss mich beeilen`,
@@ -244,7 +198,6 @@ export const answers: object[] = [
         `Darf ich auf dem Rückweg vorbeischauen? Denn jetzt bin ich in Eile...`,
         `Ich liebe Fuchs! Könne ich ein Foto machen?`,
       ],
->>>>>>> a5fedc1f8163ecd9348eeb400ccecb0b864e81a4
       interpretation: [``, ``, ``, ``, ``],
     },
   },
@@ -260,13 +213,8 @@ export const answers: object[] = [
         `Извини, родители запретили мне отвлекаться. Удачи тебе с земляникой!`,
 
         `Дина, привет! А меня зовут ${namePlayer}. Слушай, я сейчас не могу.
-<<<<<<< HEAD
         Давай телефонами обменяемся, и в следующий раз вместе сходим за земляникой.
         `,
-=======
-                Давай телефонами обменяемся, и в следующий раз вместе сходим за земляникой.
-                `,
->>>>>>> a5fedc1f8163ecd9348eeb400ccecb0b864e81a4
 
         `А давай наоборот – ты пойдешь со мной, и по дороге мы будем собирать землянику.`,
       ],
@@ -274,9 +222,6 @@ export const answers: object[] = [
     },
 
     en: {
-<<<<<<< HEAD
-      answer: [``, ``, ``, ``, ``],
-=======
       answer: [
         `No, I'm very busy.`,
         `I love strawberries, let's go soon! I need to get to my grandmother.`,
@@ -285,14 +230,10 @@ export const answers: object[] = [
                 Let's exchange phones, and next time we go get a strawberry together.`,
         `And on the contrary, you will come with me, and on the way we will collect strawberries.`,
       ],
->>>>>>> a5fedc1f8163ecd9348eeb400ccecb0b864e81a4
       interpretation: [``, ``, ``, ``, ``],
     },
 
     de: {
-<<<<<<< HEAD
-      answer: [``, ``, ``, ``, ``],
-=======
       answer: [
         `Nein, ich bin sehr beschäftigt.`,
         `Ich liebe Erdbeeren, komm schon! Ich muss zu meiner Großmutter.`,
@@ -302,7 +243,6 @@ export const answers: object[] = [
                 Lass uns die Telefone austauschen und das nächste Mal gehen wir zusammen Erdbeeren holen.`,
         `Aber im Gegenteil-du gehst mit mir, und auf dem Weg werden wir Erdbeeren sammeln.`,
       ],
->>>>>>> a5fedc1f8163ecd9348eeb400ccecb0b864e81a4
       interpretation: [``, ``, ``, ``, ``],
     },
   },
@@ -323,9 +263,6 @@ export const answers: object[] = [
     },
 
     en: {
-<<<<<<< HEAD
-      answer: [``, ``, ``, ``, ``],
-=======
       answer: [
         `Thank you, no need. I know the way well.`,
         `Yes, of course, let's go together.`,
@@ -334,14 +271,10 @@ export const answers: object[] = [
                     it is better to tell me what time it is?`,
         `Yes, come on. Do you have a real gun?" Can I see it?`,
       ],
->>>>>>> a5fedc1f8163ecd9348eeb400ccecb0b864e81a4
       interpretation: [``, ``, ``, ``, ``],
     },
 
     de: {
-<<<<<<< HEAD
-      answer: [``, ``, ``, ``, ``],
-=======
       answer: [
         `Danke, nicht nötig. Ich kenne den Weg gut.`,
         `Ja, natürlich, kommen wir zusammen.`,
@@ -350,7 +283,6 @@ export const answers: object[] = [
                     es ist besser zu sagen, wie spät es ist?`,
         `Ja, kommen Sie. Ist die Waffe echt? Darf ich das sehen?`,
       ],
->>>>>>> a5fedc1f8163ecd9348eeb400ccecb0b864e81a4
       interpretation: [``, ``, ``, ``, ``],
     },
   },
@@ -363,21 +295,13 @@ export const answers: object[] = [
         `Я иду к бабушке, она меня уже ждет.`,
         `Я ${namePlayer}, моя бабушка -  Марья Ивановна. Иду к ней в гости, она меня уже ждет.`,
         `А вам какое дело? Меня учили никому ничего не рассказывать!`,
-<<<<<<< HEAD
         `А вы, правда, полицейский? Родители объясняли мне, что не каждый человек в форме может быть полицейским и ему можно доверять.`,
-=======
-        `А вы, правда, полицейский? Родители объясняли мне, что не каждый человек в форме
-                    может быть полицейским и ему можно доверять.`,
->>>>>>> a5fedc1f8163ecd9348eeb400ccecb0b864e81a4
         `Я ${namePlayer}. Я не в первый раз сюда в одиночку иду. И вообще без родителей я часто хожу.`,
       ],
       interpretation: [``, ``, ``, ``, ``],
     },
 
     en: {
-<<<<<<< HEAD
-      answer: [``, ``, ``, ``, ``],
-=======
       answer: [
         `I'm going to grandma's, she's waiting for me.`,
         `I ${namePlayer}, my grandmother is Marya Ivanovna.
@@ -385,17 +309,13 @@ export const answers: object[] = [
         `What do you care? I was taught not to tell anyone anything!`,
         `Are you really a cop? Parents explained to me that not every person
                     in uniform can be a cop and can be trusted.`,
-        `I am ${nameplayer}. It's not the first time I've come here alone.
+        `I am ${namePlayer}. It's not the first time I've come here alone.
                     And I often go without my parents.`,
       ],
->>>>>>> a5fedc1f8163ecd9348eeb400ccecb0b864e81a4
       interpretation: [``, ``, ``, ``, ``],
     },
 
     de: {
-<<<<<<< HEAD
-      answer: [``, ``, ``, ``, ``],
-=======
       answer: [
         `Ich gehe zu meiner Großmutter, sie wartet schon auf mich.`,
         `Ich ${namePlayer}, meine Großmutter - Marija Iwanowna.
@@ -406,7 +326,6 @@ export const answers: object[] = [
         `Ich bin ${namePlayer}. Ich bin nicht das erste mal hier allein.
                     Und im Allgemeinen gehe ich oft ohne Eltern.`,
       ],
->>>>>>> a5fedc1f8163ecd9348eeb400ccecb0b864e81a4
       interpretation: [``, ``, ``, ``, ``],
     },
   },
@@ -417,12 +336,8 @@ export const answers: object[] = [
     ru: {
       answer: [
         `Нет, отстаньте от меня!`,
-<<<<<<< HEAD
         `Спасибо, с большим удовольствием. Я сейчас быстренько бабушке отнесу лекарства 
         и прибегу к Вам домой.`,
-=======
-        `Спасибо, с большим удовольствием. Я сейчас быстренько бабушке отнесу лекарства и прибегу к Вам домой.`,
->>>>>>> a5fedc1f8163ecd9348eeb400ccecb0b864e81a4
         `Спасибо за приглашение! Я сейчас зайду к бабушке и у нее отпрошусь.`,
         `Мы познакомимся в школе, когда начнутся занятия.`,
         `А Вы учитель по какому предмету? У меня с математикой плохо. Вы мне поможете?`,
@@ -431,9 +346,6 @@ export const answers: object[] = [
     },
 
     en: {
-<<<<<<< HEAD
-      answer: [``, ``, ``, ``, ``],
-=======
       answer: [
         `No, leave me alone!`,
         `Thank you, with great pleasure. I'll take my meds to
@@ -442,14 +354,10 @@ export const answers: object[] = [
         `We'll meet at school when class starts.`,
         `What subject are you a teacher in? I'm not good at math. Will you help me?"`,
       ],
->>>>>>> a5fedc1f8163ecd9348eeb400ccecb0b864e81a4
       interpretation: [``, ``, ``, ``, ``],
     },
 
     de: {
-<<<<<<< HEAD
-      answer: [``, ``, ``, ``, ``],
-=======
       answer: [
         `Nein, lasst mich in Ruhe!`,
         `Danke, mit viel Vergnügen. Ich bringe meiner Großmutter
@@ -460,7 +368,6 @@ export const answers: object[] = [
         `Sind Sie ein Lehrer in welchem Fach? Ich bin nicht gut in Mathe.
                 Können Sie mir helfen?`,
       ],
->>>>>>> a5fedc1f8163ecd9348eeb400ccecb0b864e81a4
       interpretation: [``, ``, ``, ``, ``],
     },
   },
@@ -470,12 +377,8 @@ export const answers: object[] = [
 
     ru: {
       answer: [
-<<<<<<< HEAD
         `Здравствуйте! Хорошо, отнесу. Только заходить не буду, здесь подожду. 
         Вы мне корзинку сюда вынесете, пожалуйста.`,
-=======
-        `Здравствуйте! Хорошо, отнесу. Только заходить не буду, здесь подожду. Вы мне корзинку сюда вынесете, пожалуйста.`,
->>>>>>> a5fedc1f8163ecd9348eeb400ccecb0b864e81a4
         `Нет, я слишком тороплюсь.`,
         `А яблоки вкусные? А можно я сначала  попробую?`,
         `Здравствуйте! Ладно. Можно я у вас немного посижу, пока жду. А то ноги устали.`,
@@ -485,9 +388,6 @@ export const answers: object[] = [
     },
 
     en: {
-<<<<<<< HEAD
-      answer: [``, ``, ``, ``, ``],
-=======
       answer: [
         `Hello! All right, I'll take it. Just don't come in,
                 I'll wait here. You'll take me the basket here, please.`,
@@ -496,14 +396,10 @@ export const answers: object[] = [
         `Hello there! Okay. Can I sit here for a while while I wait?" My legs are tired.`,
         `No, let me go to Grandma's first. And then I'll come running to you. You will just type the basket.`,
       ],
->>>>>>> a5fedc1f8163ecd9348eeb400ccecb0b864e81a4
       interpretation: [``, ``, ``, ``, ``],
     },
 
     de: {
-<<<<<<< HEAD
-      answer: [``, ``, ``, ``, ``],
-=======
       answer: [
         `Hallo! Okay, ich bringe es. Ich komme nicht rein,
                 ich warte hier. Sie bringen mir den Korb hierher, bitte.`,
@@ -515,13 +411,9 @@ export const answers: object[] = [
                 Und dann werde ich auf Sie zurückgreifen. 
                 Sie werden gerade einen Korb sammeln.`,
       ],
->>>>>>> a5fedc1f8163ecd9348eeb400ccecb0b864e81a4
       interpretation: [``, ``, ``, ``, ``],
     },
   },
 ];
-<<<<<<< HEAD
-=======
 
 export default answers;
->>>>>>> a5fedc1f8163ecd9348eeb400ccecb0b864e81a4

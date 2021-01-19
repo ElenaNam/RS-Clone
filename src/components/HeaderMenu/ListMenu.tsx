@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -9,12 +9,14 @@ import { useTheme } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import logo from '../../assets/images/logo_rs.png';
 
-export function ListMenu(props: object): JSX.Element {
+import { Links, links } from '../data/menu';
+
+export function ListMenu(): JSX.Element {
   const theme = useTheme();
-  const { linksArray } = props;
+  /* const { linksArray }: object[] = props; */
   return (
     <List>
-      {linksArray.map((item: object, index: number) => (
+      {links.map((item: Links, index: number) => (
         <ListItem
           button
           key={item.id}
@@ -23,7 +25,6 @@ export function ListMenu(props: object): JSX.Element {
           to={item.link}
           activeStyle={{ color: 'green' }}
         >
-          {console.log(item)}
           <ListItemIcon>
             {index % 2 === 0 ? (
               <DoneOutlineRoundedIcon
@@ -39,7 +40,7 @@ export function ListMenu(props: object): JSX.Element {
         </ListItem>
       ))}
       <Box mt={15}>
-        <Box component="img" src={logo} alt="logo_rsschool" width="60%" />
+        <img src={logo} alt="logo_rsschool" width="60%" />
       </Box>
     </List>
   );

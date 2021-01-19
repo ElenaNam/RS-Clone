@@ -1,7 +1,11 @@
 import React, { useEffect } from 'react';
 import darkstyles from './darkstyles';
 
-export default function Layout(props): JSX.Element {
+interface Props {
+  children: JSX.Element;
+}
+
+export default function Layout(props: Props) {
   useEffect(() => {
     if (window.localStorage !== null) {
       window.localStorage.getItem('theme') === 'dark'

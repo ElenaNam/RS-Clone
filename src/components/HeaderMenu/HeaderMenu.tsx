@@ -17,9 +17,6 @@ import { Box } from '@material-ui/core';
 
 import logo from '../../assets/images/logo_lf.png';
 
-// eslint-disable-next-line import/extensions
-import { links } from '../data/menu.ts';
-
 import { ListMenu } from './ListMenu';
 
 const drawerWidth = 240;
@@ -104,7 +101,7 @@ export default function HeaderMenu(): JSX.Element {
     <div className={classes.root}>
       <CssBaseline />
       <AppBar
-        /* position="fixed" */
+        position="fixed"
         className={clsx(classes.appBar, {
           [classes.appBarShift]: open,
         })}
@@ -147,8 +144,10 @@ export default function HeaderMenu(): JSX.Element {
           </IconButton>
         </div>
         <Divider />
+        <ListMenu />
         {/* {ListMenu(links)} */}
-        <ListMenu linksArray={links} />
+        {/* <ListMenu {...links} /> */}
+        {/* <ListMenu linksArray={links} /> */}
       </Drawer>
 
       <main

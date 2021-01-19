@@ -1,6 +1,15 @@
-export const links = [
+export interface Links {
+  id: number;
+  link: string;
+  colorIcon: string;
+  ru: string;
+  en: string;
+  de: string;
+}
+
+export const links: Array<Links> = [
   {
-    id: '0',
+    id: 0,
     link: '/home',
     colorIcon: 'secondary',
     ru: 'Главная',
@@ -8,7 +17,7 @@ export const links = [
     de: 'Startseite',
   },
   {
-    id: '1',
+    id: 1,
     link: '/newgame',
     colorIcon: 'primary',
     ru: 'Новая игра',
@@ -16,7 +25,7 @@ export const links = [
     de: 'Neues Spiel',
   },
   {
-    id: '2',
+    id: 2,
     ru: 'Продолжить',
     link: '/newgame' /* исправить */,
     colorIcon: 'secondary',
@@ -24,7 +33,7 @@ export const links = [
     de: 'Weiterspielen',
   },
   {
-    id: '3',
+    id: 3,
     link: '/manual',
     colorIcon: 'primary',
     ru: 'Инструкция',
@@ -32,7 +41,7 @@ export const links = [
     de: 'Anleitung',
   },
   {
-    id: '4',
+    id: 4,
     link: '/settings',
     colorIcon: 'secondary',
     ru: 'Настройки',
@@ -40,7 +49,7 @@ export const links = [
     de: 'Einstellungen',
   },
   {
-    id: '5',
+    id: 5,
     link: '/information',
     colorIcon: 'primary',
     ru: 'О разработчиках',

@@ -1,8 +1,20 @@
 import { namePlayer } from './variables';
 
-export const answers: object[] = [
+interface Assistant {
+  answer: string[];
+  interpretation: string[];
+}
+export interface Answers {
+  id: number;
+  score: string[] /* или number?? */;
+  ru: Assistant;
+  en: Assistant;
+  de: Assistant;
+}
+
+export const answers: Array<Answers> = [
   {
-    id: '0', // мама
+    id: 0, // мама
     score: ['', '', '', '', ''],
 
     ru: {
@@ -21,7 +33,7 @@ export const answers: object[] = [
     },
   },
   {
-    id: '1', // соседка
+    id: 1, // соседка
     score: [``, ``, ``, ``, ``],
 
     ru: {
@@ -64,7 +76,7 @@ export const answers: object[] = [
     },
   },
   {
-    id: '2', // продавец мороженого
+    id: 2, // продавец мороженого
     score: [``, ``, ``, ``, ``],
 
     ru: {
@@ -109,7 +121,7 @@ export const answers: object[] = [
     },
   },
   {
-    id: '3', // водитель автомобиля
+    id: 3, // водитель автомобиля
     score: [``, ``, ``, ``, ``],
 
     ru: {
@@ -154,7 +166,7 @@ export const answers: object[] = [
     },
   },
   {
-    id: '4', // лесник
+    id: 4, // лесник
     score: [``, ``, ``, ``, ``],
 
     ru: {
@@ -202,7 +214,7 @@ export const answers: object[] = [
     },
   },
   {
-    id: '5', // девочка
+    id: 5, // девочка
     score: [``, ``, ``, ``, ``],
 
     ru: {
@@ -248,7 +260,7 @@ export const answers: object[] = [
   },
 
   {
-    id: '6', // охотник
+    id: 6, // охотник
     score: [``, ``, ``, ``, ``],
 
     ru: {
@@ -287,7 +299,7 @@ export const answers: object[] = [
     },
   },
   {
-    id: '7', // участковый
+    id: 7, // участковый
     score: [``, ``, ``, ``, ``],
 
     ru: {
@@ -330,7 +342,7 @@ export const answers: object[] = [
     },
   },
   {
-    id: '8', // учитель
+    id: 8, // учитель
     score: [``, ``, ``, ``, ``],
 
     ru: {
@@ -372,7 +384,7 @@ export const answers: object[] = [
     },
   },
   {
-    id: '9', // сосед бабушки
+    id: 9, // сосед бабушки
     score: [``, ``, ``, ``, ``],
 
     ru: {

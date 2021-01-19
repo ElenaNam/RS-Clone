@@ -5,7 +5,13 @@ export const namePlayer: object = {
   lat: string /* ????? */,
 };
 
-export const hero: object[] = [
+export interface Lang {
+  ru: string;
+  en: string;
+  de: string;
+}
+
+export const hero: Lang[] = [
   {
     ru: 'Мальчик',
     en: 'Boy',
@@ -18,7 +24,7 @@ export const hero: object[] = [
   },
 ];
 
-export const locations: object[] = [
+export const locations: Lang[] = [
   {
     ru: 'ГОРОД',
     en: 'CITY',
@@ -38,21 +44,28 @@ export const locations: object[] = [
 
 export const assistant: object = {}; //помощник, который появляется после каждого ответа и объясняет ответ
 
-export const buttons: object[] = [
+export interface Btn {
+  id: number;
+  ru: string;
+  en: string;
+  de: string;
+}
+
+export const buttons: Btn[] = [
   {
-    id: '0',
+    id: 0,
     ru: 'НАЧАТЬ ИГРУ',
     en: 'START GAME',
     de: 'SPIEL STARTEN',
   },
   {
-    id: '1',
+    id: 1,
     ru: 'ИНСТРУКЦИЯ',
     en: 'MANUAL',
     de: 'ANLEITUNG',
   },
   {
-    id: '2',
+    id: 2,
     ru: 'ДАЛЕЕ',
     en: 'FURTHER' /* ? */,
     de: 'LEITER',

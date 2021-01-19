@@ -24,6 +24,7 @@ export default function MainLayout(): JSX.Element {
     <Container className={classes.main}>
       <Switch>
         {/* <Redirect to="/home" /> */}
+        {/* <Route exact path="/home" component={Home} /> */}
         <Route exact path="/home" component={withRouter(Home)} />
         <Route exact path="/newgame" component={withRouter(NewGame)} />
         {/* <Route exact path='/game'" component={} /> */}

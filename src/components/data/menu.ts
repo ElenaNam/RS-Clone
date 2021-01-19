@@ -1,4 +1,4 @@
-export const links: object[] = [
+export const links = [
   {
     id: '0',
     link: '/home',

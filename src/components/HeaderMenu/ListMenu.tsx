@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -9,12 +9,20 @@ import { useTheme } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import logo from '../../assets/images/logo_rs.png';
 
-export default function ListMenu(props): JSX.Element {
+export function ListMenu(props: object): JSX.Element {
   const theme = useTheme();
+  const { linksArray } = props;
   return (
     <List>
-      {props.map((item: object, index: number) => (
-        <ListItem button key={item.id} component={Link} to={item.link}>
+      {linksArray.map((item: object, index: number) => (
+        <ListItem
+          button
+          key={item.id}
+          component={NavLink}
+          exact
+          to={item.link}
+          activeStyle={{ color: 'green' }}
+        >
           {console.log(item)}
           <ListItemIcon>
             {index % 2 === 0 ? (

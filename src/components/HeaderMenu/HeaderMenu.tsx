@@ -16,9 +16,11 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import { Box } from '@material-ui/core';
 
 import logo from '../../assets/images/logo_lf.png';
-import { links } from '../data/menu';
 
-import ListMenu from './ListMenu';
+// eslint-disable-next-line import/extensions
+import { links } from '../data/menu.ts';
+
+import { ListMenu } from './ListMenu';
 
 const drawerWidth = 240;
 
@@ -145,7 +147,8 @@ export default function HeaderMenu(): JSX.Element {
           </IconButton>
         </div>
         <Divider />
-        {ListMenu(links)}
+        {/* {ListMenu(links)} */}
+        <ListMenu linksArray={links} />
       </Drawer>
 
       <main

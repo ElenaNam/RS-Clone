@@ -100,3 +100,9 @@
   /* const [theme, setTheme] = useState<string>('light'); */
   const ref = useRef(null);
 
+  $ git pull origin menu
+  From https://github.com/ElenaNam/RS-Clone
+   * branch            menu       -> FETCH_HEAD
+  Auto-merging .eslintcache
+  CONFLICT (content): Merge conflict in .eslintcache
+  Automatic merge failed; fix conflicts and then commit the result.

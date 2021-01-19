@@ -162,7 +162,8 @@ export const personage: object[] = [
     en: {
       name: 'Policeman',
       text: `
-            Good afternoon! Police Lieutenant Chizhik! Who are you? Where are you going?" Why unaccompanied?
+            Good afternoon! Police Lieutenant Chizhik! Who are you? 
+            Where are you going?" Why unaccompanied?
             `,
     },
     de: {
@@ -213,7 +214,7 @@ export const personage: object[] = [
     en: {
       name: "Grandma's neighbor",
       text: `
-            And, ${nameplayer}, are you in a hurry to see your grandmother?
+            And, ${namePlayer}, are you in a hurry to see your grandmother?
             Come inside for a minute, I promised her apples. I'll pick up a basket and take it to you.
             `,
     },

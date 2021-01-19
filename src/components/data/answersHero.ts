@@ -1,6 +1,20 @@
-export const answers: object[] = [
+import { namePlayer } from './variables';
+
+interface Assistant {
+  answer: string[];
+  interpretation: string[];
+}
+export interface Answers {
+  id: number;
+  score: string[] /* или number?? */;
+  ru: Assistant;
+  en: Assistant;
+  de: Assistant;
+}
+
+export const answers: Array<Answers> = [
   {
-    id: '0', // мама
+    id: 0, // мама
     score: ['', '', '', '', ''],
 
     ru: {
@@ -19,13 +33,13 @@ export const answers: object[] = [
     },
   },
   {
-    id: '1', // соседка
+    id: 1, // соседка
     score: [``, ``, ``, ``, ``],
 
     ru: {
       answer: [
         `Мои мама и папа будут весь день на работе, а бабушка заболела. Она живет в очень далекой глухой деревне, 
-                и мне нужно отвезти ей лекарства. Это будет сложная дорога через лес. Мне страшно, потому что я пойду одна.`,
+        и мне нужно отвезти ей лекарства. Это будет сложная дорога через лес. Мне страшно, потому что я пойду одна.`,
         `Не ваше дело! Иду и иду…`,
         `К бабушке.`,
         `Просто гуляю.`,
@@ -37,8 +51,8 @@ export const answers: object[] = [
     en: {
       answer: [
         `My mom and dad will be at work all day, and my grandma is sick. She lives in a very remote remote village,
-                and I need to take her medicine.
-                It will be a difficult road through the forest. I'm scared because I'm going alone.`,
+        and I need to take her medicine.
+        It will be a difficult road through the forest. I'm scared because I'm going alone.`,
         `Not your business! Coming and going...` /* ????  */,
         `To grandma.`,
         `Just walking`,
@@ -51,9 +65,9 @@ export const answers: object[] = [
       answer: [``, ``, ``, ``, ``],
       interpretation: [
         `Meine Mutter und mein Vater werden den ganzen Tag bei der Arbeit sein,
-                und meine Großmutter ist krank. Sie lebt in einem sehr Fernen Tauben Dorf,
-                und ich muss Ihr Medikamente bringen. Es wird ein schwieriger Weg durch den Wald. 
-                Ich habe Angst, weil ich allein gehen werde.`,
+        und meine Großmutter ist krank. Sie lebt in einem sehr Fernen Tauben Dorf,
+        und ich muss Ihr Medikamente bringen. Es wird ein schwieriger Weg durch den Wald. 
+        Ich habe Angst, weil ich allein gehen werde.`,
         `Es geht Sie nichts an! Ich gehe und gehe…`,
         `Zu Oma.`,
         `Ich gehe nur spazieren.`,
@@ -62,7 +76,7 @@ export const answers: object[] = [
     },
   },
   {
-    id: '2', // продавец мороженого
+    id: 2, // продавец мороженого
     score: [``, ``, ``, ``, ``],
 
     ru: {
@@ -107,7 +121,7 @@ export const answers: object[] = [
     },
   },
   {
-    id: '3', // водитель автомобиля
+    id: 3, // водитель автомобиля
     score: [``, ``, ``, ``, ``],
 
     ru: {
@@ -152,14 +166,14 @@ export const answers: object[] = [
     },
   },
   {
-    id: '4', // лесник
+    id: 4, // лесник
     score: [``, ``, ``, ``, ``],
 
     ru: {
       answer: [
         `Ой, спасибо, дядя лесник! Я только одним глазком через щелочку в заборе на них посмотрю,
-                а заходить не буду – мне торопиться нужно.
-                `,
+        а заходить не буду – мне торопиться нужно.
+        `,
 
         `Как здорово! Я действительно устала, от чая не откажусь.`,
 
@@ -200,7 +214,7 @@ export const answers: object[] = [
     },
   },
   {
-    id: '5', // девочка
+    id: 5, // девочка
     score: [``, ``, ``, ``, ``],
 
     ru: {
@@ -211,8 +225,8 @@ export const answers: object[] = [
         `Извини, родители запретили мне отвлекаться. Удачи тебе с земляникой!`,
 
         `Дина, привет! А меня зовут ${namePlayer}. Слушай, я сейчас не могу.
-                Давай телефонами обменяемся, и в следующий раз вместе сходим за земляникой.
-                `,
+        Давай телефонами обменяемся, и в следующий раз вместе сходим за земляникой.
+        `,
 
         `А давай наоборот – ты пойдешь со мной, и по дороге мы будем собирать землянику.`,
       ],
@@ -246,7 +260,7 @@ export const answers: object[] = [
   },
 
   {
-    id: '6', // охотник
+    id: 6, // охотник
     score: [``, ``, ``, ``, ``],
 
     ru: {
@@ -285,7 +299,7 @@ export const answers: object[] = [
     },
   },
   {
-    id: '7', // участковый
+    id: 7, // участковый
     score: [``, ``, ``, ``, ``],
 
     ru: {
@@ -293,8 +307,7 @@ export const answers: object[] = [
         `Я иду к бабушке, она меня уже ждет.`,
         `Я ${namePlayer}, моя бабушка -  Марья Ивановна. Иду к ней в гости, она меня уже ждет.`,
         `А вам какое дело? Меня учили никому ничего не рассказывать!`,
-        `А вы, правда, полицейский? Родители объясняли мне, что не каждый человек в форме
-                    может быть полицейским и ему можно доверять.`,
+        `А вы, правда, полицейский? Родители объясняли мне, что не каждый человек в форме может быть полицейским и ему можно доверять.`,
         `Я ${namePlayer}. Я не в первый раз сюда в одиночку иду. И вообще без родителей я часто хожу.`,
       ],
       interpretation: [``, ``, ``, ``, ``],
@@ -308,7 +321,7 @@ export const answers: object[] = [
         `What do you care? I was taught not to tell anyone anything!`,
         `Are you really a cop? Parents explained to me that not every person
                     in uniform can be a cop and can be trusted.`,
-        `I am ${nameplayer}. It's not the first time I've come here alone.
+        `I am ${namePlayer}. It's not the first time I've come here alone.
                     And I often go without my parents.`,
       ],
       interpretation: [``, ``, ``, ``, ``],
@@ -329,13 +342,14 @@ export const answers: object[] = [
     },
   },
   {
-    id: '8', // учитель
+    id: 8, // учитель
     score: [``, ``, ``, ``, ``],
 
     ru: {
       answer: [
         `Нет, отстаньте от меня!`,
-        `Спасибо, с большим удовольствием. Я сейчас быстренько бабушке отнесу лекарства и прибегу к Вам домой.`,
+        `Спасибо, с большим удовольствием. Я сейчас быстренько бабушке отнесу лекарства 
+        и прибегу к Вам домой.`,
         `Спасибо за приглашение! Я сейчас зайду к бабушке и у нее отпрошусь.`,
         `Мы познакомимся в школе, когда начнутся занятия.`,
         `А Вы учитель по какому предмету? У меня с математикой плохо. Вы мне поможете?`,
@@ -370,12 +384,13 @@ export const answers: object[] = [
     },
   },
   {
-    id: '9', // сосед бабушки
+    id: 9, // сосед бабушки
     score: [``, ``, ``, ``, ``],
 
     ru: {
       answer: [
-        `Здравствуйте! Хорошо, отнесу. Только заходить не буду, здесь подожду. Вы мне корзинку сюда вынесете, пожалуйста.`,
+        `Здравствуйте! Хорошо, отнесу. Только заходить не буду, здесь подожду. 
+        Вы мне корзинку сюда вынесете, пожалуйста.`,
         `Нет, я слишком тороплюсь.`,
         `А яблоки вкусные? А можно я сначала  попробую?`,
         `Здравствуйте! Ладно. Можно я у вас немного посижу, пока жду. А то ноги устали.`,

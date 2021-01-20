@@ -31,6 +31,20 @@ export default function MainLayout(): JSX.Element {
         <Route exact path="/manual" component={Manual} />
         <Route exact path="/settings" component={withRouter(Settings)} />
         <Route exact path="/information" component={withRouter(Information)} />
+        <Route
+          path="/rss"
+          component={() => {
+            window.location.href = 'https://rs.school/js/';
+            return null;
+          }}
+        />
+        <Route
+          path="/lf"
+          component={() => {
+            window.location.href = 'https://vk.com/lf_samara';
+            return null;
+          }}
+        />
       </Switch>
     </Container>
   );

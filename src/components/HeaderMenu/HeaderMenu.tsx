@@ -14,7 +14,7 @@ import { amber } from '@material-ui/core/colors';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import { Box } from '@material-ui/core';
-
+import { NavLink } from 'react-router-dom';
 import logo from '../../assets/images/logo_lf.png';
 
 import { ListMenu } from './ListMenu';
@@ -121,7 +121,9 @@ export default function HeaderMenu(): JSX.Element {
             <h2>СФЕРА ДОВЕРИЯ</h2>
           </Typography>
           <Box>
-            <img src={logo} alt="logo" />
+            <NavLink to="/lf" target="_blank">
+              <img src={logo} alt="logo" />
+            </NavLink>
           </Box>
         </Toolbar>
       </AppBar>

@@ -40,7 +40,9 @@ export function ListMenu(): JSX.Element {
         </ListItem>
       ))}
       <Box mt={15}>
-        <img src={logo} alt="logo_rsschool" width="60%" />
+        <NavLink to="/rss" target="_blank">
+          <img src={logo} alt="logo_rsschool" width="60%" />
+        </NavLink>
       </Box>
     </List>
   );

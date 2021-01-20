@@ -2,6 +2,7 @@ import React from 'react';
 
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
 import Drawer from '@material-ui/core/Drawer';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
@@ -15,9 +16,9 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import { Box } from '@material-ui/core';
 import { NavLink } from 'react-router-dom';
-import logo from '../../assets/images/logo_lf.png';
-
 import { ListMenu } from './ListMenu';
+
+import logo from '../../assets/images/logo_lf.png';
 
 const drawerWidth = 240;
 
@@ -46,6 +47,7 @@ const useStyles = makeStyles((theme) => ({
   menuButton: {
     marginRight: theme.spacing(2),
   },
+  title: {},
   hide: {
     display: 'none',
   },
@@ -63,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
     justifyContent: 'flex-end',
-    backgroundColor: 'grey',
+    backgroundColor: '#FF7100',
   },
   content: {
     flexGrow: 1,
@@ -116,7 +118,7 @@ export default function HeaderMenu(): JSX.Element {
           >
             <MenuIcon style={{ color: amber[50], fontSize: 60 }} />
           </IconButton>
-          <Typography variant="h6" noWrap>
+          <Typography>
             <h3>ИГРА ПО БЕЗОПАСНОСТИ</h3>
             <h2>СФЕРА ДОВЕРИЯ</h2>
           </Typography>

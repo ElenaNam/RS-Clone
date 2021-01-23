@@ -1,8 +1,13 @@
-import { string } from 'yargs';
+/* import { string } from 'yargs'; */
 
-export const namePlayer: object = {
-  ru: string,
-  lat: string /* ????? */,
+export interface Player {
+  ru: string;
+  lat: string;
+}
+
+export const namePlayer: Player = {
+  ru: '',
+  lat: '' /* ????? */,
 };
 
 export interface Lang {
@@ -42,7 +47,7 @@ export const locations: Lang[] = [
   },
 ];
 
-export const assistant: object = {}; //помощник, который появляется после каждого ответа и объясняет ответ
+export const assistant: object = {}; // помощник, который появляется после каждого ответа и объясняет ответ
 
 export interface Btn {
   id: number;

@@ -30,15 +30,21 @@ function Pause(props: Props) {
 
 const ForestSound = () => {
   /* const ref = React.createRef(); */
-  const [play, setPlay] = useState(false);
+  const [play, setPlay] = useState<boolean | null>(null);
+  /* const [play, setPlay] = useState(false); */
   let audioForest: HTMLAudioElement | null = null;
   /*  let audioForest: HTMLAudioElement = useRef(null); */
 
   async function playAudio(): Promise<void> {
     if (audioForest !== null) {
-      await audioForest.play().then((_) => {
+      console.log(audioForest);
+      /*       await audioForest.play().then(() => {
         console.log('play');
-      });
+        console.log(audioForest);
+        console.log('play');
+      }); */
+      new Audio:<string>(audioForest.children[0].getAttribute('src')).play();
+      console.log(audioForest.children[0].getAttribute('src'));
     }
   }
   async function pauseAudio(): Promise<void> {

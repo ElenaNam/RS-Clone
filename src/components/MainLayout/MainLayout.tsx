@@ -23,7 +23,6 @@ export default function MainLayout(): JSX.Element {
   return (
     <Container className={classes.main}>
       <Switch>
-        {/* <Redirect to="/home" /> */}
         {/* <Route exact path="/home" component={Home} /> */}
         <Route exact path="/home" component={withRouter(Home)} />
         <Route exact path="/newgame" component={withRouter(NewGame)} />
@@ -31,6 +30,8 @@ export default function MainLayout(): JSX.Element {
         <Route exact path="/manual" component={Manual} />
         <Route exact path="/settings" component={withRouter(Settings)} />
         <Route exact path="/information" component={withRouter(Information)} />
+
+        {/* <Redirect from="/" to="/home" /> */}
         <Route
           path="/rss"
           component={() => {

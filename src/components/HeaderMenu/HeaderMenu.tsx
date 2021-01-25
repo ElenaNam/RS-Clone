@@ -2,7 +2,6 @@ import React from 'react';
 
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
 import Drawer from '@material-ui/core/Drawer';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
@@ -118,10 +117,11 @@ export default function HeaderMenu(): JSX.Element {
           >
             <MenuIcon style={{ color: amber[50], fontSize: 60 }} />
           </IconButton>
-          <Typography>
-            <h3>ИГРА ПО БЕЗОПАСНОСТИ</h3>
-            <h2>СФЕРА ДОВЕРИЯ</h2>
-          </Typography>
+          <div>
+            <Typography variant='h5'>ИГРА ПО БЕЗОПАСНОСТИ</Typography>
+            <Typography variant='h4'>СФЕРА ДОВЕРИЯ</Typography> 
+          </div>
+         
           <Box>
             <NavLink to="/lf" target="_blank">
               <img src={logo} alt="logo" />

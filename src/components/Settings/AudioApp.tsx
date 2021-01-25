@@ -5,10 +5,8 @@ import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/core/Slider';
 import VolumeDown from '@material-ui/icons/VolumeDown';
 import VolumeUp from '@material-ui/icons/VolumeUp';
-
-/* import soundfile from '../../assets/audio/gameover.mp3'; */
-import VolumePage from './VolumePage';
-import ForestSound from './ForestSound';
+import VolumePage from './Volume/VolumePage';
+import ForestSound from './Simple/ForestSound';
 
 const useStyles = makeStyles({
   root: {
@@ -18,10 +16,25 @@ const useStyles = makeStyles({
 
 export default function AudioApp() {
   const classes = useStyles();
-  const [value, setValue] = useState<number>(30);
+  let valVolume: number = 50;
+  const local: string | null = window.localStorage.getItem('volume');
+  if (local) valVolume = +(JSON.parse(local)) * 100;
+  const [value, setValue] = useState<number>(valVolume);
+
+  const selectVolume = ({ elem, volume }: 
+  { elem: HTMLCollectionOf<HTMLAudioElement>; volume: number; }) => {    
+    Array.from(elem).map((el: HTMLAudioElement) => {
+      const item = el;
+      item.volume = volume;
+    });   
+  };
 
   const handleChange = (event: unknown, newValue: number | number[]) => {
     setValue(newValue as number);
+    const volume = (newValue as number)/100;
+    const audioElements = document.getElementsByTagName('audio'); 
+    selectVolume({ elem: audioElements, volume });   
+    window.localStorage.setItem('volume', volume.toString());
   };
 
   return (

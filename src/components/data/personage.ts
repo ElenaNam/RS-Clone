@@ -13,7 +13,7 @@ export interface Personage {
 
 export const personage: object[] = [
   {
-    id: 0, //ГОРОД
+    id: 0, // ГОРОД
     ru: {
       name: 'Мама',
       text: `
@@ -39,7 +39,7 @@ export const personage: object[] = [
   },
 
   {
-    id: 1, //ГОРОД
+    id: 1, // ГОРОД
     ru: {
       name: 'Соседка',
       text: `Здравствуй, ${namePlayer}! Куда собираешься?`,
@@ -55,7 +55,7 @@ export const personage: object[] = [
   },
 
   {
-    id: 2, //ГОРОД
+    id: 2, // ГОРОД
     ru: {
       name: 'Продавец мороженого',
       text: `Привет, ${namePlayer}!  Далеко направляешься? Хочешь на дорожку мороженого дам?`,
@@ -70,14 +70,14 @@ export const personage: object[] = [
     },
   },
   {
-    id: 3, //ГОРОД
+    id: 3, // ГОРОД
     ru: {
       name: 'Водитель автомобиля',
       text: `Садись, ${hero}, подвезу! Автобус когда еще приедет! Куда тебе надо?`,
     },
     en: {
       name: 'Сar driver',
-      text: `Get in, ${hero}, I'll give you a ride! The bus will arrive not soon! Where do you want to go?`, //перепроверить предложение
+      text: `Get in, ${hero}, I'll give you a ride! The bus will arrive not soon! Where do you want to go?`, // перепроверить предложение
     },
     de: {
       name: 'Fahrer',
@@ -86,7 +86,7 @@ export const personage: object[] = [
   },
 
   {
-    id: 4, //ЛЕС
+    id: 4, // ЛЕС
     ru: {
       name: 'Лесник',
       text: `
@@ -113,7 +113,7 @@ export const personage: object[] = [
     },
   },
   {
-    id: 5, //ЛЕС
+    id: 5, // ЛЕС
     ru: {
       name: 'Девочка',
       text: `
@@ -139,7 +139,7 @@ export const personage: object[] = [
     },
   },
   {
-    id: 6, //ЛЕС
+    id: 6, // ЛЕС
     ru: {
       name: 'Охотник',
       text: `
@@ -163,7 +163,7 @@ export const personage: object[] = [
     },
   },
   {
-    id: 7, //ДЕРЕВНЯ
+    id: 7, // ДЕРЕВНЯ
     ru: {
       name: 'Участковый',
       text: `
@@ -185,7 +185,7 @@ export const personage: object[] = [
     },
   },
   {
-    id: 8, //ДЕРЕВНЯ
+    id: 8, // ДЕРЕВНЯ
     ru: {
       name: 'Учитель',
       text: `
@@ -215,7 +215,7 @@ export const personage: object[] = [
     },
   },
   {
-    id: 9, //ДЕРЕВНЯ
+    id: 9, // ДЕРЕВНЯ
     ru: {
       name: 'Сосед бабушки',
       text: `

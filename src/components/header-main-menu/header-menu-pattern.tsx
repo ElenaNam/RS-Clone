@@ -125,14 +125,26 @@ export default function PersistentDrawerLeft() {
       >
         <div className={classes.drawerHeader}>
           <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+            {theme.direction === 'ltr' ? (
+              <ChevronLeftIcon />
+            ) : (
+              <ChevronRightIcon />
+            )}
           </IconButton>
         </div>
         <Divider />
         <List>
-          {['Новая игра', 'Продолжить', 'Инструкция', 'Настройки', 'О разработчиках'].map((text, index) => (
+          {[
+            'Новая игра',
+            'Продолжить',
+            'Инструкция',
+            'Настройки',
+            'О разработчиках',
+          ].map((text, index) => (
             <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+              <ListItemIcon>
+                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+              </ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
           ))}

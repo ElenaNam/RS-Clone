@@ -11,21 +11,23 @@ import StartNextLevel from '../StartNextLevel/StartNextLevel';
 import { hero, locations, buttons } from '../data/variables';
 
 import girlImgSrc from '../../assets/images/girl.png';
+import boyImgSrc from '../../assets/images/boy.png';
 
-import { AppState } from '../../store/types';
+import { AppState, GameState } from '../../store/types';
 
 import { startNewLevel } from '../../store/actions/startNewGameAction';
 
-const StartNewGame = (props) => {
-  const { userName, gender } = props;
+const StartNewGame = ( props: GameState ) => { // { userName, gender, lang, activeLevel }
+  const { userName, gender, activeLevel, lang } = props;
+  console.log( activeLevel, userName, lang);
   const classes = useStyles();
 
-  const lang = 'ru';
+  // const lang = 'ru';
 
     
   const [count, setCount] = useState(0);
 
-  // const [userName, setUserName] = useState('');
+  const [newUserName, setUserName] = useState('');
 
   // const [gender, setGender] = useState('male');
 
@@ -50,9 +52,9 @@ const StartNewGame = (props) => {
           А как твое имя?
         </div>
         <input
-          value={userName}
+          value={newUserName}
           maxLength={12}
-          // onChange={(e) => setUserName(e.target.value)}
+          onChange={(e) => setUserName(e.target.value)}
         />
         <div className="greeting-message">
           Выбери героя
@@ -72,13 +74,13 @@ const StartNewGame = (props) => {
               checked={gender==='boy'}
               onChange={handleGender}
             />
-            <img src={girlImgSrc} alt="boy" className="img-user" />
+            <img src={boyImgSrc} alt="boy" className="img-user" />
           </div>
         </div>
         <button type="button" onClick={handleStartNewLevel}>{buttons[2][lang]}</button>
 
 
-        <div>{userName}</div>
+        <div>{newUserName}</div>
 
       </div>
 
@@ -88,15 +90,28 @@ const StartNewGame = (props) => {
       <button type="submit" onClick={() => setCount(count + 1)}>
         Нажми на меня
       </button>
-      <StartNextLevel />
+      {/* <StartNextLevel /> */}
     </div>
   );
 };
 
-const mapStateToProps = (state: AppState) => ({
-  userName: state.userName,
-  gender: state.gender,
-});
+// const mapStateToProps = (state: AppState) => ({
+//   userName: state.userName,
+//   gender: state.gender,
+//   lang: state.lang,
+//   activeLevel: state.activeLevel,
+  
+// });
+
+const mapStateToProps = (state: AppState) => {
+  console.log(state);
+  return {
+    userName: state.game.userName,
+    gender: state.game.gender,
+    lang: state.game.lang,
+    activeLevel: state.game.activeLevel,
+  };
+};
 
 const mapDispatchToProps = {
   startNewLevel,

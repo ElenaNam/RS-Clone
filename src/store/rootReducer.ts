@@ -2,5 +2,5 @@ import { combineReducers } from 'redux';
 import { startNewGameReducer } from './reducers/startNewGameReducer';
 
 export const rootReducer = combineReducers({
-  startNewGameReducer, 
+  game: startNewGameReducer, 
 });

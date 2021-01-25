@@ -1,9 +1,29 @@
-export interface AppState {
+export interface GameState {
+  // game: {
+  //   userName: string,
+  //   gender: 'girl' | 'boy',
+  
+  //   activeLevel: number,
+  //   lang: 'ru' | 'en' | 'de',
+  // }
+  
   userName: string,
   gender: 'girl' | 'boy',
 
   activeLevel: number,
+  lang: 'ru' | 'en' | 'de',
   
+}
+
+export interface AppState {
+  // game: {
+  //   userName: string,
+  //   gender: 'girl' | 'boy',
+  
+  //   activeLevel: number,
+  //   lang: 'ru' | 'en' | 'de',
+  // }
+  game: GameState,
 }
 
 export enum LevelActionType {
@@ -12,9 +32,9 @@ export enum LevelActionType {
 
 export interface StartNewLevelAction {
   type: LevelActionType.START_NEW_LEVEL,
-  // payload: {
+  payload: {
     
-  // },
+  },
 }
 
 export type Action = StartNewLevelAction;

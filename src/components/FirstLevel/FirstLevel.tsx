@@ -15,12 +15,14 @@ import girlImgSrc from '../../assets/images/girl.png';
 import { AppState } from '../../store/types';
 
 import { startNewLevel } from '../../store/actions/startNewGameAction';
+import { useStyles } from './FirstLevel.style';
 
-const StartNewGame = (props) => {
+import SimpleDialogDemo from '../DialogWindow/DialogWindowHome';
+
+
+const FirstLevel = (props) => {
   const { userName, gender } = props;
-  // const classes = useStyles();
-
-  const lang = 'ru';
+  const classes = useStyles();
 
     
   const [count, setCount] = useState(0);
@@ -41,64 +43,23 @@ const StartNewGame = (props) => {
   };
 
   return (
-    // {classes.startNewGame}
-    <div className="start-page">
-      <div className="messages-wrapper">
-        <div className="greeting-message">
-          Привет! Я твой помощник в дороге.
-          Меня зовут хз пока!
-          А как твое имя?
-        </div>
-        <input
-          value={userName}
-          maxLength={12}
-          // onChange={(e) => setUserName(e.target.value)}
-        />
-        <div className="greeting-message">
-          Выбери героя
-        </div>
-        <div className="male-choice">
-          <div className="gender-item">
-            <Radio
-              value="girl"
-              checked={gender==='girl'}
-              onChange={handleGender}
-            />
-            <img src={girlImgSrc} alt="girl" className="img-user" />
-          </div>
-          <div className="gender-item">
-            <Radio
-              value="boy"
-              checked={gender==='boy'}
-              onChange={handleGender}
-            />
-            <img src={girlImgSrc} alt="boy" className="img-user" />
-          </div>
-        </div>
-        <button type="button" onClick={handleStartNewLevel}>{buttons[2][lang]}</button>
-
-
-        <div>{userName}</div>
+    <div className={classes.pageWrapper}>
+      <div className="page">
+        dd
+        <SimpleDialogDemo />
 
       </div>
-
-
-
-      <p>Вы нажали {count} раз</p>
-      <button type="submit" onClick={() => setCount(count + 1)}>
-        Нажми на меня
-      </button>
     </div>
   );
 };
 
 const mapStateToProps = (state: AppState) => ({
-  userName: state.userName,
-  gender: state.gender,
+  userName: state.game.userName,
+  gender: state.game.gender,
 });
 
 const mapDispatchToProps = {
   startNewLevel,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(StartNewGame);
+export default connect(mapStateToProps, mapDispatchToProps)(FirstLevel);

@@ -8,7 +8,7 @@ import VolumeUp from '@material-ui/icons/VolumeUp';
 
 /* import soundfile from '../../assets/audio/gameover.mp3'; */
 import VolumePage from './VolumePage';
-import SimpleBtn from './SimpleBtn';
+import ForestSound from './ForestSound';
 
 const useStyles = makeStyles({
   root: {
@@ -27,7 +27,7 @@ export default function AudioApp() {
   return (
     <div className={classes.root}>
       <VolumePage />
-      <SimpleBtn />
+      <ForestSound />
       <Typography id="continuous-slider" gutterBottom>
         Уровень громкости
       </Typography>

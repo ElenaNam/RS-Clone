@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
@@ -18,6 +18,7 @@ import { NavLink } from 'react-router-dom';
 import { ListMenu } from './ListMenu';
 
 import logo from '../../assets/images/logo_lf.png';
+import Context from '../Context';
 
 const drawerWidth = 240;
 
@@ -88,14 +89,15 @@ const useStyles = makeStyles((theme) => ({
 export default function HeaderMenu(): JSX.Element {
   const classes = useStyles();
   const theme = useTheme();
-  const [open, setOpen] = React.useState<boolean>(false);
+  const value = useContext(Context); 
+  /* const [open, setOpen] = React.useState<boolean>(false); */
 
   const handleDrawerOpen = () => {
-    setOpen(true);
+    value.isOpen(true);
   };
 
   const handleDrawerClose = () => {
-    setOpen(false);
+    value.isOpen(false);
   };
 
   return (
@@ -104,7 +106,7 @@ export default function HeaderMenu(): JSX.Element {
       <AppBar
         position="fixed"
         className={clsx(classes.appBar, {
-          [classes.appBarShift]: open,
+          [classes.appBarShift]: value.open,
         })}
       >
         <Toolbar className={classes.toolBar}>
@@ -113,7 +115,7 @@ export default function HeaderMenu(): JSX.Element {
             aria-label="open drawer"
             onClick={handleDrawerOpen}
             edge="start"
-            className={clsx(classes.menuButton, open && classes.hide)}
+            className={clsx(classes.menuButton, value.open && classes.hide)}
           >
             <MenuIcon style={{ color: amber[50], fontSize: 60 }} />
           </IconButton>
@@ -133,7 +135,7 @@ export default function HeaderMenu(): JSX.Element {
         className={classes.drawer}
         variant="persistent"
         anchor="left"
-        open={open}
+        open={value.open}
         classes={{
           paper: classes.drawerPaper,
         }}
@@ -156,7 +158,7 @@ export default function HeaderMenu(): JSX.Element {
 
       <main
         className={clsx(classes.content, {
-          [classes.contentShift]: open,
+          [classes.contentShift]: value.open,
         })}
       >
         <div className={classes.drawerHeader} />

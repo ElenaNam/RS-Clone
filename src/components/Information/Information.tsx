@@ -15,7 +15,14 @@ export default function Information(): JSX.Element {
 
       <Container maxWidth="sm" style={{ marginBottom: '20px' }}>
         <Typography>
-          Игра создана nickaya112 и ElenaNam при поддержке друг друга и с
+          Автор сценария и идейный вдохновитель: Воронцова Ольга Сергеевна - 
+          руководитель Школы Лайф-Файтинга. 
+        </Typography>
+      </Container>
+
+      <Container maxWidth="sm" style={{ marginBottom: '20px' }}>
+        <Typography>
+          Игра разработана nickaya112 и ElenaNam при поддержке друг друга и с
           использованием бесценного опыта, полученного при обучении, а также
           метода научного тыка.
         </Typography>

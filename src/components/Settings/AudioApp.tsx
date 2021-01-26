@@ -1,64 +1,36 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import Slider from '@material-ui/core/Slider';
-import VolumeDown from '@material-ui/icons/VolumeDown';
-import VolumeUp from '@material-ui/icons/VolumeUp';
-import VolumePage from './Volume/VolumePage';
+import Container from '@material-ui/core/Container';
+import VolumeApp from './Volume/VolumeApp';
 import ForestSound from './Simple/ForestSound';
+import AudioSlider from './AudioSlider';
+
 
 const useStyles = makeStyles({
   root: {
-    width: 200,
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+   
+  },
+  content: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'baseline',
+    width: 500,
   },
 });
 
-export default function AudioApp() {
+export default function AudioApp(): JSX.Element {
   const classes = useStyles();
-  let valVolume: number = 50;
-  const local: string | null = window.localStorage.getItem('volume');
-  if (local) valVolume = +(JSON.parse(local)) * 100;
-  const [value, setValue] = useState<number>(valVolume);
-
-  const selectVolume = ({ elem, volume }: 
-  { elem: HTMLCollectionOf<HTMLAudioElement>; volume: number; }) => {    
-    Array.from(elem).map((el: HTMLAudioElement) => {
-      const item = el;
-      item.volume = volume;
-    });   
-  };
-
-  const handleChange = (event: unknown, newValue: number | number[]) => {
-    setValue(newValue as number);
-    const volume = (newValue as number)/100;
-    const audioElements = document.getElementsByTagName('audio'); 
-    selectVolume({ elem: audioElements, volume });   
-    window.localStorage.setItem('volume', volume.toString());
-  };
-
   return (
     <div className={classes.root}>
-      <VolumePage />
+      <Container className={classes.content}>
+        <VolumeApp />      
+        <AudioSlider />
+      </Container>
+
       <ForestSound />
-      <Typography id="continuous-slider" gutterBottom>
-        Уровень громкости
-      </Typography>
-      <Grid container spacing={2}>
-        <Grid item>
-          <VolumeDown />
-        </Grid>
-        <Grid item xs>
-          <Slider
-            value={value}
-            onChange={handleChange}
-            aria-labelledby="continuous-slider"
-          />
-        </Grid>
-        <Grid item>
-          <VolumeUp />
-        </Grid>
-      </Grid>
     </div>
   );
 }

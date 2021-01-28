@@ -3,6 +3,7 @@ import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 /* import styles from './MainLayout.module.css'; */
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container/Container';
+
 import Home from '../Home/Home';
 import NewGame from '../NewGame/NewGame';
 /* import Game from '../NewGame/NewGame'; */
@@ -20,6 +21,15 @@ const useStyles = makeStyles((theme) => ({
 
 export default function MainLayout(): JSX.Element {
   const classes = useStyles();
+
+  /*   const [open, setOpen] = useState(false);
+  const isOpen = (val:boolean)=> (setOpen(val));
+
+  const value = {
+    open,
+    isOpen
+  };
+  console.log(open); */
   return (
     <Container className={classes.main}>
       <Switch>

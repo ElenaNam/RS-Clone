@@ -27,7 +27,7 @@ function VolumeApp() {
     } else {
       el.play();
       localStorage.setItem('volume?', 'true');
-      console.log('volumeApp play');
+      /* console.log('volumeApp play'); */
     }
   };
   // если в памяти ничего нет, то по умолчанию звук включен
@@ -36,9 +36,9 @@ function VolumeApp() {
   if (localVolume) valueVolume = Boolean(JSON.parse(localVolume));
 
   const [volume, setVolume] = useState<boolean>(valueVolume);
-  // вул или выкл звук всем элементам при каждом рендере
+  // вкл или выкл звук всем элементам при каждом рендере
   useEffect(() => {    
-    console.log(volume);
+    /* console.log(volume); */
     document.querySelectorAll('audio').forEach((audio) => mute(audio, volume));       
   }, [volume]);
 

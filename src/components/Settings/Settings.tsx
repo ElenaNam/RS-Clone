@@ -3,9 +3,9 @@ import Container from '@material-ui/core/Container';
 import React from 'react';
 import { HotKeys } from 'react-hotkeys';
 import AudioApp from './AudioApp';
-
 import './Settings.module.css';
-import SwitchTheme from './SwitchTheme';
+import ThemeToggler from './Theme/ThemeToggler';
+
 
 const keyMap = {
   LIGHT_THEME: 'o',
@@ -21,6 +21,7 @@ const useStyles = makeStyles(() => ({
     justifyContent: 'center', 
     borderRadius: '10px',    
     marginTop: '30px',
+    marginBottom: '30px',
     backgroundColor: 'rgba(238, 238, 235, .5)' 
   },
 }));
@@ -31,13 +32,14 @@ export default function Settings(): JSX.Element {
   const classes = useStyles();
 
   return (
-    <HotKeys keyMap={keyMap}>
-      <Container maxWidth="sm" className={classes.content1}>        
-        <SwitchTheme />        
+    <HotKeys keyMap={keyMap}>      
+      <Container maxWidth="sm" className={classes.content1}>
+        <ThemeToggler />
       </Container>
       <Container maxWidth="sm" className={classes.content2}>
         <AudioApp />
       </Container>
+
     </HotKeys>
   );
 }

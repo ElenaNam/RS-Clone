@@ -61,43 +61,25 @@ const useStyles = makeStyles((theme) => ({
   drawerHeader: {
     display: 'flex',
     alignItems: 'center',
-    padding: theme.spacing(0, 1),
-    // necessary for content to be below app bar
+    padding: theme.spacing(0, 1), 
     ...theme.mixins.toolbar,
     justifyContent: 'flex-end',
     backgroundColor: '#FF7100',
-  },
-  content: {
-    flexGrow: 1,
-    padding: theme.spacing(3),
-    transition: theme.transitions.create('margin', {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-    marginLeft: -drawerWidth,
-    backgroundColor: 'grey',
-  },
-  contentShift: {
-    transition: theme.transitions.create('margin', {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-    marginLeft: 0,
-  },
+  }
 }));
 
 export default function HeaderMenu(): JSX.Element {
   const classes = useStyles();
   const theme = useTheme();
-  const value = useContext(Context); 
-  /* const [open, setOpen] = React.useState<boolean>(false); */
+  /* const value = useContext(Context);  */  
+  const { open, isOpen } = useContext(Context);   
 
   const handleDrawerOpen = () => {
-    value.isOpen(true);
+    isOpen(true);
   };
 
   const handleDrawerClose = () => {
-    value.isOpen(false);
+    isOpen(false);
   };
 
   return (
@@ -106,7 +88,7 @@ export default function HeaderMenu(): JSX.Element {
       <AppBar
         position="fixed"
         className={clsx(classes.appBar, {
-          [classes.appBarShift]: value.open,
+          [classes.appBarShift]: open,
         })}
       >
         <Toolbar className={classes.toolBar}>
@@ -115,7 +97,7 @@ export default function HeaderMenu(): JSX.Element {
             aria-label="open drawer"
             onClick={handleDrawerOpen}
             edge="start"
-            className={clsx(classes.menuButton, value.open && classes.hide)}
+            className={clsx(classes.menuButton, open && classes.hide)}
           >
             <MenuIcon style={{ color: amber[50], fontSize: 60 }} />
           </IconButton>
@@ -135,7 +117,7 @@ export default function HeaderMenu(): JSX.Element {
         className={classes.drawer}
         variant="persistent"
         anchor="left"
-        open={value.open}
+        open={open}
         classes={{
           paper: classes.drawerPaper,
         }}
@@ -151,18 +133,7 @@ export default function HeaderMenu(): JSX.Element {
         </div>
         <Divider />
         <ListMenu />
-        {/* {ListMenu(links)} */}
-        {/* <ListMenu {...links} /> */}
-        {/* <ListMenu linksArray={links} /> */}
       </Drawer>
-
-      <main
-        className={clsx(classes.content, {
-          [classes.contentShift]: value.open,
-        })}
-      >
-        <div className={classes.drawerHeader} />
-      </main>
     </div>
   );
 }

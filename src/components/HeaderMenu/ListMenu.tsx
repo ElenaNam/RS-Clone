@@ -13,8 +13,7 @@ import { Links, links } from '../data/menu';
 
 export function ListMenu(): JSX.Element {
   const theme = useTheme();
-  const lang = 'ru';
-  /* const { linksArray }: object[] = props; */
+  const lang = 'ru'; 
   return (
     <List>
       {links.map((item: Links, index: number) => (

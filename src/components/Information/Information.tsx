@@ -12,7 +12,7 @@ export default function Information(): JSX.Element {
         <Typography 
           variant='body1' 
           key={paragraph.id}
-          style={{marginBottom: 20}}
+          style={{ marginBottom: 20 }}
         >
           {paragraph[lang]}
         </Typography>

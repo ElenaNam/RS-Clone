@@ -16,6 +16,7 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import { Box } from '@material-ui/core';
 import { NavLink } from 'react-router-dom';
 import { ListMenu } from './ListMenu';
+import { titleHeader, subtitleHeader } from '../data/textHeader';
 
 import logo from '../../assets/images/logo_lf.png';
 import Context from '../Context';
@@ -71,6 +72,7 @@ const useStyles = makeStyles((theme) => ({
 export default function HeaderMenu(): JSX.Element {
   const classes = useStyles();
   const theme = useTheme();
+  const lang = 'ru';
   /* const value = useContext(Context);  */  
   const { open, isOpen } = useContext(Context);   
 
@@ -102,8 +104,8 @@ export default function HeaderMenu(): JSX.Element {
             <MenuIcon style={{ color: amber[50], fontSize: 60 }} />
           </IconButton>
           <div>
-            <Typography variant='h5'>ИГРА ПО БЕЗОПАСНОСТИ</Typography>
-            <Typography variant='h4'>СФЕРА ДОВЕРИЯ</Typography> 
+            <Typography variant='subtitle1'>{titleHeader[lang]}</Typography>
+            <Typography variant='h4'>{`"${subtitleHeader[lang]}"`}</Typography> 
           </div>
          
           <Box>

@@ -1,35 +1,23 @@
 import React from 'react';
 import './Information.module.css';
 import { Typography } from '@material-ui/core';
-import Container from '@material-ui/core/Container';
+import Container from '@material-ui/core/Container'; 
+import { textInformation } from '../data/textInformation';
 
 export default function Information(): JSX.Element {
+  const lang = 'ru';
   return (
-    <>
-      <Container maxWidth="sm" style={{ marginBottom: '20px' }}>
-        <Typography variant="body1">
-          Данная игра является финальным проектом студентов курса
-          «JavaScript/Front-end» от The Rolling Scopes.
+    <Container maxWidth='sm'>
+      {textInformation.map((paragraph) => (
+        <Typography 
+          variant='body1' 
+          key={paragraph.id}
+          style={{marginBottom: 20}}
+        >
+          {paragraph[lang]}
         </Typography>
-      </Container>
-
-      <Container maxWidth="sm" style={{ marginBottom: '20px' }}>
-        <Typography>
-          Автор сценария и идейный вдохновитель: Воронцова Ольга Сергеевна - 
-          руководитель Школы Лайф-Файтинга. 
-        </Typography>
-      </Container>
-
-      <Container maxWidth="sm" style={{ marginBottom: '20px' }}>
-        <Typography>
-          Игра разработана nickaya112 и ElenaNam при поддержке друг друга и с
-          использованием бесценного опыта, полученного при обучении, а также
-          метода научного тыка.
-        </Typography>
-      </Container>
-
-      <Typography>Выпуск «JavaScript/Front-end» 2020-Q3</Typography>
-      <Typography>Год создания игры - 2021.</Typography>
-    </>
+      ))}
+    </Container>
   );
 }
+

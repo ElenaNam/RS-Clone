@@ -26,8 +26,11 @@ const ThemeProvider = (props: Props)=> {
   ); 
   
   const onSetDarkMode = (mode: boolean) => {
+    console.log(mode);
     setDarkMode(mode);
     storage.setItem('darkMode', mode.toString());
+    console.log('onSetDarkMode');
+    console.log(mode);
   };  
   return (   
     <ThemeContext.Provider    

@@ -13,6 +13,7 @@ import { Links, links } from '../data/menu';
 
 export function ListMenu(): JSX.Element {
   const theme = useTheme();
+  const lang = 'ru';
   /* const { linksArray }: object[] = props; */
   return (
     <List>
@@ -36,7 +37,7 @@ export function ListMenu(): JSX.Element {
               />
             )}
           </ListItemIcon>
-          <ListItemText primary={item.ru} />
+          <ListItemText primary={item[lang]} />
         </ListItem>
       ))}
       <Box mt={15}>

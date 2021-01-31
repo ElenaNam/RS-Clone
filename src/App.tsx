@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import ThemeLayout from './components/Settings/Theme/ThemeLayot';
+import HotkeysLayout from './components/Settings/HotkeysLayot';
 import Context from './components/Context';
 
 // import logo from './logo.svg';
@@ -46,14 +47,17 @@ function App(): JSX.Element {
   return (    
     <Context.Provider value={value}>     
       <ThemeLayout>
-        <div className="App">
-          <HeaderMainMenu />        
-          <div className={clsx(classes.content, { [classes.contentShift]: open,
-          })}
-          >
-            <MainLayout />
-          </div>               
-        </div>
+        <HotkeysLayout>
+          <div className="App">
+            <HeaderMainMenu />        
+            <div className={clsx(classes.content, { [classes.contentShift]: 
+            open,
+            })}
+            >
+              <MainLayout />
+            </div>               
+          </div>
+        </HotkeysLayout>
       </ThemeLayout>
     </Context.Provider>
  

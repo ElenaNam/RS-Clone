@@ -12,7 +12,7 @@ const ThemeToggler = () => {
       control={
         <Switch
           checked={context.darkMode}
-          onChange={() => context.onSetDarkMode(!context.darkMode)}
+          onChange={() => context.onSetDarkMode(!context.darkMode)}          
         />
       }      
     />

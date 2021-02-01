@@ -8,7 +8,8 @@ import VolumeUp from '@material-ui/icons/VolumeUp';
 
 const useStyles = makeStyles({
   root: {
-    width: 200,
+    display: 'flex',
+    width: 150,
   },
 });
 

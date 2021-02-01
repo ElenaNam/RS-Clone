@@ -37,9 +37,9 @@ function ForestSound() {
   
 
   return (
-    <div style={{ display: 'flex', margin: 15, justifyContent: 'center' }}>      
+    <div style={{ display: 'flex', margin: 10, justifyContent: 'center' }}>      
       <div>
-        <Typography variant="h6">Звуки леса для проверки звука</Typography>
+        <Typography variant="h6">Звуки леса</Typography>
       </div>
 
       <div>

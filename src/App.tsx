@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import ThemeLayout from './components/Settings/Theme/ThemeLayot';
-import HotkeysLayout from './components/Settings/HotkeysLayot';
+import HotkeysLayout from './components/Settings/Hotkeys/HotkeysLayot';
 import Context from './components/Context';
 
 // import logo from './logo.svg';

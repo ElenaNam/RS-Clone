@@ -11,7 +11,7 @@ export default function VolumeOn(props: Props) {
 
   return (
     <IconButton onClick={() => handleClick()}>
-      <VolumeOffIcon />
+      <VolumeOffIcon fontSize="large" />
     </IconButton>
   );
 }

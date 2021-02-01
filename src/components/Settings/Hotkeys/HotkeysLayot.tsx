@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import React, { useContext } from 'react';
 import { GlobalHotKeys } from 'react-hotkeys';
-import ThemeContext from './Theme/ThemeContext';
+import ThemeContext from '../Theme/ThemeContext';
 
 const keyMap = {
   THEME: 't'

@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container/Container';
-import Typography from '@material-ui/core/Typography';
+/* import Container from '@material-ui/core/Container/Container'; */
+/* import Typography from '@material-ui/core/Typography'; */
+import { Box } from '@material-ui/core';
 import VolumeOff from './VolumeOffBtn';
 import VolumeOn from './VolumeOnBtn';
+
 
 const useStyles = makeStyles(() => ({
   main: {
@@ -43,22 +45,18 @@ function VolumeApp() {
   }, [volume]);
 
   return (
-    <Container maxWidth="sm" className={classes.main}>
-      <div className="first">
+    <Box className={classes.main}>
+      {/* <div className="first">
         <Typography variant="h6">Звук</Typography>
-      </div>
-
-
-
+      </div> */}
       <div>
         {volume ? (
           <VolumeOff handleClick={() => setVolume(false)} />
         ) : (
           <VolumeOn handleClick={() => setVolume(true)} />
         )}
-      </div>
-      
-    </Container>
+      </div>      
+    </Box>
   );
 }
 export default VolumeApp;

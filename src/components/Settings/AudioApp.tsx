@@ -15,9 +15,9 @@ const useStyles = makeStyles({
   },
   content: {
     display: 'flex',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     alignItems: 'baseline',
-    width: 500,
+    
   },
 });
 

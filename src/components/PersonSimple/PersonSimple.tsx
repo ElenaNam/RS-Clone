@@ -4,7 +4,18 @@ import imgMother from '../../assets/images/personage/personage1.png';
 
 import { useStyles } from './PersonSimple.style';
 
-const Person = (props) => {
+export interface PersonProps {
+  // lang: 'en' | 'de' | 'ru';
+  
+  // onClose: (index: number) => void;
+
+  img: string;
+  // gender: string;
+  // userName: string;
+  // startNewLevel: () => void;
+}
+
+const Person = (props: PersonProps) => {
   const { img } = props;
   const a = 0;
   const classes = useStyles();

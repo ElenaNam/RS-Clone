@@ -1,40 +1,54 @@
-export interface GameState {
-  // game: {
-  //   userName: string,
-  //   gender: 'girl' | 'boy',
-  
-  //   activeLevel: number,
-  //   lang: 'ru' | 'en' | 'de',
-  // }
-  
-  userName: string,
-  gender: 'girl' | 'boy',
+export type Gender = 'girl' | 'boy';
+export type Lang = 'ru' | 'en' | 'de';
 
-  activeLevel: number,
-  lang: 'ru' | 'en' | 'de',
-  
+export interface GameState {
+  userName: string;
+  gender: Gender;
+
+  activeLevel: number;
+  lang: Lang;
 }
 
 export interface AppState {
   // game: {
   //   userName: string,
   //   gender: 'girl' | 'boy',
-  
+
   //   activeLevel: number,
   //   lang: 'ru' | 'en' | 'de',
   // }
-  game: GameState,
+  game: GameState;
 }
 
 export enum LevelActionType {
-  START_NEW_LEVEL = 'NEW_LEVEL_STARTED'
+  START_NEW_LEVEL = 'NEW_LEVEL_STARTED',
+  SET_USER_NAME = 'USER_NAME_CHANGED',
+  SET_GENDER = 'GENDER_CHANGED',
+  SET_LANGUAGE = 'LANGUAGE_CHANGED'
 }
 
 export interface StartNewLevelAction {
-  type: LevelActionType.START_NEW_LEVEL,
-  payload: {
-    
-  },
+  type: LevelActionType.START_NEW_LEVEL;
+  payload: {};
 }
 
-export type Action = StartNewLevelAction;
+export interface SetUserNameAction {
+  type: LevelActionType.SET_USER_NAME;
+  payload: string;
+}
+
+export interface SetGenderAction {
+  type: LevelActionType.SET_GENDER;
+  payload: Gender;
+}
+
+export interface SetLanguageAction {
+  type: LevelActionType.SET_LANGUAGE;
+  payload: Lang;
+}
+
+export type Action =
+  | StartNewLevelAction
+  | SetUserNameAction
+  | SetGenderAction
+  | SetLanguageAction;

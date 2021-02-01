@@ -2,9 +2,9 @@ import React, { useState, SyntheticEvent } from 'react';
 import './StartNewGame.css';
 import Radio from '@material-ui/core/Radio';
 import { connect } from 'react-redux';
-import { IProps } from './StartNewGame.models';
+// import { IProps } from './StartNewGame.models';
 
-import { useStyles } from './StartNewGame.style';
+// import { useStyles } from './StartNewGame.style';
 
 import StartNextLevel from '../StartNextLevel/StartNextLevel';
 
@@ -27,56 +27,29 @@ export interface StartNewGameProps {
   userName: string;
   activeLevel: number;
 
-  startNewLevel: () => void;
-
-  setUserName: (userName: string) => void;
+  setLanguage: (lang: Lang) => void;
 
   setGender: (gender: Gender) => void;
 }
 
 const StartNewGame = ( props: StartNewGameProps ) => { // { userName, gender, lang, activeLevel }
   const { userName, gender, activeLevel, lang } = props;
-  console.log( activeLevel, userName, lang);
-  const classes = useStyles();
-
-  // const lang = 'ru';
-
-    
-  const [count, setCount] = useState(0);
-
-  const [newUserName, setNewUserName] = useState('');
+  // const classes = useStyles();
 
   const [genderNew, setNewGender] = useState<Gender>('girl');
 
-  // const handleGender = (e) => {
-  //   // e.target.value && setGender(e.target.value);
+  const [langNew, setNewLang] = useState<Lang>('ru');
 
-  //   // setGender(e.target.value);
-  // };
-
-  const handleStartNewLevel = () => {
-    props.setUserName(newUserName);
+  const handleSetLanguage = () => {
     props.setGender(genderNew);
-    
-    props.startNewLevel();
-    // startNewLevel();
-    // <StartNextLevel />;
+
+    props.setLanguage(lang);
   };
 
   return (
     // {classes.startNewGame}
     <div className="start-page">
       <div className="messages-wrapper">
-        <div className="greeting-message">
-          Привет! Я твой помощник в дороге.
-          Меня зовут хз пока!
-          А как твое имя?
-        </div>
-        <input
-          // value={userName}
-          maxLength={12}
-          onChange={(e) => setNewUserName(e.target.value)}
-        />
         <div className="greeting-message">
           Выбери героя
         </div>
@@ -87,12 +60,7 @@ const StartNewGame = ( props: StartNewGameProps ) => { // { userName, gender, la
               checked={genderNew==='girl'}
               // onChange={handleGender}
               onChange={(e) => setNewGender(e.target.value as Gender)}
-              // onChange={(e) => {
-              //   if (typeof e.target.value === Gender) {
-
-              //   }
-              //   setNewGender(e.target.value)}
-              // }
+              
             />
             <img src={girlImgSrc} alt="girl" className="img-user" />
           </div>
@@ -106,31 +74,13 @@ const StartNewGame = ( props: StartNewGameProps ) => { // { userName, gender, la
             <img src={boyImgSrc} alt="boy" className="img-user" />
           </div>
         </div>
-        <button type="button" onClick={handleStartNewLevel}>{buttons[2][lang]}</button>
-
-
-        <div>{newUserName}</div>
+        <button type="button" onClick={handleSetLanguage}>{buttons[2][lang]}</button>
 
       </div>
-
-
-
-      <p>Вы нажали {count} раз</p>
-      <button type="submit" onClick={() => setCount(count + 1)}>
-        Нажми на меня
-      </button>
-      {/* <StartNextLevel /> */}
     </div>
   );
 };
 
-// const mapStateToProps = (state: AppState) => ({
-//   userName: state.userName,
-//   gender: state.gender,
-//   lang: state.lang,
-//   activeLevel: state.activeLevel,
-  
-// });
 
 const mapStateToProps = (state: AppState) => {
   console.log(state);
@@ -143,9 +93,8 @@ const mapStateToProps = (state: AppState) => {
 };
 
 const mapDispatchToProps = {
-  startNewLevel,
-  setUserName,
   setGender,
+  // setLanguage,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(StartNewGame);

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Avatar from '@material-ui/core/Avatar';
@@ -14,7 +14,7 @@ import Typography from '@material-ui/core/Typography';
 import { blue } from '@material-ui/core/colors';
 
 import { connect } from 'react-redux';
-import { AppState, GameState } from '../../store/types';
+import { AppState, GameState, Lang } from '../../store/types';
 
 import imgMother from '../../assets/images/personage/personage0.png';
 import { personage } from '../data/personage';
@@ -23,43 +23,60 @@ import { startNewLevel } from '../../store/actions/startNewGameAction';
 import { answers as answersAll } from '../data/answersHero';
 
 
+import { useStyles } from './DialogWindow.style';
+
 // const answers = ['ok', 'no'];
 // const answers = [];
-const useStyles = makeStyles({
-  avatar: {
-    backgroundColor: blue[100],
-    color: blue[600],
-  },
-});
+
+
+// const useStyles = makeStyles({
+//   avatar: {
+//     backgroundColor: blue[100],
+//     color: blue[600],
+//   },
+// });
 
 export interface SimpleDialogProps {
   open: boolean;
-  selectedValue: string;
-  lang: string;
+  // selectedValue: string;
+  selectedNum: number;
+  lang: Lang;
   personageNum: number;
-  onClose: (value: string) => void;
+  onClose: ( index: number) => void;
 }
+
 
 function SimpleDialog(props: SimpleDialogProps) {
   const classes = useStyles();
-  const { onClose, lang, personageNum, selectedValue, open } = props;
+  const { onClose, lang, personageNum, open, selectedNum } = props;
 
   const answersArr = answersAll[personageNum][lang].answer;
 
   const handleClose = () => {
-    onClose(selectedValue);
+    onClose(selectedNum);
   };
 
   const handleListItemClick = (value: string, index: number) => {
-    onClose(value);
+    onClose(index);
   };
 
   return (
-    <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={open}>
-      <DialogTitle id="simple-dialog-title">{personage[personageNum][lang].text}</DialogTitle>
+    <Dialog
+      onClose={handleClose}
+      aria-labelledby="simple-dialog-title"
+      open={open}
+    >
+      <DialogTitle id="simple-dialog-title">
+        {/* {personage[personageNum][lang].text} */}
+        {personage[personageNum][lang].text.replaceAll('{namePlayer}', 'FUck you')}
+      </DialogTitle>
       <List>
         {answersArr.map((email, index) => (
-          <ListItem button onClick={() => handleListItemClick(email, index)} key={email}>
+          <ListItem
+            button
+            onClick={() => handleListItemClick(email, index)}
+            key={email}
+          >
             <ListItemAvatar>
               <Avatar className={classes.avatar}>
                 <PersonIcon />
@@ -73,35 +90,129 @@ function SimpleDialog(props: SimpleDialogProps) {
   );
 }
 
-const SimpleDialogDemo = (props) => {
-  const { lang, imgSrc, personageNum } = props;
-  const [open, setOpen] = React.useState(false);
-  // const [selectedValue, setSelectedValue] = React.useState(answersArr[1]);
-  const [selectedValue, setSelectedValue] = React.useState();
-  const [selectedNum, setSelectedNum] = React.useState();
+export interface DialogWithResultProps {
+  open: boolean;
+  // selectedValue: string;
+  selectedNum: number;
+  lang: 'en' | 'de' | 'ru';
+  personageNum: number;
+  onClose: ( index: number) => void;
+}
 
-  const handleClickOpen = () => {
-    setOpen(true);
+function DialogWithResult(props: DialogWithResultProps) {
+  const classes = useStyles();
+  const { onClose, lang, personageNum, open, selectedNum } = props;
+
+  const interpretationArr = answersAll[personageNum][lang].interpretation;
+
+  const handleClose = () => {
+    onClose(selectedNum);
   };
 
-  const handleClose = (value: string, index: number) => {
-    setOpen(false);
-    setSelectedValue(value);
-    setSelectedNum(index);
+  const handleListItemClick = (value: string, index: number) => {
+    onClose(index);
+  };
 
-    
+  return (
+    <Dialog
+      onClose={handleClose}
+      aria-labelledby="simple-dialog-title"
+      open={open}
+    >
+      <DialogTitle id="simple-dialog-title">
+        {/* {personage[personageNum][lang].text} */}
+        {interpretationArr[selectedNum]}
+      </DialogTitle>
+      {/* <List>
+        {answersArr.map((email, index) => (
+          <ListItem
+            button
+            onClick={() => handleListItemClick(email, index)}
+            key={email}
+          >
+            <ListItemAvatar>
+              <Avatar className={classes.avatar}>
+                <PersonIcon />
+              </Avatar>
+            </ListItemAvatar>
+            <ListItemText primary={email} />
+          </ListItem>
+        ))}
+      </List> */}
+    </Dialog>
+  );
+}
+
+export interface SimpleDialogDemoProps {
+  lang: 'en' | 'de' | 'ru';
+  personageNum: number;
+  // onClose: ( index: number) => void;
+
+  imgSrc: string;
+  addScoreToLevelScore: ( score: number) => void;
+}
+
+const SimpleDialogDemo = (props: SimpleDialogDemoProps) => {
+  const classes = useStyles();
+  const { lang, imgSrc, personageNum, addScoreToLevelScore } = props;
+  const [open, setOpen] = useState(false);
+
+  const [openAnswers, setOpenAnswers] = useState(false);
+
+  // const [selectedValue, setSelectedValue] = React.useState(answersArr[1]);
+  // const [selectedValue, setSelectedValue] = useState<string>('');
+
+
+  const [disableButton, setDisableButton] = useState(false);
+  const [selectedNum, setSelectedNum] = useState<number>(-1);
+
+  const handleClickOpen = () => {
+    // setOpen(true);
+    setOpenAnswers(true);
+    setDisableButton(true);
+  };
+
+  const handleCloseAnswers = ( index: number) => {
+    // setOpen(false);
+    setOpenAnswers(false);
+
+    // setSelectedValue(value);
+    setSelectedNum(index);
+    setOpen(true);
+
+    // props.startNewLevel();
+  };
+
+  const handleClose = ( index: number) => {
+    addScoreToLevelScore(answersAll[personageNum].score[selectedNum]);
+    setOpen(false);
     // props.startNewLevel();
   };
 
   return (
     <div>
-      <Typography variant="subtitle1">Selected: {selectedValue}</Typography>
-      <br />
-      <Button color="primary" onClick={handleClickOpen}>
-        <img src={imgSrc} alt="mother" className="img-user" />
+      {/* <Typography variant="subtitle1">Selected: {selectedNum}</Typography>
+      <br /> */}
+      <Button disabled={disableButton} color="primary" onClick={handleClickOpen}>
+        <img src={imgSrc} alt="mother" className={classes.imgUser} />
         {/* Open simple dialog */}
       </Button>
-      <SimpleDialog selectedValue={selectedValue} open={open} lang={lang} onClose={handleClose} personageNum={personageNum} />
+      <SimpleDialog
+        // selectedValue={selectedValue}
+        selectedNum={selectedNum}
+        open={openAnswers}
+        lang={lang}
+        onClose={handleCloseAnswers}
+        personageNum={personageNum}
+      />
+      <DialogWithResult
+        // selectedValue={selectedValue}
+        selectedNum={selectedNum}
+        open={open}
+        lang={lang}
+        onClose={handleClose}
+        personageNum={personageNum}
+      />
     </div>
   );
 };

@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import { connect } from 'react-redux';
+
+import { Store } from 'redux';
+
 import HeaderMainMenu from './components/header-main-menu/header-main-menu';
 import StartNewGame from './components/StartNewGame/StartNewGame';
 import FirstLevel from './components/FirstLevel/FirstLevel';
@@ -9,15 +12,48 @@ import SecondLevel from './components/SecondLevel/SecondLevel';
 
 import { AppState, GameState } from './store/types';
 
+import { imagesArr } from './components/ImagesArr/ImagesArr';
+import { backgroundArr } from './components/ImagesArr/BackgroundArr';
 
 
-function App(props: GameState) {
-  const { userName, gender, activeLevel, lang } = props;
+
+export interface AppProps {
+  userName?: string,
+  gender?: 'girl' | 'boy',
+
+  activeLevel?: number,
+  lang?: 'ru' | 'en' | 'de',
+  
+}
+
+function App(props: AppProps) {
+  const { userName, gender, activeLevel = 0, lang } = props;
   // const state = {
   //   activeLevel: 0,
   // };
 
-  const arrComps = [<StartNewGame key='1' />, <FirstLevel key='2' />, <SecondLevel key='3' />];
+  // const arrComps = [<StartNewGame key='1' />, <FirstLevel key='2' />, <SecondLevel key='3' />];
+  const arrComps = [
+    <StartNewGame key="1" />,
+    <SecondLevel
+      key="3"
+      imgs={[imagesArr[0], imagesArr[1], imagesArr[2]]}
+      personageNums={[1, 2, 3]}
+      backgoundImg={backgroundArr[1]}
+    />,
+    <SecondLevel
+      key="4"
+      imgs={[imagesArr[3], imagesArr[4], imagesArr[5]]}
+      personageNums={[4, 5, 6]}
+      backgoundImg={backgroundArr[2]}
+    />,
+    <SecondLevel
+      key="5"
+      imgs={[imagesArr[6], imagesArr[7], imagesArr[8]]}
+      personageNums={[7, 8, 9]}
+      backgoundImg={backgroundArr[3]}
+    />,
+  ];
   console.log(props, activeLevel, userName, lang);
   return (
     <div className="App">

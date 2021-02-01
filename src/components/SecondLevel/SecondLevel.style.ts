@@ -7,7 +7,11 @@ export const useStyles = makeStyles(() => ({
     padding: '0',
     // marginBottom: '16px',
     listStyleType: 'none',
-    backgroundImage: `url(${backgoundImg})`,
+
+
+    // backgroundImage: `url(${backgoundImg})`,
+
+
     // backgroundColor: 'yellow',
     // maxWidth: '1024px',
     // height: '576px',
@@ -43,7 +47,7 @@ export const useStyles = makeStyles(() => ({
 
 
 
-  // personsBlock: {
-  //   display: 'flex',
-  // }
+  personsBlock: {
+    
+  }
 }));

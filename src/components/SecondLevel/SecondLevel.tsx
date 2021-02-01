@@ -29,51 +29,84 @@ import img3 from '../../assets/images/personage/personage3.png';
 
 import PersonSimple from '../PersonSimple/PersonSimple';
 
+export interface SecondLevelProps {
+  // lang: 'en' | 'de' | 'ru';
 
-const SecondLevel = (props) => {
+  // onClose: (index: number) => void;
+  gender: string;
+  userName: string;
+  startNewLevel: () => void;
+
+  imgs: string[];
+  personageNums: number[];
+  backgoundImg: string;
+}
+
+const SecondLevel = (props: SecondLevelProps) => {
   // хранить колличество пройденных персонажей
-  const arrPersons = [];
+  // const arrPersons = [];
   const [countExecutePersons, setCountExecutePersons] = useState(0);
 
-  if (countExecutePersons === arrPersons.length) {
-    alert('уровень пройден');
-  }
+  // if (countExecutePersons === arrPersons.length) {
+  //   alert('уровень пройден');
+  // }
 
-  const { userName, gender } = props;
+  const { userName, gender, imgs, personageNums, backgoundImg } = props;
   const classes = useStyles();
 
-    
-  const [count, setCount] = useState(0);
+  const [scoreLevel, setScoreLevel] = useState(0);
+  const [counterCompletedPers, setCounterCompletedPers] = useState(0);
+  // const [scoreLevel, setScoreLevel] = useState(0);
 
-  const handleGender = (e) => {
-    // e.target.value && setGender(e.target.value);
+  // const handleGender = (e) => {
+  //   // e.target.value && setGender(e.target.value);
 
-    // setGender(e.target.value);
+  //   // setGender(e.target.value);
+  // };
+
+  // const handleStartNewLevel = () => {
+  //   props.startNewLevel();
+  // };
+
+
+  const addScoreToLevelScore = (score: number) => {
+    setScoreLevel(scoreLevel + score);
+    setCounterCompletedPers(prev => prev + 1);
+
+    if (counterCompletedPers === imgs.length - 1) {
+      props.startNewLevel();
+    }
   };
 
-  const handleStartNewLevel = () => {
-    props.startNewLevel();
-    // <StartNextLevel />;
+  const BackgroundHead = {
+    backgroundImage: `url(${backgoundImg})`
   };
 
   return (
-    <Box className={classes.pageWrapper} display="flex">
-      <Box className={classes.personsBlock} alignSelf="flex-end">
-      
-        {/* <SimpleDialogDemo /> */}
+    <Box className={classes.pageWrapper} display="flex" justifyContent="space-around" style={BackgroundHead}>
+      {/* <div>Score: {scoreLevel}</div>
+      <div>CounerPers: {counterCompletedPers}</div> */}
+
+      <Box className={classes.personsBlock} alignSelf="flex-end" flexGrow="1">
+        
 
         <Grid
           container
           direction="row"
           justify="space-around"
-          alignItems="flex-end" 
+          alignItems="flex-end"
+          // alignSelf="flex-end"
         >
-          <SimpleDialogDemo imgSrc={img2} personageNum={2} />
-          <PersonSimple img={img1} />
-          <PersonSimple img={img2} />
-          <PersonSimple img={img3} />
+          {imgs.map((img, index) => (
+            <SimpleDialogDemo
+              key={personageNums[index]}
+              imgSrc={img}
+              personageNum={personageNums[index]}
+              addScoreToLevelScore={addScoreToLevelScore}
+            />
+          ))}
+        
         </Grid>
-
       </Box>
     </Box>
   );

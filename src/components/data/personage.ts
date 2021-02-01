@@ -11,12 +11,12 @@ export interface Personage {
   de: Person;
 }
 
-export const personage: object[] = [
+export const personage: Personage[] = [
   {
     id: 0, // ГОРОД
     ru: {
       name: 'Мама',
-      text: `${namePlayer}, мы с папой очень заняты на работе, а бабушка разболелась! 
+      text: `{namePlayer}, мы с папой очень заняты на работе, а бабушка разболелась! 
       Ей нужно срочно помочь.  Тебе нужно будет поехать к ней в деревню и отвезти лекарство. 
       Ты впервые отправишься самостоятельно в такой сложный путь, но мы уверены, что ты справишься. 
       Только, пожалуйста, побыстрее довези до бабушки лекарство и помни – дорога может быть опасной! 
@@ -25,11 +25,11 @@ export const personage: object[] = [
       потом сесть на автобус сорок пятого маршрута, на нём доехать до остановки Тёмный Лес, 
       сойти на ней и через лес напрямки по дорожке пройти до деревне. 
       И там не потеряешься – бабушка живёт на другой стороне деревни, 
-      в самом крайнем доме. Иди, ${namePlayer}, бабушка ждёт тебя! `,
+      в самом крайнем доме. Иди, {namePlayer}, бабушка ждёт тебя! `,
     },
     en: {
       name: 'Mom',
-      text: `${namePlayer}, my dad and I are very busy at work, and my grandmother is sick!
+      text: `{namePlayer}, my dad and I are very busy at work, and my grandmother is sick!
       She needs urgent help. You will need to go to her village and take the medicine.
       This is the first time you will go on such a difficult journey on your own, 
       but we are sure that you will manage.
@@ -40,7 +40,7 @@ export const personage: object[] = [
       then take the bus of the forty-fifth route, take it to the Dark Forest stop, get
       off at it and go straight through the forest along the path to the village.
       And you can't get lost there – my grandmother lives on the other side of the village,
-      in the outermost house. Go, ${namePlayer}, grandma is waiting for you!`,
+      in the outermost house. Go, {namePlayer}, grandma is waiting for you!`,
     },
     de: {
       name: 'Mutter',
@@ -62,7 +62,7 @@ export const personage: object[] = [
     id: 1, // ГОРОД
     ru: {
       name: 'Соседка',
-      text: `Здравствуй, ${namePlayer}! Куда собираешься?`,
+      text: 'Здравствуй, {namePlayer}! Куда собираешься?',
     },
     en: {
       name: 'Neighbour',

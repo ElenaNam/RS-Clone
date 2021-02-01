@@ -21,7 +21,6 @@ import { personage } from '../data/personage';
 import { startNewLevel } from '../../store/actions/startNewGameAction';
 // import { answers } from '../data/answersHero';
 
-
 const answers = ['ok', 'no'];
 const useStyles = makeStyles({
   avatar: {
@@ -32,29 +31,41 @@ const useStyles = makeStyles({
 
 export interface SimpleDialogProps {
   open: boolean;
-  selectedValue: string;
-  lang: string;
-  onClose: (value: string) => void;
+  // selectedValue: string;
+  selectedNum: number;
+  lang: 'en' | 'de' | 'ru';
+  // personageNum: number;
+  onClose: (index: number) => void;
 }
 
 function SimpleDialog(props: SimpleDialogProps) {
   const classes = useStyles();
-  const { onClose, lang, selectedValue, open } = props;
+  const { onClose, lang, selectedNum, open } = props;
 
   const handleClose = () => {
-    onClose(selectedValue);
+    onClose(selectedNum);
   };
 
   const handleListItemClick = (value: string) => {
-    onClose(value);
+    onClose(selectedNum);
   };
 
   return (
-    <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={open}>
-      <DialogTitle id="simple-dialog-title">{personage[0][lang].text}</DialogTitle>
+    <Dialog
+      onClose={handleClose}
+      aria-labelledby="simple-dialog-title"
+      open={open}
+    >
+      <DialogTitle id="simple-dialog-title">
+        {personage[0][lang].text}
+      </DialogTitle>
       <List>
         {answers.map((email) => (
-          <ListItem button onClick={() => handleListItemClick(email)} key={email}>
+          <ListItem
+            button
+            onClick={() => handleListItemClick(email)}
+            key={email}
+          >
             <ListItemAvatar>
               <Avatar className={classes.avatar}>
                 <PersonIcon />
@@ -76,33 +87,47 @@ function SimpleDialog(props: SimpleDialogProps) {
   );
 }
 
-const SimpleDialogDemo = (props) => {
+export interface SimpleDialogDemoProps {
+  lang: 'en' | 'de' | 'ru';
+  // personageNum: number;
+  // onClose: (index: number) => void;
+
+  // imgSrc: string;
+  startNewLevel: () => void;
+}
+
+const SimpleDialogDemo = (props: SimpleDialogDemoProps) => {
   const { lang } = props;
   const [open, setOpen] = React.useState(false);
-  const [selectedValue, setSelectedValue] = React.useState(answers[1]);
+  const [selectedNum, setSelectedNum] = React.useState<number>(-1);
 
   const handleClickOpen = () => {
     setOpen(true);
   };
 
-  const handleClose = (value: string) => {
+  const handleClose = (index: number) => {
     setOpen(false);
-    setSelectedValue(value);
-
+    setSelectedNum(index);
     
     props.startNewLevel();
   };
 
   return (
     <div>
-      <Typography variant="subtitle1">Selected: {selectedValue}</Typography>
+      <Typography variant="subtitle1">Selected: {selectedNum}</Typography>
       <br />
       <Button color="primary" onClick={handleClickOpen}>
         {/* variant="outlined"  */}
         <img src={imgMother} alt="mother" className="img-user" />
         {/* Open simple dialog */}
       </Button>
-      <SimpleDialog selectedValue={selectedValue} open={open} lang={lang} onClose={handleClose} />
+      <SimpleDialog
+        selectedNum={selectedNum}
+        open={open}
+        lang={lang}
+        onClose={handleClose}
+        // personageNum={personageNum}
+      />
     </div>
   );
 };

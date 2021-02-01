@@ -75,4 +75,10 @@ export const buttons: Btn[] = [
     en: 'FURTHER' /* ? */,
     de: 'LEITER',
   },
+  {
+    id: 3,
+    ru: 'НАЧАТЬ ЗАНОВО',
+    en: 'START OVER',
+    de: 'NEU STARTEN',
+  },
 ];

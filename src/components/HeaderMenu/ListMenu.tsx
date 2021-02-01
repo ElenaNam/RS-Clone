@@ -23,7 +23,7 @@ export function ListMenu(): JSX.Element {
           component={NavLink}
           exact
           to={item.link}
-          activeStyle={{ color: 'green' }}
+          activeStyle={{ color: '#1565c0' }}
         >
           <ListItemIcon>
             {index % 2 === 0 ? (
@@ -40,9 +40,9 @@ export function ListMenu(): JSX.Element {
         </ListItem>
       ))}
       <Box mt={15}>
-        <NavLink to="/rss" target="_blank">
+        <a href='https://rs.school/js/' target="_blank" rel='noreferrer'>
           <img src={logo} alt="logo_rsschool" width="60%" />
-        </NavLink>
+        </a>
       </Box>
     </List>
   );

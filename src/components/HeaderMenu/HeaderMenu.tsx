@@ -7,15 +7,13 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { ClickAwayListener, Box } from '@material-ui/core';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { amber } from '@material-ui/core/colors';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-/* import { Box } from '@material-ui/core'; */
-import { NavLink } from 'react-router-dom';
+
 import { ListMenu } from './ListMenu';
 import { titleHeader, subtitleHeader } from '../data/textHeader';
 
@@ -59,14 +57,16 @@ const useStyles = makeStyles((theme) => ({
   },
   drawerPaper: {
     width: drawerWidth,
+    backgroundColor: '#e1f5fe',
+    
   },
   drawerHeader: {
     display: 'flex',
     alignItems: 'center',
     padding: theme.spacing(0, 1), 
     ...theme.mixins.toolbar,
-    justifyContent: 'flex-end',
-    backgroundColor: '#FF7100',
+    justifyContent: 'flex-end',    
+    borderBottom: '1px solid #0D0D0D'
   }
 }));
 
@@ -106,14 +106,28 @@ export default function HeaderMenu(): JSX.Element {
               <MenuIcon style={{ color: amber[50], fontSize: 60 }} />
             </IconButton>
             <div>
-              <Typography variant='subtitle1'>{titleHeader[lang]}</Typography>
-              <Typography variant='h4'>{`"${subtitleHeader[lang]}"`}</Typography> 
+              <Box
+                style={{color: '#0D0D0D'}}            
+                fontFamily="h6.fontFamily"
+                fontSize={{ xs: 12, sm: 'h5.fontSize', md: 'h4.fontSize' }}
+                p={{ xs: 1, sm: 1, md: 1, lg: 1 }} 
+              >
+                {titleHeader[lang]}
+              </Box>    
+              <Box
+                style={{color: '#0D0D0D'}}                 
+                fontWeight="fontWeightBold"                            
+                fontFamily="h5.fontFamily"
+                fontSize={{ xs: 16, sm: 'h4.fontSize', md: 'h3.fontSize' }}            
+              >
+                {`"${subtitleHeader[lang]}"`}
+              </Box>    
             </div>
             
             <Box>
-              <NavLink to="/lf" target="_blank">
-                <img src={logo} alt="logo" />
-              </NavLink>
+              <a href='https://vk.com/lf_samara' target="_blank" rel='noreferrer'>
+                <img src={logo} alt="logo" width='100px' />
+              </a>              
             </Box>
           </Toolbar>
         </AppBar>
@@ -127,7 +141,7 @@ export default function HeaderMenu(): JSX.Element {
           }}
         >
           <div className={classes.drawerHeader}>
-            <IconButton onClick={handleDrawerClose}>
+            <IconButton style={{color: 'DarkOrange'}} onClick={handleDrawerClose}>
               {theme.direction === 'ltr' ? (
                 <ChevronLeftIcon />
               ) : (

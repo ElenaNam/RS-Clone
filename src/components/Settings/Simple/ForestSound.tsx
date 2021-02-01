@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { useState, useRef, useEffect } from 'react';
 import Typography from '@material-ui/core/Typography';
 import { Pause, Play } from './SimpleBtn';
@@ -17,10 +18,13 @@ function ForestSound() {
       setPlay(true);
       console.log('forestSound play');
       localStorage.setItem('play?', 'true');
+
       // громкость
       const localVolume: string | null = window.localStorage.getItem('volume');
+
       localVolume ? ref.current.volume = +(JSON.parse(localVolume)) 
-        : ref.current.volume = .5;     
+        : ref.current.volume = .5;   
+      console.log(ref.current);  
       ref.current.play();     
     }
   }

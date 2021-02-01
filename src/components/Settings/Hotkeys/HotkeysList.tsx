@@ -49,9 +49,10 @@ const AccordionDetails = withStyles((theme) => ({
 export default function CustomizedAccordions() {
   const [expanded, setExpanded] = React.useState<string | false>('panel1');
 
-  const handleChange = (panel: string) => (event: React.ChangeEvent<{}>, newExpanded: boolean) => {
-    setExpanded(newExpanded ? panel : false);
-  };
+  const handleChange = (panel: string) => 
+    (event: React.ChangeEvent<{}>, newExpanded: boolean) => {
+      setExpanded(newExpanded ? panel : false);
+    };
 
   return (
     <div> 

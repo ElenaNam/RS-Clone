@@ -10,6 +10,7 @@ import NewGame from '../NewGame/NewGame';
 import Manual from '../Manual/Manual';
 import Settings from '../Settings/Settings';
 import Information from '../Information/Information';
+import FinalPage from '../FinalPage/FinalPage';
 
 const useStyles = makeStyles((theme) => ({
   main: {
@@ -35,20 +36,13 @@ export default function MainLayout(): JSX.Element {
       <Switch>
         {/* <Route exact path="/home" component={Home} /> */}
         <Route exact path="/home" component={withRouter(Home)} />
-        <Route exact path="/newgame" component={withRouter(NewGame)} />
+        <Route exact path="/newgame" component={withRouter(FinalPage)} /> {/* временно */}
         {/* <Route exact path='/game'" component={} /> */}
         <Route exact path="/manual" component={Manual} />
         <Route exact path="/settings" component={withRouter(Settings)} />
         <Route exact path="/information" component={withRouter(Information)} />
 
         {/* <Redirect from="/" to="/home" /> */}
-        <Route
-          path="/rss"
-          component={() => {
-            window.location.href = 'https://rs.school/js/';
-            return null;
-          }}
-        />
         <Route
           path="/lf"
           component={() => {

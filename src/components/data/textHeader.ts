@@ -11,7 +11,7 @@ export const titleHeader: HInterface = {
 };
 
 export const subtitleHeader: HInterface = {
-  ru: 'Бабуля, я иду',
-  en: "Granny, I'm coming",
-  de: 'Oma, ich komme.',
+  ru: 'Важное путешествие',
+  en: 'An important journey',
+  de: 'Wichtige Reise',
 };

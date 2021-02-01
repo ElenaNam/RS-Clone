@@ -1,4 +1,11 @@
-export const rules = [
+export interface Rules {
+  id: number
+  ru: string
+  en: string
+  de: string
+}
+
+export const rules: Rules[] = [
   {
     id: 0,
     ru: 'Мы ничего не берём у посторонних, малознакомых и даже знакомых людей без разрешения родителей;',
@@ -43,8 +50,14 @@ export const rules = [
   },
 ];
 
-export const finalPhrase = { // говорит джин
+export interface Final {
+  ru: string
+  en: string
+  de: string
+}
+
+export const finalPhrase: Final = { // говорит джин
   ru: 'Теперь ты знаешь все правила самостоятельного путешествия! Не забывай их! И пусть в твоей жизнь встречаются только добрые люди!',
   en: "Now you know all the rules of independent travel! Don't forget them! And let only good people meet in your life!",
   de: 'Jetzt kennst du alle Regeln der Selbstreise! Vergiss sie nicht! Und lass in deinem Leben nur gute Menschen treffen!',
-}
+};

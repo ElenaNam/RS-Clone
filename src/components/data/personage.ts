@@ -18,6 +18,7 @@ export interface Personage {
   result1?: Grandma
   result2?: Grandma
   result3?: Grandma
+  /* variant?: Grandma */
 }
 
 export const personage: Personage[] = [

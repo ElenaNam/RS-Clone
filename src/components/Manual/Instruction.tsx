@@ -1,93 +1,65 @@
-/* import React from 'react';
-import './Manual.module.css';
-import Typography from '@material-ui/core/Typography';
-import { Container } from '@material-ui/core';
-
-export default function Instruction(): JSX.Element {
-  return (
-    <Container maxWidth="sm">
-      <Typography paragraph>Пойди туда не знаю куда</Typography>
-    </Container>
-  );
-} */
-
 import React from 'react';
-import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardMedia from '@material-ui/core/CardMedia';
-import CardContent from '@material-ui/core/CardContent';
-import Avatar from '@material-ui/core/Avatar';
-import { Box } from '@material-ui/core';
-import girl from '../../assets/images/girl.png';
-import boy from '../../assets/images/boy.png';
+import { Grid, Paper, Typography } from '@material-ui/core';
+import CardManual from './CardManual';
+import gin from '../../assets/images/gin_success.png';
+import task from '../../assets/images/personage/personage0.png';
+import loc from '../../assets/images/additional/all_locations.jpg';
+import und from '../../assets/images/additional/und.png';
+import heros from '../../assets/images/additional/heros.png';
+import score from '../../assets/images/additional/score.png';
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {     
-      /* display: 'flex',
-      justifyContent: 'space-between', */
-      maxWidth: 345,
-      /* maxHeight: 600, */
-      backgroundColor: '#e1f5fe',
-    },
-    headerCard: {
-      display: 'flex',
-      justifyContent: 'space-around',
-      alignItems: 'center',
-    },
-    titleCard: {
-      display: 'inline-flex',
-      /* justifyContent: 'flex-start', */
-      /* marginLeft: 30, */
-      /* border: '1px solid OrangeRed', */
-    },
-    media: {
-      width: '100%',
-      backgroundSize: 'contain',      
-      paddingTop: '56.25%', // 16:9
-      /* border: '1px solid OrangeRed', */
-    }, 
-    avatar: {
-      display: 'inline-flex',
-      backgroundColor: 'transparent',
-      color: 'red',
-      border: '1px solid OrangeRed',
-    },
-  })
-);
+
 
 export default function Instruction() {
-  const classes = useStyles();
+  
   return (
-    <Card className={classes.root}>
-      <CardContent>  
-        <Box className={classes.headerCard}>
-          <Avatar className={classes.avatar}>
-            1
-          </Avatar>      
-        
-          <Box component="h2" className={classes.titleCard}>
-            Выбери героя
-          </Box>
-        </Box> 
-        <Box className={classes.headerCard}>
-          <CardMedia   
-            className={classes.media}       
-            component="div"
-            image={girl}           
-            title=""
-          />
-          <CardMedia   
-            className={classes.media}       
-            component="div"
-            image={boy}           
-            title=""
-          />
-        </Box>  
+    <div style={{ display: 'flex', justifyContent: 'center', flexGrow: 1 }}>
+      <Grid container style={{ justifyContent: 'space-around' }}>
 
+        <Grid 
+          item 
+          xs={12} 
+          sm={12} 
+          md={12} 
+          lg={12} 
+          style={{ marginTop: 30 }}
+        >
+          <Paper elevation={5}>            
+            <Typography variant='h6'>
+              Чтобы отправиться в путешествие, нужно подготовиться!
+            </Typography>             
+          </Paper> 
+        </Grid>
 
-      </CardContent>    
-       
-    </Card>
+        <Grid item xs={12} sm={6} md={4} lg={3}>
+          <CardManual number="1" text='Выбери героя' img={heros}  /> 
+        </Grid>
+        <Grid item xs={12} sm={6} md={4} lg={3}>
+          <CardManual number="2" text='Познакомься с помощником' img={gin} /> 
+        </Grid>          
+        <Grid item xs={12} sm={6} md={4} lg={3}>
+          <CardManual number="3" text='Получи задание' img={task} /> 
+        </Grid> 
+
+        <Grid item xs={12} sm={12} md={12} lg={12} style={{ marginTop: 30 }}>
+          <Paper elevation={5}>            
+            <Typography variant='h6'>
+              Теперь можно отправляться в путь!
+            </Typography>             
+          </Paper> 
+        </Grid>
+
+        <Grid item xs={12} sm={6} md={4} lg={3}>
+          <CardManual number="4" text='Пройди Город, Лес и Деревню' img={loc} /> 
+        </Grid>
+        <Grid item xs={12} sm={6} md={4} lg={3}>
+          <CardManual number="5" text='Общайся со встречными людьми' img={und}  /> 
+        </Grid>          
+        <Grid item xs={12} sm={6} md={4} lg={3}>
+          <CardManual number="6" text='Выбирай ответ и получай баллы' img={score} /> 
+        </Grid> 
+
+      </Grid>
+    </div>
   );
 }

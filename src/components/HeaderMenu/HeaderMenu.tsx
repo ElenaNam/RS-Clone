@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
@@ -18,7 +17,7 @@ import { ListMenu } from './ListMenu';
 import { titleHeader, subtitleHeader } from '../data/textHeader';
 
 import logo from '../../assets/images/logo_lf.png';
-import Context from '../Context';
+
 
 const drawerWidth = 240;
 
@@ -57,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
   },
   drawerPaper: {
     width: drawerWidth,
-    backgroundColor: '#e1f5fe',
+    /* backgroundColor: '#e1f5fe', */
     
   },
   drawerHeader: {
@@ -74,15 +73,15 @@ export default function HeaderMenu(): JSX.Element {
   const classes = useStyles();
   const theme = useTheme();
   const lang = 'ru';
-  /* const value = useContext(Context);  */  
-  const { open, isOpen } = useContext(Context);   
+   
+  const [open, setOpen] = React.useState(false); 
 
   const handleDrawerOpen = () => {
-    isOpen(true);
+    setOpen(true);
   };
 
   const handleDrawerClose = () => {
-    isOpen(false);
+    setOpen(false);
   };
 
   return (

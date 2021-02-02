@@ -41,8 +41,7 @@ export default function ControlGame(): JSX.Element {
           </ListItemIcon>
           <ListItemText primary="и сделай что-нибудь" />
         </ListItem>
-      </List>
-      <Typography variant="subtitle1">Здесь будет скриншот</Typography>
+      </List>      
     </Container>
   );
 }

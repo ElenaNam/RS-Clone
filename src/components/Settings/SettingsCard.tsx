@@ -26,7 +26,8 @@ const useStyles = makeStyles((theme:Theme)=>({
     justifyContent: 'center',
     verticalAlign: 'center',
     minHeight: 50, 
-    background: 'linear-gradient(45deg, #F4A460 30%, #D2691E 90%)',
+    /* background: 'linear-gradient(45deg, #F4A460 30%, #D2691E 90%)', */
+    background: 'linear-gradient(45deg, Moccasin 10%, BurlyWood 90%)', 
     
   }
 }));

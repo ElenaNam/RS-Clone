@@ -1,5 +1,6 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Switch, Route, Redirect, withRouter, NavLink } from 'react-router-dom'; 
+
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -8,6 +9,7 @@ import DoneOutlineRoundedIcon from '@material-ui/icons/DoneOutlineRounded';
 import { useTheme } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import logo from '../../assets/images/logo_rs.png';
+import DraggableDialog from '../Dialog/Dialog';
 
 import { Links, links } from '../data/menu';
 
@@ -39,11 +41,15 @@ export function ListMenu(): JSX.Element {
           <ListItemText primary={item[lang]} />
         </ListItem>
       ))}
+      <ListItem>
+        <DraggableDialog />
+      </ListItem>
       <Box mt={15}>
         <a href='https://rs.school/js/' target="_blank" rel='noreferrer'>
           <img src={logo} alt="logo_rsschool" width="60%" />
         </a>
       </Box>
+      <Route exact path="/information" component={withRouter(DraggableDialog)} /> 
     </List>
   );
 }

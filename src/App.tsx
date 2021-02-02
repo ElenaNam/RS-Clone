@@ -1,67 +1,21 @@
-import React, { useState } from 'react';
-import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
-import clsx from 'clsx';
+import React from 'react';
+import './App.css';
 import ThemeLayout from './components/Settings/Theme/ThemeLayot';
 import HotkeysLayout from './components/Settings/Hotkeys/HotkeysLayot';
-import Context from './components/Context';
-
-// import logo from './logo.svg';
-import './App.css';
-import HeaderMainMenu from './components/HeaderMenu/HeaderMainMenu';
-import MainLayout from './components/MainLayout/MainLayout';
-
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    content: {
-      marginTop: theme.spacing(5),
-      flexGrow: 1,
-      padding: theme.spacing(3),
-      transition: theme.transitions.create('margin', {
-        easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.leavingScreen,
-      }),
-      marginLeft: 0,
-    },
-    contentShift: {
-      transition: theme.transitions.create('margin', {
-        easing: theme.transitions.easing.easeOut,
-        duration: theme.transitions.duration.enteringScreen,
-      }),
-      marginLeft: 240,
-    },
-  })
-);
-
+import Template from './components/Template/Template';
+import Menu from './components/Menu/Menu';
 
 function App(): JSX.Element {
-  const classes = useStyles();
-  const [open, setOpen] = useState(false);
-  const isOpen = (val:boolean)=> (setOpen(val));
-
-  const value = {
-    open,
-    isOpen
-  };
-
-
-  return (    
-    <Context.Provider value={value}>     
-      <ThemeLayout>
-        <HotkeysLayout>
-          <div className="App">
-            <HeaderMainMenu />        
-            <div className={clsx(classes.content, { [classes.contentShift]: 
-            open,
-            })}
-            >
-              <MainLayout />
-            </div>               
-          </div>
-        </HotkeysLayout>
-      </ThemeLayout>
-    </Context.Provider>
- 
+  return (     
+    <ThemeLayout>
+      <HotkeysLayout>
+        <div className="App">
+          <Menu /> 
+          <Template />        
+        </div>
+      </HotkeysLayout>
+    </ThemeLayout>
   );
-} 
+}  
 
 export default App;

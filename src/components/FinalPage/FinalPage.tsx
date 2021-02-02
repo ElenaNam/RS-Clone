@@ -1,9 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Grid, Paper, Typography, makeStyles, Box, Button } from '@material-ui/core';
-import { personage } from '../data/personage';
+import { personage } from '../data/personage'; 
+import { Grandma, buttons } from '../data/variables';
 import { rules, finalPhrase } from '../data/finish';
-import { buttons } from '../data/variables';
 
 import grandma from '../../assets/images/personage/personage10.png';
 import gin from '../../assets/images/gin_success.png';
@@ -32,7 +32,7 @@ const useStyles = makeStyles(() => ({
     background: 'linear-gradient(45deg, Peru 30%, SaddleBrown 80%)',    
   },
   paper: {
-    background: 'linear-gradient(45deg, Moccasin 10%, BurlyWood 90%)',    
+    /* background: 'linear-gradient(45deg, Moccasin 10%, BurlyWood 90%)', */    
   },
   text: {
     margin: 5,
@@ -49,9 +49,9 @@ export default function FinalPage(): JSX.Element {
   const score: number = 15;
   let variant: string = '';
 
-  if (score < 12) variant = 'result1';
-  if (score > 12 && score < 18) variant = 'result2';
-  if (score === 18) variant = 'result3';
+  if (score < 12) variant = 'result1?';
+  if (score >= 12 && score < 18) variant = 'result2?';
+  if (score === 18) variant = 'result3?';
 
   return ( 
     <div className={classes.root}>
@@ -67,11 +67,10 @@ export default function FinalPage(): JSX.Element {
 
         <Grid item xs={12} sm={8} lg={4} className={classes.content}>
           <Paper elevation={5} className={classes.paper}>
-            <Typography className={classes.text}>              
-              {personage[10].result1?.ru.text}
-              {/* {personage[10].variant.ru.text} */}
-              {/* {console.log(variant)}
-              {console.log({ variant })} */}
+            <Typography className={classes.text}>
+
+              {personage[10].result1?.ru.text} 
+
             </Typography>
           </Paper> 
         </Grid>
@@ -111,7 +110,7 @@ export default function FinalPage(): JSX.Element {
         variant="contained" 
         color="primary" 
         component={NavLink} 
-        to='/newgame'
+        to='/home'
       >
         {buttons[3][lang]}
       </Button>

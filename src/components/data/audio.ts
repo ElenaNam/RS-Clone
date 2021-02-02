@@ -4,7 +4,7 @@ export interface Audio {
   src: string;
 }
 
-export const soundsArr = [
+export const soundsArr: Audio[] = [
   {
     id: 0,
     name: 'city',

@@ -3,7 +3,7 @@ import './Information.module.css';
 import { Typography } from '@material-ui/core';
 import Container from '@material-ui/core/Container'; 
 import { textInformation } from '../data/textInformation';
-import PlaySoundLevel from '../PlaySoundLevel/PlaySoundLevel';
+
 
 export default function Information(): JSX.Element {
   const lang = 'ru';
@@ -18,7 +18,6 @@ export default function Information(): JSX.Element {
           {paragraph[lang]}
         </Typography>
       ))}
-      <PlaySoundLevel />
     </Container>
   );
 }

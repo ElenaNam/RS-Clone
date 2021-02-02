@@ -27,7 +27,7 @@ export const links: Array<Links> = [
   {
     id: 2,
     ru: 'Продолжить',
-    link: '/newgame' /* исправить */,
+    link: '/game',
     colorIcon: 'secondary',
     en: 'Continue',
     de: 'Weiterspielen',
@@ -48,12 +48,12 @@ export const links: Array<Links> = [
     en: 'Settings',
     de: 'Einstellungen',
   },
-  {
+/*   {
     id: 5,
     link: '/information',
     colorIcon: 'primary',
     ru: 'О разработчиках',
     en: 'About the developers',
     de: 'Über Entwickler',
-  },
+  }, */
 ];

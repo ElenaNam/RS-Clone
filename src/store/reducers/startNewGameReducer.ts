@@ -38,6 +38,14 @@ export const startNewGameReducer = (
 
         lang: action.payload,
       };
+    case LevelActionType.ADD_SCORE:
+      console.log('add score work');
+      return {
+        ...state,
+
+        scoreGame: state.scoreGame + action.payload,
+      };
+  
 
     default:
       return state;

@@ -3,6 +3,8 @@ import {
   StartNewLevelAction,
   SetUserNameAction,
   SetGenderAction,
+  SetLanguageAction,
+  AddToScoreGameAction,
   Gender,
   Lang,
 } from '../types';
@@ -25,7 +27,12 @@ export const setGender = (gender: Gender): SetGenderAction => ({
   payload: gender,
 });
 
-export const setLanguage = (lang: Lang): SetUserNameAction => ({
-  type: LevelActionType.SET_USER_NAME,
+export const setLanguage = (lang: Lang): SetLanguageAction => ({
+  type: LevelActionType.SET_LANGUAGE,
   payload: lang,
+});
+
+export const addToScoreGame = (score: number): AddToScoreGameAction => ({
+  type: LevelActionType.ADD_SCORE,
+  payload: score,
 });

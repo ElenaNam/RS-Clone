@@ -19,4 +19,6 @@ export const initialState: GameState = {
 
   lang: 'ru',
 
+  scoreGame: 0,
+
 };

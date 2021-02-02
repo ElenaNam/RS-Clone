@@ -28,6 +28,7 @@ import img3 from '../../assets/images/personage/personage3.png';
 // import img4 from '../../assets/images/personage/personage0.png';
 
 import PersonSimple from '../PersonSimple/PersonSimple';
+import ScoreGame from '../ScoreGame/ScoreGame';
 
 export interface SecondLevelProps {
   // lang: 'en' | 'de' | 'ru';
@@ -79,36 +80,42 @@ const SecondLevel = (props: SecondLevelProps) => {
   };
 
   const BackgroundHead = {
-    backgroundImage: `url(${backgoundImg})`
+    backgroundImage: `url(${backgoundImg})`,
+    // width: '100%',
   };
 
   return (
-    <Box className={classes.pageWrapper} display="flex" justifyContent="space-around" style={BackgroundHead}>
-      {/* <div>Score: {scoreLevel}</div>
-      <div>CounerPers: {counterCompletedPers}</div> */}
+    <Box className={classes.pageWrapperMain}>
+      <Box className={classes.pageWrapper} display="flex" justifyContent="space-around" style={BackgroundHead}>
 
-      <Box className={classes.personsBlock} alignSelf="flex-end" flexGrow="1">
+        <ScoreGame />
+        {/* <div>Score: {scoreLevel}</div>
+        <div>CounerPers: {counterCompletedPers}</div> */}
+
+        <Box className={classes.personsBlock} alignSelf="flex-end" flexGrow="1">
         
 
-        <Grid
-          container
-          direction="row"
-          justify="space-around"
-          alignItems="flex-end"
-          // alignSelf="flex-end"
-        >
-          {imgs.map((img, index) => (
-            <SimpleDialogDemo
-              key={personageNums[index]}
-              imgSrc={img}
-              personageNum={personageNums[index]}
-              addScoreToLevelScore={addScoreToLevelScore}
-            />
-          ))}
-        
-        </Grid>
+          <Grid
+            container
+            direction="row"
+            justify="space-around"
+            alignItems="flex-end"
+            // alignSelf="flex-end"
+          >
+            {imgs.map((img, index) => (
+              <SimpleDialogDemo
+                key={personageNums[index]}
+                imgSrc={img}
+                personageNum={personageNums[index]}
+                addScoreToLevelScore={addScoreToLevelScore}
+              />
+            ))}
+          
+          </Grid>
+        </Box>
       </Box>
     </Box>
+    
   );
 };
 

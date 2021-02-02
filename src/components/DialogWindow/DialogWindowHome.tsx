@@ -57,7 +57,7 @@ function SimpleDialog(props: SimpleDialogProps) {
       open={open}
     >
       <DialogTitle id="simple-dialog-title">
-        {personage[0][lang].text}
+        {personage[0][lang]?.text}
       </DialogTitle>
       <List>
         {answers.map((email) => (

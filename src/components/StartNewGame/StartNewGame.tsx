@@ -54,6 +54,15 @@ const StartNewGame = ( props: StartNewGameProps ) => { // { userName, gender, la
   //   // setGender(e.target.value);
   // };
 
+  let variant;
+  let score = 10;
+  if (score === 18) {variant = 'result3';}
+  if (score < 12) {variant = 'result1';}
+  if ((score > 12) && (score < 18)) {variant = 'result2';}
+  score = 15;
+  
+  console.log(variant);
+
   const handleStartNewLevel = () => {
     props.setUserName(newUserName);
     props.setGender(genderNew);

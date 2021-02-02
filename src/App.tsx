@@ -1,31 +1,21 @@
 import React from 'react';
-// import logo from './logo.svg';
 import './App.css';
-import HeaderMainMenu from './components/header-main-menu/header-main-menu';
+import ThemeLayout from './components/Settings/Theme/ThemeLayot';
+import HotkeysLayout from './components/Settings/Hotkeys/HotkeysLayot';
+import Template from './components/Template/Template';
+import Menu from './components/Menu/Menu';
 
-/* import clsx from 'clsx'; */
-
-function App() {
-  return (
-    <div className="App">
-      <HeaderMainMenu />
-      <header className="App-header">
-        {/* <div className="first-table">jh</div> */}
-        {/* <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a> */}
-      </header>
-    </div>
+function App(): JSX.Element {
+  return (     
+    <ThemeLayout>
+      <HotkeysLayout>
+        <div className="App">
+          <Menu /> 
+          <Template />        
+        </div>
+      </HotkeysLayout>
+    </ThemeLayout>
   );
-}
+}  
 
 export default App;

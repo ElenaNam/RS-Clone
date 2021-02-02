@@ -4,7 +4,7 @@ export interface Rules {
   en: string
   de: string
 }
-
+  
 export const rules: Rules[] = [
   {
     id: 0,
@@ -49,13 +49,13 @@ export const rules: Rules[] = [
     de: 'Wir halten uns fest an die Sicherheitsregeln und ziehen uns nicht von ihnen zurück!',
   },
 ];
-
+  
 export interface Final {
   ru: string
   en: string
   de: string
 }
-
+  
 export const finalPhrase: Final = { // говорит джин
   ru: 'Теперь ты знаешь все правила самостоятельного путешествия! Не забывай их! И пусть в твоей жизнь встречаются только добрые люди!',
   en: "Now you know all the rules of independent travel! Don't forget them! And let only good people meet in your life!",

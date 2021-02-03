@@ -10,6 +10,7 @@ import StartNewGame from './components/StartNewGame/StartNewGame';
 import FirstLevel from './components/FirstLevel/FirstLevel';
 import SecondLevel from './components/SecondLevel/SecondLevel';
 import FinalPage from './components/FinalPage/FinalPage';
+import Home from './components/Home/Home';
 
 import { AppState, GameState } from './store/types';
 

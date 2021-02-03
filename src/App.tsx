@@ -16,6 +16,11 @@ import { imagesArr } from './components/ImagesArr/ImagesArr';
 import { backgroundArr } from './components/ImagesArr/BackgroundArr';
 
 
+import ThemeLayout from './components/Settings/Theme/ThemeLayot';
+import HotkeysLayout from './components/Settings/Hotkeys/HotkeysLayot';
+import Template from './components/Template/Template';
+import Menu from './components/Menu/Menu';
+
 
 export interface AppProps {
   userName?: string,
@@ -55,15 +60,81 @@ function App(props: AppProps) {
     />,
   ];
   console.log(props, activeLevel, userName, lang);
-  return (
-    <div className="App">
-      <HeaderMainMenu />
-      {/* <StartNewGame key='1' /> */}
-      {/* {(state.activeLevel === 0) && <StartNewGame />} */}
-      {arrComps[activeLevel]}
-    </div>
+
+  return (     
+    <ThemeLayout>
+      <HotkeysLayout>
+        <div className="App">
+          <Menu /> 
+          {arrComps[activeLevel]}
+          {/* <Template />         */}
+        </div>
+      </HotkeysLayout>
+    </ThemeLayout>
   );
-}
+}  
+
+
+
+// function App(props: AppProps) {
+//   const { userName, gender, activeLevel = 0, lang } = props;
+//   // const state = {
+//   //   activeLevel: 0,
+//   // };
+
+//   // const arrComps = [<StartNewGame key='1' />, <FirstLevel key='2' />, <SecondLevel key='3' />];
+//   const arrComps = [
+//     <StartNewGame key="1" />,
+//     <SecondLevel
+//       key="3"
+//       imgs={[imagesArr[0], imagesArr[1], imagesArr[2]]}
+//       personageNums={[1, 2, 3]}
+//       backgoundImg={backgroundArr[1]}
+//     />,
+//     <SecondLevel
+//       key="4"
+//       imgs={[imagesArr[3], imagesArr[4], imagesArr[5]]}
+//       personageNums={[4, 5, 6]}
+//       backgoundImg={backgroundArr[2]}
+//     />,
+//     <SecondLevel
+//       key="5"
+//       imgs={[imagesArr[6], imagesArr[7], imagesArr[8]]}
+//       personageNums={[7, 8, 9]}
+//       backgoundImg={backgroundArr[3]}
+//     />,
+//   ];
+//   console.log(props, activeLevel, userName, lang);
+//   return (
+//     <div className="App">
+//       <HeaderMainMenu />
+//       {/* <StartNewGame key='1' /> */}
+//       {/* {(state.activeLevel === 0) && <StartNewGame />} */}
+//       {arrComps[activeLevel]}
+//     </div>
+//   );
+// }  
+
+
+
+
+// function App(): JSX.Element {
+//   return (     
+//     <ThemeLayout>
+//       <HotkeysLayout>
+//         <div className="App">
+//           <Menu /> 
+//           <Template />        
+//         </div>
+//       </HotkeysLayout>
+//     </ThemeLayout>
+//   );
+// }  
+
+
+
+
+
 
 
 // const mapStateToProps = (state: AppState) => ({

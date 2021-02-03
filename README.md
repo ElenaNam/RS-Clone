@@ -3,12 +3,12 @@ RS-Clone
 Front End application
 
 Technologies used
-*React single page application
-*Routing done using React Router
-*State management via Redux
-*Typescript
-*Eslint
-*hooks
+* React single page application
+* Routing done using React Router
+* State management via Redux
+* Typescript
+* Eslint
+* hooks
 
 
 Setup

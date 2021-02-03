@@ -27,7 +27,7 @@ export const links: Array<Links> = [
   {
     id: 2,
     ru: 'Продолжить',
-    link: '/newgame' /* исправить */,
+    link: '/game' /* исправить */,
     colorIcon: 'secondary',
     en: 'Continue',
     de: 'Weiterspielen',

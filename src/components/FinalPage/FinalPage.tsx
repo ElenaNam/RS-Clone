@@ -7,9 +7,10 @@ import { rules, finalPhrase } from '../data/finish';
 
 import grandma from '../../assets/images/personage/personage10.png';
 import gin from '../../assets/images/gin_success.png';
+import smile from '../../assets/images/smile.png';
 
 
-const useStyles = makeStyles(() => ({  
+const useStyles = makeStyles((theme) => ({  
   root: {
     flexGrow: 1,
     justifyContent: 'space-around',
@@ -24,21 +25,32 @@ const useStyles = makeStyles(() => ({
   },
   container: {
     justifyContent: 'center',
+    marginLeft: 10,
+    marginRight: 10,
   },
   content: {   
     alignSelf: 'flex-start',
-    marginTop: '10px',
+    margin: 10,
     paddingBottom: '5px',
     background: 'linear-gradient(45deg, Peru 30%, SaddleBrown 80%)',    
   },
   paper: {
     /* background: 'linear-gradient(45deg, Moccasin 10%, BurlyWood 90%)', */    
   },
+  score: {    
+    margin: 10,
+    justifyContent: 'center',
+    flexDirection: 'row',
+    background: 'linear-gradient(45deg, Peru 30%, SaddleBrown 80%)',  
+  },
   text: {
     margin: 5,
   },
   text2: {
     margin: '5px 5px 15px 5px',
+    [theme.breakpoints.down('xs')]: {
+      fontSize: 12,
+    },
   },
 }));
 
@@ -57,21 +69,40 @@ export default function FinalPage(): JSX.Element {
     <div className={classes.root}>
       <Grid container spacing={3} className={classes.container}>
 
-        <Grid item xs={6} sm={6} lg={9} className={classes.content}>
-          <Paper elevation={5}>            
-            <Typography variant='body1' className={classes.text2}>
-              5 баллов
-            </Typography>             
+        <Grid item xs={6} sm={6} lg={9} className={classes.score}>
+          <Paper elevation={5}>   
+            <Box
+              style={{ color: '#0D0D0D', display: 'inline' }}            
+              fontFamily="h6.fontFamily"
+              fontSize={{ xs: 12, sm: 14, md: 16 }}
+              p={{ xs: 1, sm: 1, md: 1, lg: 1 }}
+            >
+              5
+            </Box>  
+            <Box style={{ display: 'inline', verticalAlign: 'text-top' }}>
+              <img src={smile} alt='smile' width='15px' />
+            </Box>     
+            {/*     <Typography variant='body1' className={classes.text2}>
+              5 
+            </Typography> */}             
           </Paper> 
         </Grid>
 
         <Grid item xs={12} sm={8} lg={4} className={classes.content}>
           <Paper elevation={5} className={classes.paper}>
-            <Typography className={classes.text}>
-
+            <Box
+              style={{ color: '#0D0D0D', display: 'inline' }}            
+              fontFamily="h6.fontFamily"
+              fontSize={{ xs: 12, sm: 14, md: 16 }}
+              p={{ xs: 1, sm: 1, md: 1, lg: 1 }}
+            >
               {personage[10].result1?.ru.text} 
+            </Box> 
 
-            </Typography>
+
+            {/* <Typography className={classes.text}>
+              {personage[10].result1?.ru.text}
+            </Typography> */}
           </Paper> 
         </Grid>
 
@@ -83,7 +114,8 @@ export default function FinalPage(): JSX.Element {
 
         <Grid item xs={12} sm={12} lg={6} className={classes.content}>
           <Paper elevation={5} className={classes.paper}>
-            {rules.map((rule) => (
+            {rules.map((rule) => (              
+
               <Typography key={rule.id} variant='body1' className={classes.text2}>
                 {rule[lang]} 
               </Typography> 

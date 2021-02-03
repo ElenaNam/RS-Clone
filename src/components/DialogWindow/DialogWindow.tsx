@@ -1,0 +1,248 @@
+import React, { useState } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+import Avatar from '@material-ui/core/Avatar';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemAvatar from '@material-ui/core/ListItemAvatar';
+import ListItemText from '@material-ui/core/ListItemText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import Dialog from '@material-ui/core/Dialog';
+import PersonIcon from '@material-ui/icons/Person';
+import AddIcon from '@material-ui/icons/Add';
+import Typography from '@material-ui/core/Typography';
+import { blue } from '@material-ui/core/colors';
+
+import { connect } from 'react-redux';
+import { AppState, GameState, Lang } from '../../store/types';
+
+import imgMother from '../../assets/images/personage/personage0.png';
+import { personage } from '../data/personage';
+import {
+  startNewLevel,
+  addToScoreGame,
+} from '../../store/actions/startNewGameAction';
+
+import { answers as answersAll } from '../data/answersHero';
+
+import { hero as genderName } from '../data/variables';
+
+import { useStyles } from './DialogWindow.style';
+
+export interface DialogWithQuestionProps {
+  open: boolean;
+  // selectedValue: string;
+  selectedNum: number;
+  lang: Lang;
+  personageNum: number;
+  userName: string;
+  gender: string;
+
+  onClose: (index: number) => void;
+}
+
+function DialogWithQuestion(props: DialogWithQuestionProps) {
+  const classes = useStyles();
+  const {
+    onClose,
+    lang,
+    personageNum,
+    open,
+    selectedNum,
+    userName,
+    gender,
+  } = props;
+
+  const answersArr = answersAll[personageNum][lang].answer;
+
+  let greeting: string | undefined;
+  if (gender === 'girl') {
+    greeting = personage[personageNum][lang]?.text
+      .replaceAll('{namePlayer}', userName)
+      .replaceAll('{hero}', genderName[1][lang]);
+  } else {
+    greeting = personage[personageNum][lang]?.text
+      .replaceAll('{namePlayer}', userName)
+      .replaceAll('{hero}', genderName[0][lang]);
+  }
+
+  const handleClose = () => {
+    onClose(selectedNum);
+  };
+
+  const handleListItemClick = (value: string, index: number) => {
+    onClose(index);
+  };
+
+  return (
+    <Dialog
+      // onClose={handleClose}
+      aria-labelledby="simple-dialog-title"
+      open={open}
+    >
+      <DialogTitle id="simple-dialog-title">{greeting}</DialogTitle>
+      <List>
+        {answersArr.map((email, index) => (
+          <ListItem
+            button
+            onClick={() => handleListItemClick(email, index)}
+            key={email}
+          >
+            <ListItemAvatar>
+              <Avatar className={classes.avatar}>
+                <PersonIcon />
+              </Avatar>
+            </ListItemAvatar>
+            <ListItemText primary={email} />
+          </ListItem>
+        ))}
+      </List>
+    </Dialog>
+  );
+}
+
+export interface DialogWithResultProps {
+  open: boolean;
+  // selectedValue: string;
+  selectedNum: number;
+  lang: 'en' | 'de' | 'ru';
+  personageNum: number;
+  userName: string;
+  onClose: (index: number) => void;
+}
+
+function DialogWithResult(props: DialogWithResultProps) {
+  const classes = useStyles();
+  const { onClose, lang, personageNum, open, selectedNum, userName } = props;
+
+  const interpretationArr = answersAll[personageNum][lang].interpretation;
+
+  const handleClose = () => {
+    onClose(selectedNum);
+  };
+
+  const handleListItemClick = (value: string, index: number) => {
+    onClose(index);
+  };
+
+  return (
+    <Dialog
+      onClose={handleClose}
+      aria-labelledby="simple-dialog-title"
+      open={open}
+    >
+      <DialogTitle id="simple-dialog-title">
+        {/* {answersAll[personageNum][lang].interpretation[selectedNum].replaceAll('{namePlayer}', userName)} */}
+        {answersAll[personageNum][lang].interpretation[selectedNum]}
+      </DialogTitle>
+      <Button onClick={handleClose} color="primary" autoFocus>
+        Agree
+      </Button>
+    </Dialog>
+  );
+}
+
+export interface SimpleDialogDemoProps {
+  lang: 'en' | 'de' | 'ru';
+  personageNum: number;
+  // onClose: ( index: number) => void;
+
+  imgSrc: string;
+  userName: string;
+  gender: string;
+  addScoreToLevelScore: (score: number) => void;
+  addToScoreGame: (score: number) => void;
+}
+
+const SimpleDialogDemo = (props: SimpleDialogDemoProps) => {
+  const classes = useStyles();
+  const {
+    lang,
+    imgSrc,
+    personageNum,
+    addScoreToLevelScore,
+    userName,
+    gender,
+  } = props;
+  const [open, setOpen] = useState(false);
+
+  const [openAnswers, setOpenAnswers] = useState(false);
+
+  const [disableButton, setDisableButton] = useState(false);
+  const [selectedNum, setSelectedNum] = useState<number>(-1);
+
+  const handleClickOpen = () => {
+    // setOpen(true);
+    setOpenAnswers(true);
+    setDisableButton(true);
+  };
+
+  const handleCloseAnswers = (index: number) => {
+    // setOpen(false);
+    setOpenAnswers(false);
+
+    setSelectedNum(index);
+    setOpen(true);
+
+    props.addToScoreGame(answersAll[personageNum].score[index]);
+  };
+
+  const handleClose = (index: number) => {
+    addScoreToLevelScore(answersAll[personageNum].score[selectedNum]);
+
+    setOpen(false);
+    // props.startNewLevel();
+  };
+
+  return (
+    <div>
+      {/* <Typography variant="subtitle1">Selected: {selectedNum}</Typography>
+      <br /> */}
+      <Button
+        disabled={disableButton}
+        color="primary"
+        onClick={handleClickOpen}
+      >
+        <img src={imgSrc} alt="mother" className={classes.imgUser} />
+        {/* Open simple dialog */}
+      </Button>
+      <DialogWithQuestion
+        selectedNum={selectedNum}
+        open={openAnswers}
+        lang={lang}
+        onClose={handleCloseAnswers}
+        personageNum={personageNum}
+        userName={userName}
+        gender={gender}
+      />
+      <DialogWithResult
+        selectedNum={selectedNum}
+        open={open}
+        lang={lang}
+        onClose={handleClose}
+        personageNum={personageNum}
+        userName={userName}
+      />
+    </div>
+  );
+};
+
+const mapStateToProps = (state: AppState) => {
+  console.log(state);
+  return {
+    userName: state.game.userName,
+    gender: state.game.gender,
+    lang: state.game.lang,
+    activeLevel: state.game.activeLevel,
+  };
+};
+
+const mapDispatchToProps = {
+  startNewLevel,
+  addToScoreGame,
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SimpleDialogDemo);

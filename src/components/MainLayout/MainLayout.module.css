@@ -1,0 +1,18 @@
+.main {
+  max-width: 1280px;
+  width: 100%;
+  color: rgb(230, 170, 32);
+  background-color: #6e727a;
+  min-height: 100vh;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* font-size: calc(10px + 2vmin); */
+}
+.main p {
+  line-height: normal;
+  font-weight: bold;
+  font-size: 2rem;
+}

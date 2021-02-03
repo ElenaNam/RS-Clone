@@ -12,20 +12,20 @@ Technologies used
 ---
 
 **Setup**
-Clone the repository and install the dependencies
+1. Clone the repository and install the dependencies
 *npm install*
 
-Start the frontend application locally
+2. Start the frontend application locally
 *npm start*
-... [add other steps here]
+
 
 ---
 
 **Available commands**
-npm start: Start the app locally in your development environment, by default it will be in http://localhost:3000.
-npm test: Run tests using watch mode.
-npm lint: Run linter.
-... [add other commands here]
+* npm start: Start the app locally in your development environment, by default it will be in http://localhost:3000.
+* npm test: Run tests using watch mode.
+* npm lint: Run linter.
+* npm run build: Run the production build
 
 ---
 

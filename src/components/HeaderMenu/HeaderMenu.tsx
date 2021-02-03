@@ -51,9 +51,22 @@ const useStyles = makeStyles((theme) => ({
   toolBar: {
     backgroundColor: 'orange',
     justifyContent: 'space-between',
+    height: 130,
+    [theme.breakpoints.down('xs')]: { 
+      height: 80,
+    },
+
+  },
+  menuIcon: {
+    color: amber[50], 
+    fontSize: 60,
+    marginRight: 0,
+    [theme.breakpoints.down('xs')]: {
+      fontSize: 40,
+    },
   },
   menuButton: {
-    marginRight: theme.spacing(2),
+    marginRight: theme.spacing(1),    
   },
   title: {},
   hide: {
@@ -78,6 +91,12 @@ const useStyles = makeStyles((theme) => ({
     ...theme.mixins.toolbar,
     justifyContent: 'flex-end',    
     borderBottom: '1px solid #0D0D0D'
+  },
+  boxImg: {
+    width: 100,
+    [theme.breakpoints.down('xs')]: {
+      width: 50,
+    },
   }
 }));
 
@@ -114,7 +133,7 @@ export default function HeaderMenu(): JSX.Element {
               edge="start"
               className={clsx(classes.menuButton, open && classes.hide)}
             >
-              <MenuIcon style={{ color: amber[50], fontSize: 60 }} />
+              <MenuIcon className={classes.menuIcon} />
             </IconButton>
             <div>
               <Box
@@ -129,15 +148,16 @@ export default function HeaderMenu(): JSX.Element {
                 style={{color: '#0D0D0D'}}                 
                 fontWeight="fontWeightBold"                            
                 fontFamily="h5.fontFamily"
-                fontSize={{ xs: 16, sm: 'h4.fontSize', md: 'h3.fontSize' }}            
+                fontSize={{ xs: 15, sm: 30, md: 'h3.fontSize' }}    
+                p={{ xs: 0, sm: 1, md: 1, lg: 1 }}         
               >
                 {`"${subtitleHeader[lang]}"`}
               </Box>    
             </div>
             
-            <Box>
+            <Box className={classes.boxImg}>
               <a href='https://vk.com/lf_samara' target="_blank" rel='noreferrer'>
-                <img src={logo} alt="logo" width='100px' />
+                <img src={logo} alt="logo" style={{ maxWidth: '100%', height: 'auto' }} />
               </a>              
             </Box>
           </Toolbar>
@@ -151,7 +171,6 @@ export default function HeaderMenu(): JSX.Element {
             paper: classes.drawerPaper,
           }}
         >
-          {console.log(Drawer)}
           <div className={classes.drawerHeader}>
             <IconButton style={{color: 'DarkOrange'}} onClick={handleDrawerClose}>
               {theme.direction === 'ltr' ? (

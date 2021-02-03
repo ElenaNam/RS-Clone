@@ -21,6 +21,15 @@ import logo from '../../assets/images/logo_lf.png';
 
 const drawerWidth = 240;
 
+/* const drawerWidth = {
+  width: 240,
+  '@media (max-width: 480px)': {
+    width: 500
+  }
+};  */
+
+
+
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
@@ -50,9 +59,12 @@ const useStyles = makeStyles((theme) => ({
   hide: {
     display: 'none',
   },
-  drawer: {
-    width: drawerWidth,
+  drawer: {    
     flexShrink: 0,
+    [theme.breakpoints.down('sm')]: { // не работает
+      width: '100%',
+    },
+    width: drawerWidth,
   },
   drawerPaper: {
     width: drawerWidth,
@@ -139,6 +151,7 @@ export default function HeaderMenu(): JSX.Element {
             paper: classes.drawerPaper,
           }}
         >
+          {console.log(Drawer)}
           <div className={classes.drawerHeader}>
             <IconButton style={{color: 'DarkOrange'}} onClick={handleDrawerClose}>
               {theme.direction === 'ltr' ? (

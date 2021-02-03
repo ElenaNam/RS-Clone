@@ -46,9 +46,7 @@ Finally, remember to transition your issue tracker card to Done.
 **Linter**
 In order to lint the code, the project uses ESLint, which is provided by Create React App.
 
-If you want to run the linter just type:
-
-*npm lint*
+If you want to run the linter just type: *npm lint*
 It's also convenient to integrate the linter warnings into your code editor, there are many plugins available for ESLint depending on your text editor used.
 
 

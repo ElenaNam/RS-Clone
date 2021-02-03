@@ -8,14 +8,21 @@ import ListItemText from '@material-ui/core/ListItemText';
 import DoneOutlineRoundedIcon from '@material-ui/icons/DoneOutlineRounded';
 import { useTheme } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
+import { connect } from 'react-redux';
 import logo from '../../assets/images/logo_rs.png';
 import DraggableDialog from '../Dialog/Dialog';
 
 import { Links, links } from '../data/menu';
+import { Lang, AppState } from '../../store/types';
 
-export function ListMenu(): JSX.Element {
+export interface ListMenuProps {
+  lang: Lang;
+}
+
+const ListMenu = (props: ListMenuProps) => {
   const theme = useTheme();
-  const lang = 'ru'; 
+  const { lang } = props;
+  // const lang = 'ru'; 
   return (
     <List>
       {links.map((item: Links, index: number) => (
@@ -52,4 +59,14 @@ export function ListMenu(): JSX.Element {
       <Route exact path="/information" component={withRouter(DraggableDialog)} /> 
     </List>
   );
-}
+};
+
+const mapStateToProps = (state: AppState) => ({
+  lang: state.game.lang,
+});
+
+const mapDispatchToProps = {
+
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ListMenu);

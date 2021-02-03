@@ -1,5 +1,5 @@
 import React, { useState, SyntheticEvent } from 'react';
-import './StartNewGame.css';
+// import './StartNewGame.css';
 import Radio from '@material-ui/core/Radio';
 import { connect } from 'react-redux';
 import { IProps } from './StartNewGame.models';
@@ -74,9 +74,9 @@ const StartNewGame = ( props: StartNewGameProps ) => { // { userName, gender, la
 
   return (
     // {classes.startNewGame}
-    <div className="start-page">
-      <div className="messages-wrapper">
-        <div className="greeting-message">
+    <div className={classes.startPage}>
+      <div className={classes.messagesWrapper}>
+        <div className={classes.greetingMessage}>
           Привет! Я твой помощник в дороге.
           Меня зовут хз пока!
           А как твое имя?
@@ -86,33 +86,27 @@ const StartNewGame = ( props: StartNewGameProps ) => { // { userName, gender, la
           maxLength={12}
           onChange={(e) => setNewUserName(e.target.value)}
         />
-        <div className="greeting-message">
+        <div className={classes.greetingMessage}>
           Выбери героя
         </div>
-        <div className="male-choice">
-          <div className="gender-item">
+        <div className={classes.maleChoice}>
+          <div className={classes.genderItem}>
             <Radio
               value="girl"
               checked={genderNew==='girl'}
               // onChange={handleGender}
               onChange={(e) => setNewGender(e.target.value as Gender)}
-              // onChange={(e) => {
-              //   if (typeof e.target.value === Gender) {
-
-              //   }
-              //   setNewGender(e.target.value)}
-              // }
             />
-            <img src={girlImgSrc} alt="girl" className="img-user" />
+            <img src={girlImgSrc} alt="girl" className={classes.imgUser} />
           </div>
-          <div className="gender-item">
+          <div className={classes.genderItem}>
             <Radio
               value="boy"
               checked={genderNew==='boy'}
               // onChange={handleGender}
               onChange={(e) => setNewGender(e.target.value as Gender)}
             />
-            <img src={boyImgSrc} alt="boy" className="img-user" />
+            <img src={boyImgSrc} alt="boy" className={classes.imgUser} />
           </div>
         </div>
         <button type="button" onClick={handleStartNewLevel}>{buttons[2][lang]}</button>
@@ -121,13 +115,6 @@ const StartNewGame = ( props: StartNewGameProps ) => { // { userName, gender, la
         <div>{newUserName}</div>
 
       </div>
-
-
-
-      <p>Вы нажали {count} раз</p>
-      <button type="submit" onClick={() => setCount(count + 1)}>
-        Нажми на меня
-      </button>
       {/* <StartNextLevel /> */}
     </div>
   );

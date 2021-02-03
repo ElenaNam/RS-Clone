@@ -1,6 +1,18 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 export const useStyles = makeStyles(() => ({
+  startPage: {
+    marginTop: '100px',
+
+    height: '80vh',
+    display: 'flex',
+
+    justifyContent: 'center',
+
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+
   startNewGame: {
     padding: '0',
     marginBottom: '16px',
@@ -22,9 +34,13 @@ export const useStyles = makeStyles(() => ({
     flex: '0 0 auto',
   },
   
-  maleСhoice: {
+  maleChoice: {
     display: 'flex',
     justifyContent: 'center',
+  },
+
+  genderItem: {
+
   },
   
   imgUser: {

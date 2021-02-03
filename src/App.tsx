@@ -9,6 +9,7 @@ import HeaderMainMenu from './components/header-main-menu/header-main-menu';
 import StartNewGame from './components/StartNewGame/StartNewGame';
 import FirstLevel from './components/FirstLevel/FirstLevel';
 import SecondLevel from './components/SecondLevel/SecondLevel';
+import FinalPage from './components/FinalPage/FinalPage';
 
 import { AppState, GameState } from './store/types';
 
@@ -58,6 +59,7 @@ function App(props: AppProps) {
       personageNums={[7, 8, 9]}
       backgoundImg={backgroundArr[3]}
     />,
+    <FinalPage key="6" />
   ];
   console.log(props, activeLevel, userName, lang);
 

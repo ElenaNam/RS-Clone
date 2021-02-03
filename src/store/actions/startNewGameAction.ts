@@ -1,6 +1,7 @@
 import {
   LevelActionType,
   StartNewLevelAction,
+  RestartGameAction,
   SetUserNameAction,
   SetGenderAction,
   SetLanguageAction,
@@ -12,9 +13,11 @@ import {
 export const startNewLevel = (): StartNewLevelAction => ({
   type: LevelActionType.START_NEW_LEVEL,
   payload: {},
-  // payload: {
+});
 
-  // },
+export const restartGame = (): RestartGameAction => ({
+  type: LevelActionType.RESTART_GAME,
+  payload: {},
 });
 
 export const setUserName = (userName: string): SetUserNameAction => ({

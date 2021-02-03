@@ -1,16 +1,21 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Grid, Paper, Typography, makeStyles, Box, Button } from '@material-ui/core';
-import { personage } from '../data/personage'; 
+import { connect } from 'react-redux';
+import { personage, personageGranny } from '../data/personage'; 
 import { Grandma, buttons } from '../data/variables';
 import { rules, finalPhrase } from '../data/finish';
 
 import grandma from '../../assets/images/personage/personage10.png';
 import gin from '../../assets/images/gin_success.png';
+import { AppState, Lang } from '../../store/types';
+
+import { startNewLevel, restartGame } from '../../store/actions/startNewGameAction';
 
 
 const useStyles = makeStyles(() => ({  
   root: {
+    marginTop: '130px',
     flexGrow: 1,
     justifyContent: 'space-around',
     /* overflow: 'hidden', */
@@ -42,16 +47,45 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-export default function FinalPage(): JSX.Element {
+export interface FinalPageProps {
+  // lang: 'en' | 'de' | 'ru';
+
+  // onClose: (index: number) => void;
+  gender: string;
+  userName: string;
+  lang: Lang;
+
+  scoreGame: number;
+
+  restartGame: () => void;
+
+  // imgs: string[];
+  // personageNums: number[];
+  // backgoundImg: string;
+}
+
+const FinalPage = (props: FinalPageProps) => {
   const classes = useStyles();
+  const { userName, gender, scoreGame, lang } = props;
 
-  const lang = 'ru';
+  // const lang = 'ru';
   const score: number = 15;
-  let variant: string = '';
+  let variant: 'result1' | 'result2' | 'result3' = 'result3';
 
-  if (score < 12) variant = 'result1?';
-  if (score >= 12 && score < 18) variant = 'result2?';
-  if (score === 18) variant = 'result3?';
+  if (scoreGame < 12) {
+    variant = 'result1';
+  }
+  if (scoreGame >= 12 && scoreGame < 18) {
+    variant = 'result2';
+  }
+  if (scoreGame === 18) {
+    variant = 'result3';
+  }
+
+  const handleClickRestart = () => {
+    // setOpen(true);
+    props.restartGame();
+  };
 
   return ( 
     <div className={classes.root}>
@@ -60,18 +94,21 @@ export default function FinalPage(): JSX.Element {
         <Grid item xs={6} sm={6} lg={9} className={classes.content}>
           <Paper elevation={5}>            
             <Typography variant='body1' className={classes.text2}>
-              5 баллов
+              {scoreGame} баллов
             </Typography>             
           </Paper> 
         </Grid>
 
         <Grid item xs={12} sm={8} lg={4} className={classes.content}>
           <Paper elevation={5} className={classes.paper}>
-            <Typography className={classes.text}>
+            {/* <Typography className={classes.text}>
 
-              {personage[10].result1?.ru.text} 
+              {personageGranny[variant][lang].text} 
 
-            </Typography>
+            </Typography> */}
+            <Box>
+              {personageGranny[variant][lang].text.replaceAll('{namePlayer}', userName)} 
+            </Box> 
           </Paper> 
         </Grid>
 
@@ -106,9 +143,12 @@ export default function FinalPage(): JSX.Element {
         </Grid>
       </Grid>
 
-      <Button 
+      <Button
+        // onclick={handleClickRestart}
+        onClick={() => { handleClickRestart(); }}
         variant="contained" 
-        color="primary" 
+        color="primary"
+        // onclick={handleClickRestart}
         component={NavLink} 
         to='/home'
       >
@@ -117,4 +157,18 @@ export default function FinalPage(): JSX.Element {
       
     </div>      
   );  
-}
+};
+
+
+const mapStateToProps = (state: AppState) => ({
+  userName: state.game.userName,
+  gender: state.game.gender,
+  scoreGame: state.game.scoreGame,
+  lang: state.game.lang,
+});
+
+const mapDispatchToProps = {
+  restartGame,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(FinalPage);

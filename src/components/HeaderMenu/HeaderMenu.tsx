@@ -13,10 +13,12 @@ import { amber } from '@material-ui/core/colors';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 
-import { ListMenu } from './ListMenu';
+import { connect } from 'react-redux';
+import ListMenu from './ListMenu';
 import { titleHeader, subtitleHeader } from '../data/textHeader';
 
 import logo from '../../assets/images/logo_lf.png';
+import { Lang, AppState } from '../../store/types';
 
 
 const drawerWidth = 240;
@@ -69,10 +71,15 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function HeaderMenu(): JSX.Element {
+export interface ListMenuProps {
+  lang: Lang;
+}
+
+const HeaderMenu = (props: ListMenuProps) => {
   const classes = useStyles();
   const theme = useTheme();
-  const lang = 'ru';
+  const { lang } = props;
+  // const lang = 'ru';
    
   const [open, setOpen] = React.useState(false); 
 
@@ -154,4 +161,14 @@ export default function HeaderMenu(): JSX.Element {
       </div>
     </ClickAwayListener>
   );
-}
+};
+
+const mapStateToProps = (state: AppState) => ({
+  lang: state.game.lang,
+});
+
+const mapDispatchToProps = {
+
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(HeaderMenu);

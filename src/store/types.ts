@@ -23,6 +23,7 @@ export interface AppState {
 
 export enum LevelActionType {
   START_NEW_LEVEL = 'NEW_LEVEL_STARTED',
+  RESTART_GAME = 'GAME_RESTARTED',
   SET_USER_NAME = 'USER_NAME_CHANGED',
   SET_GENDER = 'GENDER_CHANGED',
   SET_LANGUAGE = 'LANGUAGE_CHANGED',
@@ -31,6 +32,11 @@ export enum LevelActionType {
 
 export interface StartNewLevelAction {
   type: LevelActionType.START_NEW_LEVEL;
+  payload: {};
+}
+
+export interface RestartGameAction {
+  type: LevelActionType.RESTART_GAME;
   payload: {};
 }
 
@@ -55,6 +61,7 @@ export interface AddToScoreGameAction {
 
 export type Action =
   | StartNewLevelAction
+  | RestartGameAction
   | SetUserNameAction
   | SetGenderAction
   | SetLanguageAction

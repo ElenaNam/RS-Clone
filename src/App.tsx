@@ -41,6 +41,7 @@ function App(props: AppProps) {
 
   // const arrComps = [<StartNewGame key='1' />, <FirstLevel key='2' />, <SecondLevel key='3' />];
   const arrComps = [
+    <Home key="0" />,
     <StartNewGame key="1" />,
     <SecondLevel
       key="3"
@@ -70,6 +71,7 @@ function App(props: AppProps) {
         <div className="App">
           <Menu /> 
           {arrComps[activeLevel]}
+
           {/* <Template />         */}
         </div>
       </HotkeysLayout>

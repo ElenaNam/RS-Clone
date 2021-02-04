@@ -2,10 +2,15 @@ import { makeStyles } from '@material-ui/core/styles';
 
 
 export const useStyles = makeStyles(() => ({
+  imgBlock: {
+    display: 'flex',
+    justifyContent: 'space-between',
+  },
+  
   imgUser: {
-    // width: '150px',
+    width: '20vw',
     // height: '200px',
-    height: '15vw',
+    alignSelf: 'flex-end',
   },
 
   avatar: {

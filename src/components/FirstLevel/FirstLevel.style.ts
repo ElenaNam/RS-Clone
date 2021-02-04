@@ -3,16 +3,34 @@ import house from '../../assets/images/house.png';
 
 export const useStyles = makeStyles(() => ({
   pageWrapper: {
-    margin: '0 auto',
+    // margin: '0 auto',
     padding: '0',
+
+    marginTop: '-15vw',
+    // height: 'calc(100vh - 160px)',
+
+    // width: '100vw',
+
     // marginBottom: '16px',
     listStyleType: 'none',
     backgroundImage: `url(${house})`,
     // backgroundColor: 'yellow',
     // maxWidth: '1024px',
     // height: '576px',
-    backgroundSize: 'cover',
+    backgroundSize: 'contain',
     // height: '200px',
+
+    backgroundRepeat: 'no-repeat',
+
+    height: '56.3vw',
+
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-end',
+  },
+
+  page: {
+    
   },
 
   messagesWrapper: {

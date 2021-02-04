@@ -10,9 +10,7 @@ import StartNextLevel from '../StartNextLevel/StartNextLevel';
 
 import { hero, locations, buttons } from '../data/variables';
 
-import girlImgSrc from '../../assets/images/girl.png';
-
-import { AppState, GameState } from '../../store/types';
+import { AppState, GameState, Lang } from '../../store/types';
 
 import { startNewLevel } from '../../store/actions/startNewGameAction';
 import { useStyles } from './FirstLevel.style';
@@ -20,9 +18,8 @@ import { useStyles } from './FirstLevel.style';
 import SimpleDialogDemo from '../DialogWindow/DialogWindowHome';
 
 export interface FirstLevelProps {
-  lang: 'en' | 'de' | 'ru';
-  
-  onClose: (index: number) => void;
+  lang: Lang;
+
   gender: string;
   userName: string;
   startNewLevel: () => void;
@@ -33,30 +30,14 @@ const FirstLevel = (props: FirstLevelProps) => {
   const { userName, gender } = props;
   const classes = useStyles();
 
-    
-  const [count, setCount] = useState(0);
-
-  // const [userName, setUserName] = useState('');
-
-  // const [gender, setGender] = useState('male');
-
-  // const handleGender = (e) => {
-  //   // e.target.value && setGender(e.target.value);
-
-  //   // setGender(e.target.value);
-  // };
-
   const handleStartNewLevel = () => {
     props.startNewLevel();
-    // <StartNextLevel />;
   };
 
   return (
     <div className={classes.pageWrapper}>
-      <div className="page">
-        dd
+      <div className={classes.page}>
         <SimpleDialogDemo />
-
       </div>
     </div>
   );
@@ -65,6 +46,7 @@ const FirstLevel = (props: FirstLevelProps) => {
 const mapStateToProps = (state: AppState) => ({
   userName: state.game.userName,
   gender: state.game.gender,
+  lang: state.game.lang,
 });
 
 const mapDispatchToProps = {

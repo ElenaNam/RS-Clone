@@ -59,8 +59,9 @@ const SecondLevel = (props: SecondLevelProps) => {
     <Box className={classes.pageWrapperMain}>
       <Box className={classes.pageWrapper} display="flex" justifyContent="space-around" style={BackgroundHead}>
         {/* <ScoreGame /> */}
+
         <Box className={classes.personsBlock} alignSelf="flex-end" flexGrow="1">
-          <ScoreGame />
+          {/* <ScoreGame /> */}
           <Grid
             container
             direction="row"

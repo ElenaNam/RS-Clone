@@ -43,6 +43,7 @@ function App(props: AppProps) {
   const arrComps = [
     <Home key="0" />,
     <StartNewGame key="1" />,
+    <FirstLevel key="2" />,
     <SecondLevel
       key="3"
       imgs={[imagesArr[0], imagesArr[1], imagesArr[2]]}

@@ -14,33 +14,37 @@ import Typography from '@material-ui/core/Typography';
 import { blue } from '@material-ui/core/colors';
 
 import { connect } from 'react-redux';
-import { AppState, GameState } from '../../store/types';
+import { AppState, GameState, Gender } from '../../store/types';
 
 import imgMother from '../../assets/images/personage/personage0.png';
+import girlImgSrc from '../../assets/images/girl.png';
+import boyImgSrc from '../../assets/images/boy.png';
+
 import { personage } from '../data/personage';
 import { startNewLevel } from '../../store/actions/startNewGameAction';
+import { useStyles } from './DialogWindowHome.style';
 // import { answers } from '../data/answersHero';
 
 const answers = ['ok', 'no'];
-const useStyles = makeStyles({
-  avatar: {
-    backgroundColor: blue[100],
-    color: blue[600],
-  },
-});
+// const useStyles = makeStyles({
+//   avatar: {
+//     backgroundColor: blue[100],
+//     color: blue[600],
+//   },
+// });
 
 export interface SimpleDialogProps {
   open: boolean;
-  // selectedValue: string;
   selectedNum: number;
   lang: 'en' | 'de' | 'ru';
+  userName: string;
   // personageNum: number;
   onClose: (index: number) => void;
 }
 
 function SimpleDialog(props: SimpleDialogProps) {
   const classes = useStyles();
-  const { onClose, lang, selectedNum, open } = props;
+  const { onClose, lang, selectedNum, open, userName } = props;
 
   const handleClose = () => {
     onClose(selectedNum);
@@ -57,7 +61,7 @@ function SimpleDialog(props: SimpleDialogProps) {
       open={open}
     >
       <DialogTitle id="simple-dialog-title">
-        {personage[0][lang]?.text}
+        {personage[0][lang]?.text.replaceAll('{namePlayer}', userName)}
       </DialogTitle>
       <List>
         {answers.map((email) => (
@@ -74,14 +78,6 @@ function SimpleDialog(props: SimpleDialogProps) {
             <ListItemText primary={email} />
           </ListItem>
         ))}
-        {/* <ListItem autoFocus button onClick={() => handleListItemClick('addAccount')}>
-          <ListItemAvatar>
-            <Avatar>
-              <AddIcon />
-            </Avatar>
-          </ListItemAvatar>
-          <ListItemText primary="Add account" />
-        </ListItem> */}
       </List>
     </Dialog>
   );
@@ -89,6 +85,8 @@ function SimpleDialog(props: SimpleDialogProps) {
 
 export interface SimpleDialogDemoProps {
   lang: 'en' | 'de' | 'ru';
+  userName: string;
+  gender: Gender;
   // personageNum: number;
   // onClose: (index: number) => void;
 
@@ -97,7 +95,8 @@ export interface SimpleDialogDemoProps {
 }
 
 const SimpleDialogDemo = (props: SimpleDialogDemoProps) => {
-  const { lang } = props;
+  const classes = useStyles();
+  const { lang, userName, gender } = props;
   const [open, setOpen] = React.useState(false);
   const [selectedNum, setSelectedNum] = React.useState<number>(-1);
 
@@ -112,16 +111,21 @@ const SimpleDialogDemo = (props: SimpleDialogDemoProps) => {
     props.startNewLevel();
   };
 
+  let imgPers = girlImgSrc;
+  if (gender === 'boy') {
+    imgPers = boyImgSrc;
+  }
+
   return (
-    <div>
-      <Typography variant="subtitle1">Selected: {selectedNum}</Typography>
-      <br />
+    <div className={classes.imgBlock}>
+      <img src={imgPers} alt="mother" className={classes.imgUser} />
       <Button color="primary" onClick={handleClickOpen}>
         {/* variant="outlined"  */}
-        <img src={imgMother} alt="mother" className="img-user" />
+        <img src={imgMother} alt="mother" className={classes.imgUser} />
         {/* Open simple dialog */}
       </Button>
       <SimpleDialog
+        userName={userName}
         selectedNum={selectedNum}
         open={open}
         lang={lang}

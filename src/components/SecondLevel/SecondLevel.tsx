@@ -10,7 +10,7 @@ import StartNextLevel from '../StartNextLevel/StartNextLevel';
 
 import { hero, locations, buttons } from '../data/variables';
 
-import girlImgSrc from '../../assets/images/girl.png';
+// import girlImgSrc from '../../assets/images/girl.png';
 
 import { AppState } from '../../store/types';
 

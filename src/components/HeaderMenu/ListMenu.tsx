@@ -9,6 +9,7 @@ import DoneOutlineRoundedIcon from '@material-ui/icons/DoneOutlineRounded';
 import { useTheme } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import { connect } from 'react-redux';
+// import logo from '../../assets/images/logo_rs.png';
 import logo from '../../assets/images/logo_rs.png';
 import DraggableDialog from '../Dialog/Dialog';
 

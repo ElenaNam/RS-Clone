@@ -15,14 +15,26 @@ import DraggableDialog from '../Dialog/Dialog';
 import { Links, links } from '../data/menu';
 import { Lang, AppState } from '../../store/types';
 
+import { setLanguage, restartGame } from '../../store/actions/startNewGameAction';
+
 export interface ListMenuProps {
   lang: Lang;
+  setLanguage: (lang: Lang) => void;
+  restartGame: () => void;
 }
 
 const ListMenu = (props: ListMenuProps) => {
   const theme = useTheme();
   const { lang } = props;
   // const lang = 'ru'; 
+
+  const handleMenuEl = (buttonName: string) => {
+    if (buttonName === 'New Game') {
+      props.restartGame();
+    }
+    console.log('кнопка меню нажата', buttonName);
+  };
+
   return (
     <List>
       {links.map((item: Links, index: number) => (
@@ -33,6 +45,7 @@ const ListMenu = (props: ListMenuProps) => {
           exact
           to={item.link}
           activeStyle={{ color: '#1565c0' }}
+          onClick={()=>{handleMenuEl(item.en);}}
         >
           <ListItemIcon>
             {index % 2 === 0 ? (
@@ -66,7 +79,8 @@ const mapStateToProps = (state: AppState) => ({
 });
 
 const mapDispatchToProps = {
-
+  setLanguage,
+  restartGame,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ListMenu);

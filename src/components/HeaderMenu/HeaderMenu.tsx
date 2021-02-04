@@ -12,8 +12,8 @@ import MenuIcon from '@material-ui/icons/Menu';
 import { amber } from '@material-ui/core/colors';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-
-import { ListMenu } from './ListMenu';
+import { ListMenu } from './ListMenu'; 
+import { ListMenuCopy } from './ListMenuCopy';
 import { titleHeader, subtitleHeader } from '../data/textHeader';
 
 import logo from '../../assets/images/logo_lf.png';
@@ -181,7 +181,8 @@ export default function HeaderMenu(): JSX.Element {
             </IconButton>
           </div>
           <Divider />
-          <ListMenu />
+          <ListMenu /> 
+          {/* <ListMenuCopy /> */}
         </Drawer>     
       </div>
     </ClickAwayListener>

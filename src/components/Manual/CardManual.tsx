@@ -10,17 +10,28 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: { 
       maxWidth: 400,   
-      minWidth: 220,
+      minWidth: 170,
+      width: '100%', 
       background: 'linear-gradient(45deg, Moccasin 10%, BurlyWood 90%)',      
       margin: 20,  
+      
     },
     headerCard: {
       display: 'flex',
-      alignItems: 'center',
+      alignItems: 'center',  
     },
     titleCard: {
       display: 'inline-flex',
-      marginLeft: 20,
+      marginLeft: 10,
+      padding: 2,
+      marginRight: 2,
+      [theme.breakpoints.down('xs')]: {
+        fontSize: 12,
+      },
+    },
+    contentCard: {
+      display: 'flex',
+      alignItems: 'center',
     },
     media: {
       width: '100%',
@@ -66,7 +77,7 @@ export default function CardManual(props: MProps) {
             {text}
           </Box> 
         </Box> 
-        <Box className={classes.headerCard}>
+        <Box className={classes.contentCard}>
           <CardMedia   
             className={classes.media}       
             component="div"

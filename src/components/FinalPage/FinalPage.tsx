@@ -8,16 +8,19 @@ import { rules, finalPhrase } from '../data/finish';
 
 import grandma from '../../assets/images/personage/personage10.png';
 import gin from '../../assets/images/gin_success.png';
+import smile from '../../assets/images/smile.png'; 
 import { AppState, Lang } from '../../store/types';
-
 import { startNewLevel, restartGame } from '../../store/actions/startNewGameAction';
 
 
-const useStyles = makeStyles(() => ({  
+
+const useStyles = makeStyles((theme) => ({  
   root: {
-    marginTop: '130px',
+    marginTop: '50px',
     flexGrow: 1,
     justifyContent: 'space-around',
+    marginLeft: 10,
+    marginRight: 10,
     /* overflow: 'hidden', */
   },
   img1: {
@@ -28,22 +31,56 @@ const useStyles = makeStyles(() => ({
     maxHeight: '100%',    
   },
   container: {
-    justifyContent: 'center',
+    justifyContent: 'center',    
+    marginBottom: 10,
   },
   content: {   
     alignSelf: 'flex-start',
-    marginTop: '10px',
+    margin: 10,
     paddingBottom: '5px',
     background: 'linear-gradient(45deg, Peru 30%, SaddleBrown 80%)',    
   },
   paper: {
     /* background: 'linear-gradient(45deg, Moccasin 10%, BurlyWood 90%)', */    
   },
+  scoreContainer: {
+    display: 'flex', 
+    justifyContent: 'center', 
+    alignItems: 'center',
+  },
+  score: { 
+    display: 'contents',   
+    margin: 10,
+    justifyContent: 'center',
+    flexDirection: 'row',
+    background: 'linear-gradient(45deg, Peru 30%, SaddleBrown 80%)',  
+  },
+  smile: {
+    display: 'flex',
+    marginLeft: 5,
+    height: 30,
+    [theme.breakpoints.down('md')]: {
+      height: 28,
+    },
+    [theme.breakpoints.down('sm')]: {
+      height: 25,
+    },
+    [theme.breakpoints.down('xs')]: {
+      height: 15,
+    },
+  },
   text: {
-    margin: 5,
+    margin: 10,
   },
   text2: {
     margin: '5px 5px 15px 5px',
+    fontSize: 16,
+    [theme.breakpoints.down('sm')]: {
+      fontSize: 14,
+    },
+    [theme.breakpoints.down('xs')]: {
+      fontSize: 12,
+    },
   },
 }));
 
@@ -92,12 +129,26 @@ const FinalPage = (props: FinalPageProps) => {
       <Grid container spacing={3} className={classes.container}>
 
         <Grid item xs={6} sm={6} lg={9} className={classes.content}>
+          <Paper elevation={5} className={classes.scoreContainer}>
+            <Box 
+              fontSize={{ xs: 15, sm: 25, md: 30 }}
+              p={{ xs: 1, sm: 1, md: 2, lg: 2 }}  
+              className={classes.score}
+            >
+              {scoreGame}
+            </Box> 
+            <Box className={classes.smile}>
+              <img src={smile} alt='smile' style={{ height: '100%' }} />
+            </Box>             
+          </Paper> 
+        </Grid>
+        {/*         <Grid item xs={6} sm={6} lg={9} className={classes.content}>
           <Paper elevation={5}>            
             <Typography variant='body1' className={classes.text2}>
               {scoreGame} баллов
             </Typography>             
           </Paper> 
-        </Grid>
+        </Grid> */}
 
         <Grid item xs={12} sm={8} lg={4} className={classes.content}>
           <Paper elevation={5} className={classes.paper}>
@@ -106,7 +157,7 @@ const FinalPage = (props: FinalPageProps) => {
               {personageGranny[variant][lang].text} 
 
             </Typography> */}
-            <Box>
+            <Box className={classes.text2}>
               {personageGranny[variant][lang].text.replaceAll('{namePlayer}', userName)} 
             </Box> 
           </Paper> 
@@ -118,9 +169,10 @@ const FinalPage = (props: FinalPageProps) => {
           </Box> 
         </Grid>
 
-        <Grid item xs={12} sm={12} lg={6} className={classes.content}>
+        <Grid item xs={12} sm={10} lg={6} className={classes.content}>
           <Paper elevation={5} className={classes.paper}>
-            {rules.map((rule) => (
+            {rules.map((rule) => (              
+
               <Typography key={rule.id} variant='body1' className={classes.text2}>
                 {rule[lang]} 
               </Typography> 
@@ -146,7 +198,7 @@ const FinalPage = (props: FinalPageProps) => {
       <Button
         // onclick={handleClickRestart}
         onClick={() => { handleClickRestart(); }}
-        variant="contained" 
+        variant="outlined" 
         color="primary"
         // onclick={handleClickRestart}
         component={NavLink} 

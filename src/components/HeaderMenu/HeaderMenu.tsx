@@ -13,8 +13,11 @@ import { amber } from '@material-ui/core/colors';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 
+/* import { ListMenuCopy } from './ListMenuCopy'; */
+
 import { connect } from 'react-redux';
 import ListMenu from './ListMenu';
+import { ListMenuSecondary } from './ListMenuSecondary';
 import { titleHeader, subtitleHeader } from '../data/textHeader';
 
 import logo from '../../assets/images/logo_lf.png';
@@ -188,7 +191,8 @@ const HeaderMenu = (props: ListMenuProps) => {
             </IconButton>
           </div>
           <Divider />
-          <ListMenu />
+          <ListMenu /> 
+          <ListMenuSecondary />
         </Drawer>     
       </div>
     </ClickAwayListener>

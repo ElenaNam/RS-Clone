@@ -15,6 +15,14 @@ export const startNewGameReducer = (
 
         activeLevel: state.activeLevel + 1,
       };
+
+    case LevelActionType.RESTART_GAME:
+      console.log('RESTART');
+      return {
+        ...initialState,
+
+        activeLevel: 0,
+      };
       
     case LevelActionType.SET_USER_NAME:
       console.log('set name work');

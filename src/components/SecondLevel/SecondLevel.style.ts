@@ -4,11 +4,14 @@ import backgoundImg from '../../assets/images/locations/city.jpg';
 export const useStyles = makeStyles(() => ({
   pageWrapperMain: {
     // height: '100vh',
-    height: 'calc(100vh - 120px)',
+    height: 'calc(100vh - 160px)',
+    // marginTop: '130px',
   },
 
   pageWrapper: {
-    margin: '0 auto',
+    // margin: '0 auto',
+    margin: '-15vw auto',
+
     padding: '0',
     // marginBottom: '16px',
     listStyleType: 'none',
@@ -26,6 +29,7 @@ export const useStyles = makeStyles(() => ({
     backgroundRepeat: 'no-repeat',
 
     height: '56.3vw',
+    // height: '52vw',
     // backgroundSize: 'cover',
 
     // backgroundSize: '100% auto',

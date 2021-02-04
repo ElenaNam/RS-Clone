@@ -9,6 +9,8 @@ import HeaderMainMenu from './components/header-main-menu/header-main-menu';
 import StartNewGame from './components/StartNewGame/StartNewGame';
 import FirstLevel from './components/FirstLevel/FirstLevel';
 import SecondLevel from './components/SecondLevel/SecondLevel';
+import FinalPage from './components/FinalPage/FinalPage';
+import Home from './components/Home/Home';
 
 import { AppState, GameState } from './store/types';
 
@@ -39,6 +41,7 @@ function App(props: AppProps) {
 
   // const arrComps = [<StartNewGame key='1' />, <FirstLevel key='2' />, <SecondLevel key='3' />];
   const arrComps = [
+    <Home key="0" />,
     <StartNewGame key="1" />,
     <SecondLevel
       key="3"
@@ -58,6 +61,7 @@ function App(props: AppProps) {
       personageNums={[7, 8, 9]}
       backgoundImg={backgroundArr[3]}
     />,
+    <FinalPage key="6" />
   ];
   console.log(props, activeLevel, userName, lang);
 
@@ -67,6 +71,7 @@ function App(props: AppProps) {
         <div className="App">
           <Menu /> 
           {arrComps[activeLevel]}
+
           {/* <Template />         */}
         </div>
       </HotkeysLayout>

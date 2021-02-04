@@ -18,9 +18,9 @@ function PaperComponent(props: PaperProps) {
 }
 
 export interface Props  { 
-  link: string
-  title: string
-  children: JSX.Element  
+  link?: string
+  title?: string
+  children?: JSX.Element  
 }
 
 export default function MenuDialog(props:Props) {

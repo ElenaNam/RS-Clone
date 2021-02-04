@@ -6,10 +6,13 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import DoneOutlineRoundedIcon from '@material-ui/icons/DoneOutlineRounded';
+import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
+import SentimentVerySatisfiedOutlinedIcon from '@material-ui/icons/SentimentVerySatisfiedOutlined';
+import SendOutlinedIcon from '@material-ui/icons/SendOutlined';
 import { useTheme } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import { connect } from 'react-redux';
-// import logo from '../../assets/images/logo_rs.png';
+
 import logo from '../../assets/images/logo_rs.png';
 import DraggableDialog from '../Dialog/Dialog';
 
@@ -17,6 +20,8 @@ import { Links, links } from '../data/menu';
 import { Lang, AppState } from '../../store/types';
 
 import { setLanguage, restartGame } from '../../store/actions/startNewGameAction';
+
+const gameLinks = links.slice(0, 3);
 
 export interface ListMenuProps {
   lang: Lang;
@@ -36,20 +41,34 @@ const ListMenu = (props: ListMenuProps) => {
     console.log('кнопка меню нажата', buttonName);
   };
 
+  const setIcon = (value: number): React.ReactNode => {
+    if (value === 0) return (<HomeOutlinedIcon
+      style={{ color: 'DarkOrange' }}
+    />);
+    if (value === 1) return (<SentimentVerySatisfiedOutlinedIcon
+      style={{ color: 'Tomato'}}
+    />);
+    if (value === 2) return (<SendOutlinedIcon
+      style={{ color: 'lime' }}
+    />
+    );
+    return null;
+  };
+
   return (
-    <List>
-      {links.map((item: Links, index: number) => (
+    <List style={{padding: 0}}>
+      {gameLinks.map((item: Links, index: number) => (
         <ListItem
           button
           key={item.id}
           component={NavLink}
           exact
           to={item.link}
-          activeStyle={{ color: '#1565c0' }}
+          /* activeStyle={{ color: '#1565c0' }}   */        
           onClick={()=>{handleMenuEl(item.en);}}
         >
           <ListItemIcon>
-            {index % 2 === 0 ? (
+            {/*             {index % 2 === 0 ? (
               <DoneOutlineRoundedIcon
                 style={{ color: theme.palette.warning.light }}
               />
@@ -57,20 +76,19 @@ const ListMenu = (props: ListMenuProps) => {
               <DoneOutlineRoundedIcon
                 style={{ color: theme.palette.error.main }}
               />
-            )}
+            )} */}
+            { setIcon(index) }
+
           </ListItemIcon>
           <ListItemText primary={item[lang]} />
         </ListItem>
       ))}
-      <ListItem>
-        <DraggableDialog />
-      </ListItem>
-      <Box mt={15}>
+      {/*       <Box mt={15}>
         <a href='https://rs.school/js/' target="_blank" rel='noreferrer'>
           <img src={logo} alt="logo_rsschool" width="60%" />
         </a>
-      </Box>
-      <Route exact path="/information" component={withRouter(DraggableDialog)} /> 
+      </Box> */}
+       
     </List>
   );
 };

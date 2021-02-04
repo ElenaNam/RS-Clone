@@ -17,6 +17,7 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 
 import { connect } from 'react-redux';
 import ListMenu from './ListMenu';
+import { ListMenuSecondary } from './ListMenuSecondary';
 import { titleHeader, subtitleHeader } from '../data/textHeader';
 
 import logo from '../../assets/images/logo_lf.png';
@@ -191,7 +192,7 @@ const HeaderMenu = (props: ListMenuProps) => {
           </div>
           <Divider />
           <ListMenu /> 
-          {/* <ListMenuCopy /> */}
+          <ListMenuSecondary />
         </Drawer>     
       </div>
     </ClickAwayListener>

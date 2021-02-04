@@ -7,8 +7,10 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Paper, { PaperProps } from '@material-ui/core/Paper';
 import Draggable from 'react-draggable';
-import { Link } from 'react-router-dom';
-import Information from '../Information/Information';
+import { Link, NavLink } from 'react-router-dom';
+import { useStyles } from './Dialog.style';
+import { links } from '../data/menu';
+import Manual from '../Manual/Manual';
 
 function PaperComponent(props: PaperProps) {
   return (
@@ -18,7 +20,9 @@ function PaperComponent(props: PaperProps) {
   );
 }
 
-export default function DraggableDialog() {
+export default function DialogInstruction() {
+  const lang = 'ru';
+  const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -31,20 +35,29 @@ export default function DraggableDialog() {
 
   return (
     <div>
-      <Link to='/information' onClick={handleClickOpen}>
-        О разработчиках
-      </Link>
+      <NavLink 
+        to={links[3].link} 
+        onClick={handleClickOpen} 
+        exact
+        /* activeStyle={{ color: '#1565c0' }}   */       
+        className={classes.link} 
+      >
+        {links[3][lang]}
+      </NavLink>
       <Dialog
         open={open}
         onClose={handleClose}
         PaperComponent={PaperComponent}
         aria-labelledby="draggable-dialog-title"
+        fullWidth={true}
+        maxWidth="md"
+        
       >
-        <DialogTitle style={{ cursor: 'move' }} id="draggable-dialog-title">
-          О разработчиках
+        <DialogTitle className={classes.titleDialog} id="draggable-dialog-title">
+          {links[3][lang]}
         </DialogTitle>
         <DialogContent>
-          <Information />
+          <Manual />
         </DialogContent>
       </Dialog>
     </div>

@@ -25,7 +25,7 @@ import { startNewLevel } from '../../store/actions/startNewGameAction';
 import { useStyles } from './DialogWindowHome.style';
 // import { answers } from '../data/answersHero';
 
-const answers = ['ok', 'no'];
+const answers = ['OK'];
 // const useStyles = makeStyles({
 //   avatar: {
 //     backgroundColor: blue[100],

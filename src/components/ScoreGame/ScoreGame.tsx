@@ -1,36 +1,24 @@
 import React, { useState, SyntheticEvent } from 'react';
-// import './StartNewGame.css';
-import Radio from '@material-ui/core/Radio';
 import { connect } from 'react-redux';
-// import { IProps } from './StartNewGame.models';
 
-// import { useStyles } from './StartNewGame.style';
+import LinearProgress, { LinearProgressProps } from '@material-ui/core/LinearProgress';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
 
-import StartNextLevel from '../StartNextLevel/StartNextLevel';
-
-import { hero, locations, buttons } from '../data/variables';
-
-import girlImgSrc from '../../assets/images/girl.png';
-import boyImgSrc from '../../assets/images/boy.png';
 
 import { AppState, GameState, Gender, Lang } from '../../store/types';
 
-import { startNewLevel, setUserName, setGender } from '../../store/actions/startNewGameAction';
-
 import { answers as answersAll } from '../data/answersHero';
-
+import { useStyles } from './ScoreGame.style';
 
 export interface ScoreGameProps {
-  // lang?: Lang;
-  // userName?: string;
-  // activeLevel?: number;
-  // gender?: Gender;
   scoreGame?: number;
 }
 
 const ScoreGame = ( props: ScoreGameProps ) => {
   const { scoreGame } = props;
-  // const classes = useStyles();
+  const newScoreGame = scoreGame || 0;
+  const classes = useStyles();
 
   const maxScore = answersAll.reduce((sum, item) => {
     if (Math.max.apply(null, item.score) > 0) {
@@ -40,10 +28,10 @@ const ScoreGame = ( props: ScoreGameProps ) => {
   }, 0);
 
   return (
-    // {classes.startNewGame}
     <div className="start-page">
       <div className="messages-wrapper">
-        <div className="greeting-message">
+        <div className={classes.greetingMessage}>
+          <LinearWithValueLabel currentScore={newScoreGame} maxScore={maxScore} />
           Score: {scoreGame}/{maxScore}
         </div>
       </div>
@@ -51,13 +39,43 @@ const ScoreGame = ( props: ScoreGameProps ) => {
   );
 };
 
-
 const mapStateToProps = (state: AppState) => ({
-  // userName: state.game.userName,
-  // gender: state.game.gender,
-  // lang: state.game.lang,
-  // activeLevel: state.game.activeLevel,
   scoreGame: state.game.scoreGame,
 });
 
 export default connect(mapStateToProps, null)(ScoreGame);
+
+
+function LinearProgressWithLabel(props: LinearProgressProps & { value: number }) {
+  return (
+    <Box display="flex" alignItems="center">
+      <Box width="100%" mr={1}>
+        <LinearProgress variant="determinate" {...props} />
+      </Box>
+      <Box minWidth={35}>
+        <Typography variant="body2" color="textSecondary">{`${Math.round(
+          props.value
+        )}%`}
+        </Typography>
+      </Box>
+    </Box>
+  );
+}
+
+export interface LinearWithValueLabelProps {
+  currentScore: number;
+  maxScore: number;
+}
+
+function LinearWithValueLabel(props: LinearWithValueLabelProps) {
+  const { currentScore, maxScore } = props;
+  const classes = useStyles();
+
+  const progressNew = currentScore * 100 / maxScore;
+
+  return (
+    <div className={classes.root}>
+      <LinearProgressWithLabel value={progressNew} />
+    </div>
+  );
+}

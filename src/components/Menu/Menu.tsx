@@ -8,7 +8,7 @@ function Menu(): JSX.Element {
   return (  
     <div style={{display: 'flex', justifyContent: 'center'}}>
       <HeaderMainMenu /> 
-      <MainLayout />           
+      {/* <MainLayout />  */}          
     </div> 
   );
 } 

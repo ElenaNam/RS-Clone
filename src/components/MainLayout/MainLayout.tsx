@@ -37,8 +37,8 @@ export default function MainLayout(): JSX.Element {
           {/* <Route exact path="/home" component={withRouter(Home)} /> */}
           {/* <Route exact path="/newgame" component={withRouter(Template)} /> */} 
           {/* <Route exact path="/game" component={withRouter(FinalPage)} /> */}   
-          <Route exact path="/manual" component={Manual} />
-          <Route exact path="/settings" component={withRouter(Settings)} />
+          {/* <Route exact path="/manual" component={Manual} /> */}
+          {/* <Route exact path="/settings" component={withRouter(Settings)} /> */}
           {/* <Route exact path="/information" component={withRouter(Information)} /> */}
           {/* <Route exact path="/information" component={withRouter(DraggableDialog)} />  */}
 

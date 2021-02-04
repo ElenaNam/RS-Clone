@@ -17,6 +17,7 @@ import { AppState, GameState, Gender, Lang } from '../../store/types';
 
 import { startNewLevel, setUserName, setGender } from '../../store/actions/startNewGameAction';
 
+import FinalPage from '../FinalPage/FinalPage';
 
 
 
@@ -47,6 +48,11 @@ const StartNewGame = ( props: StartNewGameProps ) => { // { userName, gender, la
   };
 
   return (
+    // {classes.startNewGame}
+    <FinalPage />
+  );
+};
+/*   return (
     // {classes.startNewGame}
     <div className="start-page">
       <div className="messages-wrapper">
@@ -79,7 +85,7 @@ const StartNewGame = ( props: StartNewGameProps ) => { // { userName, gender, la
       </div>
     </div>
   );
-};
+}; */
 
 
 const mapStateToProps = (state: AppState) => {

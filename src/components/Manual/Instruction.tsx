@@ -1,5 +1,6 @@
 import React from 'react';
 import { Grid, Paper, Typography } from '@material-ui/core';
+import { useStyles } from './Manual.style';
 import CardManual from './CardManual';
 import gin from '../../assets/images/gin_success.png';
 import task from '../../assets/images/personage/personage0.png';
@@ -11,6 +12,7 @@ import score from '../../assets/images/additional/score.png';
 
 
 export default function Instruction() {
+  const classes = useStyles();
   
   return (
     <div style={{ display: 'flex', justifyContent: 'center', flexGrow: 1 }}>
@@ -22,10 +24,10 @@ export default function Instruction() {
           sm={12} 
           md={12} 
           lg={12} 
-          style={{ marginTop: 30 }}
+          className={classes.card}
         >
           <Paper elevation={5}>            
-            <Typography variant='h6'>
+            <Typography variant='h6' className={classes.text}>
               Чтобы отправиться в путешествие, нужно подготовиться!
             </Typography>             
           </Paper> 
@@ -41,9 +43,9 @@ export default function Instruction() {
           <CardManual number="3" text='Получи задание' img={task} /> 
         </Grid> 
 
-        <Grid item xs={12} sm={12} md={12} lg={12} style={{ marginTop: 30 }}>
+        <Grid item xs={12} sm={12} md={12} lg={12} className={classes.card}>
           <Paper elevation={5}>            
-            <Typography variant='h6'>
+            <Typography variant='h6' className={classes.text}>
               Теперь можно отправляться в путь!
             </Typography>             
           </Paper> 

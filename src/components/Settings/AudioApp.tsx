@@ -30,7 +30,7 @@ export default function AudioApp(): JSX.Element {
         <AudioSlider />
       </Container>
 
-      <ForestSound />
+      {/* <ForestSound /> */}
     </div>
   );
 }

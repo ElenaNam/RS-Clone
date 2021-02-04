@@ -42,27 +42,27 @@ export default function Settings(): JSX.Element {
 
   return (    
     <div className={classes.root}>
-      <Grid container spacing={5}>
+      <Grid container spacing={5} style={{marginBottom: 10}}>
         <Grid item xs={12} sm={6} lg={4}>
           <SettingsCard title='Тема'>
             <ThemeToggler />
           </SettingsCard>
         </Grid>
-        <Grid item xs={12} sm={6} lg={4}>
+        <Grid item xs={12} sm={6} lg={4} style={{marginBottom: 10}}>
           <SettingsCard title='Звук'>
             <AudioApp />
           </SettingsCard> 
         </Grid>      
-        <Grid item xs={12} sm={6} lg={4}>
+        <Grid item xs={12} sm={6} lg={4} style={{marginBottom: 10}}>
           <SettingsCard title='Язык'>
             <LangApp />
           </SettingsCard> 
         </Grid>      
-        <Grid item xs={12} sm={6} lg={4}>
+        {/* <Grid item xs={12} sm={6} lg={4}>
           <SettingsCard title='Горячие клавиши'>
             <HotkeysList />
           </SettingsCard> 
-        </Grid>      
+        </Grid>  */}     
       </Grid>
     </div>
 

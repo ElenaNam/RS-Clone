@@ -28,6 +28,18 @@ const store = createStore(rootReducer, composeWithDevTools());
 
 const history = createBrowserHistory();
 ReactDOM.render(
+  
+  <Provider store={store}>
+    <Router {...history}>
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>      
+    </Router>,
+  </Provider>,
+
+  document.getElementById('root')
+);
+/* ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <Router {...history}>
@@ -38,7 +50,7 @@ ReactDOM.render(
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
-);
+); */
 
 
 

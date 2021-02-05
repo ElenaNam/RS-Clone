@@ -2,22 +2,19 @@ import { makeStyles } from '@material-ui/core/styles';
 
 
 export const useStyles = makeStyles(() => ({
+  imgBlock: {
+    display: 'flex',
+    justifyContent: 'space-between',
+  },
+  
   imgUser: {
-    // width: '150px',
+    width: '20vw',
     // height: '200px',
-    height: '15vw',
+    alignSelf: 'flex-end',
   },
-  titleDialog: {
-    textAlign: 'center',    
-    fontWeight: 800,
 
-  },
   avatar: {
     backgroundColor: 'blue[100]',
     color: 'blue[600]',
-  },
-  titleDialogInt: {
-    textAlign: 'center',
-
   },
 }));

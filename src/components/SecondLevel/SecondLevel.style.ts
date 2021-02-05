@@ -12,7 +12,9 @@ export const useStyles = makeStyles(() => ({
     // margin: '0 auto',
     margin: '-15vw auto',
 
-    padding: '0',
+    // padding: '0',
+    paddingTop: '16vw',
+    
     // marginBottom: '16px',
     listStyleType: 'none',
 
@@ -70,6 +72,7 @@ export const useStyles = makeStyles(() => ({
 
 
   personsBlock: {
+    // height: '100%',
     
   }
 }));

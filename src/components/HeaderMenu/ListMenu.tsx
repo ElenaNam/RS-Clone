@@ -68,27 +68,11 @@ const ListMenu = (props: ListMenuProps) => {
           onClick={()=>{handleMenuEl(item.en);}}
         >
           <ListItemIcon>
-            {/*             {index % 2 === 0 ? (
-              <DoneOutlineRoundedIcon
-                style={{ color: theme.palette.warning.light }}
-              />
-            ) : (
-              <DoneOutlineRoundedIcon
-                style={{ color: theme.palette.error.main }}
-              />
-            )} */}
             { setIcon(index) }
-
           </ListItemIcon>
           <ListItemText primary={item[lang]} />
         </ListItem>
-      ))}
-      {/*       <Box mt={15}>
-        <a href='https://rs.school/js/' target="_blank" rel='noreferrer'>
-          <img src={logo} alt="logo_rsschool" width="60%" />
-        </a>
-      </Box> */}
-       
+      ))}       
     </List>
   );
 };

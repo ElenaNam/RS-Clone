@@ -1,7 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 
-export const useStyles = makeStyles(() => ({
+export const useStyles = makeStyles((theme) => ({
   imgUser: {
     // width: '150px',
     // height: '200px',
@@ -17,7 +17,21 @@ export const useStyles = makeStyles(() => ({
     color: 'blue[600]',
   },
   titleDialogInt: {
+    position: 'relative',
     textAlign: 'center',
+    whiteSpace: 'pre-line',
+
+  },
+  gin: {
+    position: 'absolute',
+    opacity: .4,
+    width: 150,    
+    [theme.breakpoints.up('sm')]: { 
+      width: 200, 
+    },    
+  },
+  tooltip: {
+    fontSize: 40,
 
   },
 }));

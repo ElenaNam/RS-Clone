@@ -65,7 +65,7 @@ function SimpleDialog(props: SimpleDialogProps) {
       aria-labelledby="simple-dialog-title"
       open={open}
     >
-      <DialogTitle id="simple-dialog-title">
+      <DialogTitle id="simple-dialog-title" style={{ whiteSpace: 'pre-line', textAlign: 'center' }}>
         {personage[0][lang]?.text.replaceAll('{namePlayer}', userName)}
       </DialogTitle>
       <List>        

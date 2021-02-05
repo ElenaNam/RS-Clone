@@ -8,10 +8,12 @@ import loc from '../../assets/images/additional/all_locations.jpg';
 import und from '../../assets/images/additional/und.png';
 import heros from '../../assets/images/additional/heros.png';
 import score from '../../assets/images/additional/score.png';
+import { titleArr, textArr } from '../data/textManual';
 
 
 
 export default function Instruction() {
+  const lang = 'ru';
   const classes = useStyles();
   
   return (
@@ -28,37 +30,37 @@ export default function Instruction() {
         >
           <Paper elevation={5}>            
             <Typography variant='h6' className={classes.text}>
-              Чтобы отправиться в путешествие, нужно подготовиться!
+              {titleArr[0][lang]}
             </Typography>             
           </Paper> 
         </Grid>
 
         <Grid item xs={12} sm={6} md={4} lg={3}>
-          <CardManual number="1" text='Выбери героя' img={heros}  /> 
+          <CardManual number="1" text={textArr[0][lang]} img={heros}  /> 
         </Grid>
         <Grid item xs={12} sm={6} md={4} lg={3}>
-          <CardManual number="2" text='Познакомься с помощником' img={gin} /> 
+          <CardManual number="2" text={textArr[1][lang]} img={gin} /> 
         </Grid>          
         <Grid item xs={12} sm={6} md={4} lg={3}>
-          <CardManual number="3" text='Получи задание' img={task} /> 
+          <CardManual number="3" text={textArr[2][lang]} img={task} /> 
         </Grid> 
 
         <Grid item xs={12} sm={12} md={12} lg={12} className={classes.card}>
           <Paper elevation={5}>            
             <Typography variant='h6' className={classes.text}>
-              Теперь можно отправляться в путь!
+              {titleArr[1][lang]}
             </Typography>             
           </Paper> 
         </Grid>
 
         <Grid item xs={12} sm={6} md={4} lg={3}>
-          <CardManual number="4" text='Пройди Город, Лес и Деревню' img={loc} /> 
+          <CardManual number="4" text={textArr[3][lang]} img={loc} /> 
         </Grid>
         <Grid item xs={12} sm={6} md={4} lg={3}>
-          <CardManual number="5" text='Общайся со встречными людьми' img={und}  /> 
+          <CardManual number="5" text={textArr[4][lang]} img={und}  /> 
         </Grid>          
         <Grid item xs={12} sm={6} md={4} lg={3}>
-          <CardManual number="6" text='Выбирай ответ и получай баллы' img={score} /> 
+          <CardManual number="6" text={textArr[5][lang]} img={score} /> 
         </Grid> 
 
       </Grid>

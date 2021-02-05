@@ -8,6 +8,8 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import ListItemText from '@material-ui/core/ListItemText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Dialog from '@material-ui/core/Dialog';
+import { Box } from '@material-ui/core';
+import Tooltip from '@material-ui/core/Tooltip';
 import PersonIcon from '@material-ui/icons/Person';
 import AddIcon from '@material-ui/icons/Add';
 import Typography from '@material-ui/core/Typography';
@@ -19,6 +21,7 @@ import { AppState, GameState, Lang } from '../../store/types';
 import imgMother from '../../assets/images/personage/personage0.png';
 import girl from '../../assets/images/girl.png';
 import boy from '../../assets/images/boy.png';
+import gin from '../../assets/images/gin_success.png';
 import { personage } from '../data/personage';
 
 import {
@@ -31,6 +34,7 @@ import { answers as answersAll } from '../data/answersHero';
 import { buttons, hero as genderName } from '../data/variables';
 
 import { useStyles } from './DialogWindow.style';
+
 
 export interface DialogWithQuestionProps {
   open: boolean;
@@ -137,6 +141,9 @@ function DialogWithResult(props: DialogWithResultProps) {
       open={open}
       maxWidth="md"
     >
+      <Box className={classes.gin}>
+        <img src={gin} alt={gin} width='100%' />
+      </Box>
       <DialogTitle id="simple-dialog-title" className={classes.titleDialogInt}>
         {/* {answersAll[personageNum][lang].interpretation[selectedNum].replaceAll('{namePlayer}', userName)} */}
         {answersAll[personageNum][lang].interpretation[selectedNum]}
@@ -209,7 +216,10 @@ const SimpleDialogDemo = (props: SimpleDialogDemoProps) => {
         color="primary"
         onClick={handleClickOpen}
       >
-        <img src={imgSrc} alt="mother" className={classes.imgUser} />
+        <Tooltip title="???" classes={classes} arrow>
+          <img src={imgSrc} alt="mother" className={classes.imgUser} />
+        </Tooltip>
+        
         {/* Open simple dialog */}
       </Button>
       <DialogWithQuestion

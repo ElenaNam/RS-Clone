@@ -17,8 +17,7 @@ import DialogInformation from '../Dialog/DialogInformation';
 
 
 export function ListMenuSecondary(): JSX.Element {
-  const theme = useTheme();
-  const lang = 'ru'; 
+  const theme = useTheme();  
   return (
     <List style={{padding: 0}}>
       <ListItem>           

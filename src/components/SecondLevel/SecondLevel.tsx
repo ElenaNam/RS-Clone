@@ -57,10 +57,10 @@ const SecondLevel = (props: SecondLevelProps) => {
 
   return (
     <Box className={classes.pageWrapperMain}>
-      <Box className={classes.pageWrapper} display="flex" justifyContent="space-around" style={BackgroundHead}>
-        {/* <ScoreGame /> */}
+      <Box className={classes.pageWrapper} display="flex" justifyContent="space-between" flexDirection="column" style={BackgroundHead}>
+        <ScoreGame />
 
-        <Box className={classes.personsBlock} alignSelf="flex-end" flexGrow="1">
+        <Box className={classes.personsBlock}>
           {/* <ScoreGame /> */}
           <Grid
             container
@@ -93,3 +93,4 @@ const mapDispatchToProps = {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SecondLevel);
+// alignSelf="flex-end"

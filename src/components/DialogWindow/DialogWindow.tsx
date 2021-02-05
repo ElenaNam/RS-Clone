@@ -17,7 +17,10 @@ import { connect } from 'react-redux';
 import { AppState, GameState, Lang } from '../../store/types';
 
 import imgMother from '../../assets/images/personage/personage0.png';
+import girl from '../../assets/images/girl.png';
+import boy from '../../assets/images/boy.png';
 import { personage } from '../data/personage';
+
 import {
   startNewLevel,
   addToScoreGame,
@@ -25,7 +28,7 @@ import {
 
 import { answers as answersAll } from '../data/answersHero';
 
-import { hero as genderName } from '../data/variables';
+import { buttons, hero as genderName } from '../data/variables';
 
 import { useStyles } from './DialogWindow.style';
 
@@ -56,11 +59,14 @@ function DialogWithQuestion(props: DialogWithQuestionProps) {
   const answersArr = answersAll[personageNum][lang].answer;
 
   let greeting: string | undefined;
+  let avaSrc: string | undefined;
   if (gender === 'girl') {
+    avaSrc = girl;
     greeting = personage[personageNum][lang]?.text
       .replaceAll('{namePlayer}', userName)
       .replaceAll('{hero}', genderName[1][lang]);
   } else {
+    avaSrc = boy;
     greeting = personage[personageNum][lang]?.text
       .replaceAll('{namePlayer}', userName)
       .replaceAll('{hero}', genderName[0][lang]);
@@ -79,8 +85,9 @@ function DialogWithQuestion(props: DialogWithQuestionProps) {
       // onClose={handleClose}
       aria-labelledby="simple-dialog-title"
       open={open}
+      maxWidth="md"
     >
-      <DialogTitle id="simple-dialog-title">{greeting}</DialogTitle>
+      <DialogTitle id="simple-dialog-title" className={classes.titleDialog}>{greeting}</DialogTitle>
       <List>
         {answersArr.map((email, index) => (
           <ListItem
@@ -89,11 +96,9 @@ function DialogWithQuestion(props: DialogWithQuestionProps) {
             key={email}
           >
             <ListItemAvatar>
-              <Avatar className={classes.avatar}>
-                <PersonIcon />
-              </Avatar>
+              <Avatar alt='avatar' src={avaSrc} style={{ border: '1px solid red' }} />
             </ListItemAvatar>
-            <ListItemText primary={email} />
+            <ListItemText primary={`${index + 1  } _ ${  email}`} />
           </ListItem>
         ))}
       </List>
@@ -130,13 +135,14 @@ function DialogWithResult(props: DialogWithResultProps) {
       onClose={handleClose}
       aria-labelledby="simple-dialog-title"
       open={open}
+      maxWidth="md"
     >
-      <DialogTitle id="simple-dialog-title">
+      <DialogTitle id="simple-dialog-title" className={classes.titleDialogInt}>
         {/* {answersAll[personageNum][lang].interpretation[selectedNum].replaceAll('{namePlayer}', userName)} */}
         {answersAll[personageNum][lang].interpretation[selectedNum]}
       </DialogTitle>
-      <Button onClick={handleClose} color="primary" autoFocus>
-        Agree
+      <Button onClick={handleClose} color="secondary" autoFocus>
+        {buttons[4][lang]}
       </Button>
     </Dialog>
   );

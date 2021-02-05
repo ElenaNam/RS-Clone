@@ -1,6 +1,8 @@
 import React, { useState, SyntheticEvent } from 'react';
 // import './StartNewGame.css';
+import { Box, Button, Container, Paper } from '@material-ui/core';
 import Radio from '@material-ui/core/Radio';
+import Input from '@material-ui/core/Input';
 import { connect } from 'react-redux';
 import { IProps } from './StartNewGame.models';
 
@@ -12,10 +14,14 @@ import { hero, locations, buttons } from '../data/variables';
 
 import girlImgSrc from '../../assets/images/girl.png';
 import boyImgSrc from '../../assets/images/boy.png';
+import gin from '../../assets/images/gin_success.png';
 
 import { AppState, GameState, Gender, Lang } from '../../store/types';
 
 import { startNewLevel, setUserName, setGender } from '../../store/actions/startNewGameAction';
+
+import { text1, text2 } from '../data/textNewGame';
+
 
 
 
@@ -74,49 +80,88 @@ const StartNewGame = ( props: StartNewGameProps ) => { // { userName, gender, la
 
   return (
     // {classes.startNewGame}
-    <div className={classes.startPage}>
-      <div className={classes.messagesWrapper}>
-        <div className={classes.greetingMessage}>
-          Привет! Я твой помощник в дороге.
-          Меня зовут хз пока!
-          А как твое имя?
-        </div>
-        <input
-          // value={userName}
-          maxLength={12}
-          onChange={(e) => setNewUserName(e.target.value)}
-        />
-        <div className={classes.greetingMessage}>
-          Выбери героя
-        </div>
-        <div className={classes.maleChoice}>
-          <div className={classes.genderItem}>
-            <Radio
-              value="girl"
-              checked={genderNew==='girl'}
-              // onChange={handleGender}
-              onChange={(e) => setNewGender(e.target.value as Gender)}
+    <Container maxWidth='sm' className={classes.startPage}>
+      <Paper elevation={5} className={classes.paper}>
+        <Box className={classes.messagesWrapper}>
+          <Box className={classes.gin}>
+            <img src={gin} alt={gin} width='100%' />
+          </Box>
+          <Paper elevation={5} className={classes.paperInner}>
+            <Box 
+              fontSize={{ xs: 15, sm: 18, md: 25 }}
+              p={{ xs: 1, sm: 1, md: 2, lg: 2 }} 
+              className={classes.greetingMessage}
+            >            
+              {text1[lang]}                        
+            </Box>
+          </Paper>
+          {/* <input
+            // value={userName}
+            maxLength={12}
+            onChange={(e) => setNewUserName(e.target.value)}
+          /> */}
+
+          <form noValidate autoComplete="off">
+            <Input 
+              autoFocus={true}
+              placeholder=""             
+              inputProps={{ 'aria-label': 'description', maxLength: 12, size: 15 }}
+              onChange={(e) => setNewUserName(e.target.value)} 
             />
-            <img src={girlImgSrc} alt="girl" className={classes.imgUser} />
+          </form>
+
+          <div className={classes.greetingMessage}>
+            <Box 
+              fontWeight={600}
+              fontSize={{ xs: 14, sm: 18, md: 25, lg: 25 }}
+              p={{ xs: 1, sm: 1, md: 2, lg: 2 }} 
+              className={classes.greetingMessage}
+            >            
+              {text2[lang]}                        
+            </Box>
           </div>
-          <div className={classes.genderItem}>
-            <Radio
-              value="boy"
-              checked={genderNew==='boy'}
-              // onChange={handleGender}
-              onChange={(e) => setNewGender(e.target.value as Gender)}
-            />
-            <img src={boyImgSrc} alt="boy" className={classes.imgUser} />
+
+          <div className={classes.maleChoice}>
+
+            <div className={classes.genderItem}>
+              <Radio
+                value="girl"
+                checked={genderNew==='girl'}
+                // onChange={handleGender}
+                onChange={(e) => setNewGender(e.target.value as Gender)}
+              />
+              <img src={girlImgSrc} alt="girl" className={classes.imgUser} />
+            </div>
+
+            <div className={classes.genderItem}>
+              <Radio
+                value="boy"
+                checked={genderNew==='boy'}
+                // onChange={handleGender}
+                onChange={(e) => setNewGender(e.target.value as Gender)}
+              />
+              <img src={boyImgSrc} alt="boy" className={classes.imgUser} />
+            </div>
           </div>
-        </div>
-        <button type="button" onClick={handleStartNewLevel}>{buttons[2][lang]}</button>
+
+          <Button           
+            variant="contained" 
+            color="secondary"
+            /* component={NavLink} */ 
+            /* to='/home' */
+            onClick={handleStartNewLevel}
+          >
+            {buttons[2][lang]}
+          </Button>
 
 
-        <div>{newUserName}</div>
+          <div style={{ display: 'none' }}>{newUserName}</div>
 
-      </div>
-      {/* <StartNextLevel /> */}
-    </div>
+        </Box>
+        {/* <StartNextLevel /> */}
+      </Paper>
+
+    </Container>
   );
 };
 

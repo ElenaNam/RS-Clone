@@ -7,9 +7,17 @@ export const useStyles = makeStyles(() => ({
     // height: '200px',
     height: '15vw',
   },
+  titleDialog: {
+    textAlign: 'center',    
+    fontWeight: 800,
 
+  },
   avatar: {
     backgroundColor: 'blue[100]',
     color: 'blue[600]',
+  },
+  titleDialogInt: {
+    textAlign: 'center',
+
   },
 }));

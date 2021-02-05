@@ -160,6 +160,18 @@ export const buttons: Btn[] = [
     en: 'START OVER',
     de: 'NEU STARTEN',
   },
+  {
+    id: 4,
+    ru: 'ПОНЯТНО',
+    en: 'I SEE',
+    de: 'ES IST KLAR',
+  },
+  {
+    id: 5,
+    ru: 'ХОРОШО',
+    en: 'OK',
+    de: 'OK',
+  },
 ];
 
 

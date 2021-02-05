@@ -1,0 +1,23 @@
+.messages-wrapper {
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+  align-items: center;
+}
+
+.greeting-message {
+  border: 1px solid black;
+  padding: 5px;
+  background-color: yellow;
+
+  flex: 0 0 auto;
+}
+
+.male-choice {
+  display: flex;
+  justify-content: center;
+}
+
+.img-user {
+  width: 100px;
+}

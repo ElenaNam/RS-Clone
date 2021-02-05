@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 
+
 import StartNextLevel from '../StartNextLevel/StartNextLevel';
 
 import { hero, locations, buttons } from '../data/variables';
@@ -22,6 +23,11 @@ import SimpleDialogDemo from '../DialogWindow/DialogWindow';
 import PersonSimple from '../PersonSimple/PersonSimple';
 import ScoreGame from '../ScoreGame/ScoreGame';
 
+import MusicLevel from '../MusicLevel/MusicLevel';
+
+
+
+
 export interface SecondLevelProps {
   gender: string;
   userName: string;
@@ -30,15 +36,21 @@ export interface SecondLevelProps {
   imgs: string[];
   personageNums: number[];
   backgoundImg: string;
+  sound: string;
 }
 
 const SecondLevel = (props: SecondLevelProps) => {
   // хранить колличество пройденных персонажей
   const [countExecutePersons, setCountExecutePersons] = useState(0);
-  const { userName, gender, imgs, personageNums, backgoundImg } = props;
+  const { userName, gender, imgs, personageNums, backgoundImg, sound } = props;
   const classes = useStyles();
   const [scoreLevel, setScoreLevel] = useState(0);
   const [counterCompletedPers, setCounterCompletedPers] = useState(0);
+
+  // const audio = new Audio();
+  // audio.preload = 'auto';
+  // audio.src = sound;
+  // audio.play();
 
 
   const addScoreToLevelScore = (score: number) => {
@@ -79,6 +91,7 @@ const SecondLevel = (props: SecondLevelProps) => {
           </Grid>
         </Box>
       </Box>
+      <MusicLevel />
     </Box>
   );
 };

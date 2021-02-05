@@ -30,4 +30,17 @@ export const titleArr: Array<Blocks> = [
     en: 'Hotkeys',
     de: 'Schnelltaste',
   }, */
+  // {
+  //   id: 4,
+  //   ru: 'Ночной режим',
+  //   en: 'night mode',
+  //   de: 'nacht-modus',
+  // },
 ];
+
+export const nightMode: Blocks = {
+  id: 4,
+  ru: 'Ночной режим',
+  en: 'Night mode',
+  de: 'Nacht-modus',
+};

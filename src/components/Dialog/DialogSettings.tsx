@@ -8,9 +8,13 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import Paper, { PaperProps } from '@material-ui/core/Paper';
 import Draggable from 'react-draggable';
 import { Link, NavLink } from 'react-router-dom';
+import { connect } from 'react-redux';
 import { useStyles } from './Dialog.style';
 import { links } from '../data/menu';
 import Settings from '../Settings/Settings';
+
+import { AppState, GameState, Gender, Lang } from '../../store/types';
+
 
 function PaperComponent(props: PaperProps) {
   return (
@@ -20,8 +24,15 @@ function PaperComponent(props: PaperProps) {
   );
 }
 
-export default function DialogSettings() {
-  const lang = 'ru';
+export interface DialogSettingsProps {
+  lang?: Lang;
+}
+
+
+const DialogSettings = ( props: DialogSettingsProps ) => {
+  const { lang = 'ru' } = props;
+
+  // const lang = 'ru';
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
@@ -62,4 +73,10 @@ export default function DialogSettings() {
       </Dialog>
     </div>
   );
-}
+};
+
+const mapStateToProps = (state: AppState) => ({
+  lang: state.game.lang,
+});
+
+export default connect(mapStateToProps, null)(DialogSettings);

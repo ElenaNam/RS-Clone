@@ -1,5 +1,6 @@
 import React from 'react';
 import { Grid, Paper, Typography } from '@material-ui/core';
+import { connect } from 'react-redux';
 import { useStyles } from './Manual.style';
 import CardManual from './CardManual';
 import gin from '../../assets/images/gin_success.png';
@@ -10,10 +11,18 @@ import heros from '../../assets/images/additional/heros.png';
 import score from '../../assets/images/additional/score.png';
 import { titleArr, textArr } from '../data/textManual';
 
+import { AppState, GameState, Gender, Lang } from '../../store/types';
 
 
-export default function Instruction() {
-  const lang = 'ru';
+export interface InstructionProps {
+  lang?: Lang;
+}
+
+
+const Instruction = ( props: InstructionProps ) => {
+  const { lang = 'ru' } = props;
+  // const lang = 'ru';
+
   const classes = useStyles();
   
   return (
@@ -66,4 +75,11 @@ export default function Instruction() {
       </Grid>
     </div>
   );
-}
+};
+
+
+const mapStateToProps = (state: AppState) => ({
+  lang: state.game.lang,
+});
+
+export default connect(mapStateToProps, null)(Instruction);

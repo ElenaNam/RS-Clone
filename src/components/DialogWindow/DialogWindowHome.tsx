@@ -1,7 +1,8 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Avatar from '@material-ui/core/Avatar';
+import PermPhoneMsgIcon from '@material-ui/icons/PermPhoneMsg';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
@@ -19,13 +20,16 @@ import { AppState, GameState, Gender } from '../../store/types';
 import imgMother from '../../assets/images/personage/personage0.png';
 import girlImgSrc from '../../assets/images/girl.png';
 import boyImgSrc from '../../assets/images/boy.png';
+import { buttons } from '../data/variables';
 
 import { personage } from '../data/personage';
 import { startNewLevel } from '../../store/actions/startNewGameAction';
 import { useStyles } from './DialogWindowHome.style';
 // import { answers } from '../data/answersHero';
 
-const answers = ['OK'];
+const answers = ['OK']; 
+
+/* const answers: string = buttons[5][lang]; */
 // const useStyles = makeStyles({
 //   avatar: {
 //     backgroundColor: blue[100],
@@ -42,8 +46,9 @@ export interface SimpleDialogProps {
   onClose: (index: number) => void;
 }
 
-function SimpleDialog(props: SimpleDialogProps) {
+function SimpleDialog(props: SimpleDialogProps) {  
   const classes = useStyles();
+  const theme = useTheme();
   const { onClose, lang, selectedNum, open, userName } = props;
 
   const handleClose = () => {
@@ -60,10 +65,10 @@ function SimpleDialog(props: SimpleDialogProps) {
       aria-labelledby="simple-dialog-title"
       open={open}
     >
-      <DialogTitle id="simple-dialog-title">
+      <DialogTitle id="simple-dialog-title" style={{ whiteSpace: 'pre-line', textAlign: 'center' }}>
         {personage[0][lang]?.text.replaceAll('{namePlayer}', userName)}
       </DialogTitle>
-      <List>
+      <List>        
         {answers.map((email) => (
           <ListItem
             button
@@ -71,9 +76,11 @@ function SimpleDialog(props: SimpleDialogProps) {
             key={email}
           >
             <ListItemAvatar>
-              <Avatar className={classes.avatar}>
+              <PermPhoneMsgIcon style={{ color: theme.palette.error.main }} />
+              {/* <Avatar alt='avatar' src={imgPers} style={{ border: '1px solid red' }} /> */}
+              {/* <Avatar className={classes.avatar}>
                 <PersonIcon />
-              </Avatar>
+              </Avatar> */}
             </ListItemAvatar>
             <ListItemText primary={email} />
           </ListItem>
@@ -118,7 +125,7 @@ const SimpleDialogDemo = (props: SimpleDialogDemoProps) => {
 
   return (
     <div className={classes.imgBlock}>
-      <img src={imgPers} alt="mother" className={classes.imgUser} />
+      <img src={imgPers} alt="hero" className={classes.imgUser} />
       <Button color="primary" onClick={handleClickOpen}>
         {/* variant="outlined"  */}
         <img src={imgMother} alt="mother" className={classes.imgUser} />

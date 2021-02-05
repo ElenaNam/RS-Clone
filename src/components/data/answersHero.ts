@@ -275,9 +275,7 @@ export const answers: Array<Answers> = [
 
         'Извини, родители запретили мне отвлекаться. Удачи тебе с земляникой!',
 
-        `Дина, привет! А меня зовут ${namePlayer}. Слушай, я сейчас не могу.
-        Давай телефонами обменяемся, и в следующий раз вместе сходим за земляникой, а?
-        `,
+        'Дина, привет! А меня зовут {namePlayer}. Слушай, я сейчас не могу. Давай телефонами обменяемся, и в следующий раз вместе сходим за земляникой, а?',
 
         'А давай наоборот – ты пойдешь со мной, и по дороге мы будем собирать землянику.',
       ],
@@ -295,8 +293,7 @@ export const answers: Array<Answers> = [
         "No, I'm very busy.",
         "I love strawberries, let's go soon! I need to get to my grandmother.",
         "I'm sorry, my parents forbade me to be distracted. Good luck with the strawberries!",
-        `Dina, hi! And my name is ${namePlayer}. Look, I can't right now.
-                Let's exchange phones, and next time we go get a strawberry together.`,
+        "Dina, hi! And my name is {namePlayer}. Look, I can't right now. Let's exchange phones, and next time we go get a strawberry together.",
         'And on the contrary, you will come with me, and on the way we will collect strawberries.',
       ],
       interpretation: [
@@ -313,8 +310,7 @@ export const answers: Array<Answers> = [
         'Nein, ich bin sehr beschäftigt.',
         'Ich liebe Erdbeeren, komm schon! Ich muss zu meiner Großmutter.',
         'Tut mir Leid, meine Eltern haben mir verboten, abgelenkt zu werden. Viel Glück mit Erdbeeren!',
-        `Dina, hallo! Und ich heisse ${namePlayer}. Hör zu, ich kann jetzt nicht.
-        Lass uns die Telefone austauschen und das nächste Mal gehen wir zusammen Erdbeeren holen.`,
+        'Dina, hallo! Und ich heisse {namePlayer}. Hör zu, ich kann jetzt nicht. Lass uns die Telefone austauschen und das nächste Mal gehen wir zusammen Erdbeeren holen.',
         'Aber im Gegenteil-du gehst mit mir, und auf dem Weg werden wir Erdbeeren sammeln.',
       ],
       interpretation: [
@@ -389,10 +385,10 @@ export const answers: Array<Answers> = [
     ru: {
       answer: [
         'Я иду к бабушке, она меня уже ждет.',
-        `Я ${namePlayer}, моя бабушка -  Марья Ивановна. Иду к ней в гости, она меня уже ждет.`,
+        'Я {namePlayer}, моя бабушка -  Марья Ивановна. Иду к ней в гости, она меня уже ждет.',
         'А вам какое дело? Меня учили никому ничего не рассказывать!',
         'А вы, правда, полицейский? Родители объясняли мне, что не каждый человек в форме может быть полицейским и ему можно доверять.',
-        `Я ${namePlayer}. Я не в первый раз сюда в одиночку иду. И вообще без родителей я часто хожу.`,
+        'Я {namePlayer}. Я не в первый раз сюда в одиночку иду. И вообще без родителей я часто хожу.',
       ],
       interpretation: [
         'Нет, нет. Это решение было неверным! Давай посмотрим вместе…\n  Общение с сотрудником полиции – это особое общение, имеющее свои правила. Сотрудник полиции – человек, который обязан оказывать тебе помощь и спасти тебя, если тебе угрожает опасность. Но он же по закону, он может получить у тебя информацию о тебе (имя, фамилия, возраст, школа, класс), о твоих родителях, о цели твоего движения. Но прежде чем дать ответы на его вопросы, нужно убедиться – действительно ли он сотрудник полиции или ты случайно спутал форму полиции и работника охраны? Поэтому самый правильный ответ - №4.\n Ответ №1 – Это вежливый ответ. Но он неполный и сотрудник полиции может попросить его дополнить.\n Ответ №2 – Хороший ответ. Вежливый, отвечающий на вопросы, дающий нужную, но короткую информацию. Настоящий участковый её оценит, сразу поймёт, о ком ты говоришь и, возможно, даже проводит до дома бабушки.\n Ответ №3 – такой грубый ответ очень плох – он может вызвать ответную недоброжелательность.\n Ответ №4 – Не смотря на то, что этот ответ кажется грубым, но это та самая ситуация, когда ты можешь и даже должен потребовать от взрослого человека доказательства его права получить у тебя особую информацию – о тебе самом, о твоей дороге и твоей семье. Настоящий сотрудник полиции в ответ на твоё вежливый, но твёрдый вопрос обязан показать тебе своё удостоверение, где будут его звание, должность и фамилия. И не бойся – настоящий сотрудник полиции будет доволен, что ты хорошо знаешь законы и  следишь за безопасностью своей и своих близких. Убедившись в том, что разговариваешь с сотрудником полиции, ты можешь спокойно отвечать на его вопросы.\n Ответ №5 – этот ответ включает в себя и грубость, и ложь (мама отправила тебя впервые к бабушке самостоятельно!). Но главное – эта маленькая хитрость и желание показать себя очень взрослым в глазах сотрудника полиции может привести к плохим последствиям, ведь участковый обязательно проверит правдивость твоих слов и, когда выяснится ложь, будут неприятности у тебя и твоих родителей. Не нужно лгать сотрудникам полиции!',
@@ -405,10 +401,10 @@ export const answers: Array<Answers> = [
     en: {
       answer: [
         "I'm going to grandma's, she's waiting for me.",
-        `I ${namePlayer}, my grandmother is Marya Ivanovna. I'm going to visit her, she's waiting for me.`,
+        "I {namePlayer}, my grandmother is Marya Ivanovna. I'm going to visit her, she's waiting for me.",
         'What do you care? I was taught not to tell anyone anything!',
         'Are you really a cop? Parents explained to me that not every person in uniform can be a cop and can be trusted.',
-        `I am ${namePlayer}. It's not the first time I've come here alone. And I often go without my parents.`,
+        "I am {namePlayer}. It's not the first time I've come here alone. And I often go without my parents.",
       ],
       interpretation: [
         "No, no. This decision was wrong! Let's see together...\n Communication with a police officer is a special communication that has its own rules. A police officer is a person who is obliged to help you and save you if you are in danger. But he's under the law, he can get information from you about you (first name, last name, age, school, class), about your parents, about the purpose of your movement. But before you give answers to his questions, you need to make sure – is he really a police officer or did you accidentally confuse the uniform of the police and the security guard? So the most correct answer is #4.\n Answer #1 is a polite answer. But it is incomplete and the police officer may ask you to complete it.\n is the Answer Number 2 is a Good answer. Polite, answering questions, giving the necessary, but short information. A real district police officer will appreciate it, immediately understand who you are talking about and, perhaps, even take you to your grandmother's house.\n Answer №3 – such a rude answer is very bad – it can cause a response of ill will.\n Answer №4 – Despite the fact that this answer seems rude, but this is the very situation where you can and even should require an adult to prove his right to get special information from you – about yourself, about your road and your family. A real police officer, in response to your polite but firm question, is obliged to show you his ID card, where his rank, position and surname will be. And do not be afraid – a real police officer will be pleased that you know the laws well and monitor the safety of your own and your loved ones. After making sure that you are talking to a police officer, you can safely answer his questions.\n Answer №5 – this answer includes both rudeness and lies (your mother sent you to your grandmother for the first time on her own!). But the main thing is that this little trick and the desire to show yourself very adult in the eyes of a police officer can lead to bad consequences, because the district police officer will definitely check whether everything is as you said/I did, and when the lie comes out, you and your parents will be in trouble. No need to lie to the police!", 
@@ -422,10 +418,10 @@ export const answers: Array<Answers> = [
     de: {
       answer: [
         'Ich gehe zu meiner Großmutter, sie wartet schon auf mich.',
-        `Ich ${namePlayer}, meine Großmutter - Marija Iwanowna. Ich gehe zu ihr, sie wartet schon auf mich.`,
+        'Ich {namePlayer}, meine Großmutter - Marija Iwanowna. Ich gehe zu ihr, sie wartet schon auf mich.',
         'Was kümmert es Sie? Mir wurde beigebracht, niemandem etwas zu sagen!',
         'Sind Sie wirklich ein Polizist? Die Eltern erklärten mir, dass nicht jeder in Form ist vielleicht ein Polizist und man kann ihm vertrauen.',
-        `Ich bin ${namePlayer}. Ich bin nicht das erste mal hier allein. Und im Allgemeinen gehe ich oft ohne Eltern.`,
+        'Ich bin {namePlayer}. Ich bin nicht das erste mal hier allein. Und im Allgemeinen gehe ich oft ohne Eltern.',
       ],
       interpretation: [
         'Nein, nein. Diese Entscheidung war falsch! Lassen Sie uns gemeinsam sehen...\n Kommunikation mit einem Polizisten ist eine besondere Kommunikation, die ihre eigenen Regeln hat. Ein Polizist ist ein Mann, der dir helfen und dich retten muss, wenn du in Gefahr bist. Aber er ist nach dem Gesetz, er kann von dir Informationen über dich selbst (Name, Nachname, Alter, Schule, Klasse), über deine Eltern, über den Zweck deiner Bewegung erhalten. Aber bevor Sie Antworten auf seine Fragen geben, müssen Sie sich vergewissern-ist er wirklich ein Polizist oder haben Sie versehentlich die Form der Polizei und der Mitarbeiter des Sicherheitsdienstes verwechselt? Daher ist die richtige Antwort Nummer 4.\n Antwort №1 ist eine höfliche Antwort. Aber er ist unvollständig und ein Polizist kann ihn bitten, ihn zu ergänzen.\n Antwort №2 ist eine gute Antwort. Höflich, die Beantwortung von Fragen, die notwendige, aber kurze Informationen. Der echte Bezirksbeamte wird es bewerten, sofort verstehen, über wen Sie sprechen und vielleicht sogar bis zum Haus der Großmutter verbringt.\n Antwort №3 – eine solche grobe Antwort ist sehr schlecht-sie kann eine Gegenfeindlichkeit verursachen.\n Antwort №4-Trotz der Tatsache, dass diese Antwort unhöflich scheint, aber es ist die gleiche Situation, in der Sie können und sollten sogar verlangen, dass ein Erwachsener Nachweis seines Rechts, um Ihnen besondere Informationen – über Sie selbst, über Ihre Straße und Ihre Familie. Ein echter Polizist als Antwort auf Ihre höfliche, aber solide Frage ist verpflichtet, Ihnen Ihren Ausweis zu zeigen, wo sein Titel, Position und Nachname sein wird. Und fürchte dich nicht-ein echter Polizist wird glücklich sein, dass Sie die Gesetze gut kennen und die Sicherheit Ihrer und Ihrer Lieben überwachen. Nachdem Sie sicher sind, dass Sie mit einem Polizisten sprechen, können Sie ruhig seine Fragen beantworten.\n Antwort №5-Diese Antwort beinhaltet sowohl Unhöflichkeit als auch Lügen (Mama hat dich zum ersten Mal selbst zu Oma geschickt!). Aber die Hauptsache-dieser kleine Trick und der Wunsch, sich in den Augen eines Polizisten sehr erwachsen zu zeigen, kann zu schlechten Folgen führen, weil der Bezirk unbedingt prüft und wenn sich die Lüge herausstellt, wird es Probleme bei Ihnen und Ihren Eltern geben. Keine Notwendigkeit, die Polizei zu lügen!', 

@@ -15,6 +15,8 @@ import Home from './components/Home/Home';
 import { AppState, GameState } from './store/types';
 
 import { imagesArr } from './components/ImagesArr/ImagesArr';
+import { soundsArr } from './components/SoundsArr/SoundsArr';
+
 import { backgroundArr } from './components/ImagesArr/BackgroundArr';
 
 
@@ -22,6 +24,8 @@ import ThemeLayout from './components/Settings/Theme/ThemeLayot';
 import HotkeysLayout from './components/Settings/Hotkeys/HotkeysLayot';
 import Template from './components/Template/Template';
 import Menu from './components/Menu/Menu';
+
+import MusicLevel from './components/MusicLevel/MusicLevel';
 
 
 export interface AppProps {
@@ -47,18 +51,21 @@ function App(props: AppProps) {
     <SecondLevel
       key="3"
       imgs={[imagesArr[0], imagesArr[1], imagesArr[2]]}
+      sound={soundsArr[0]}
       personageNums={[1, 2, 3]}
       backgoundImg={backgroundArr[1]}
     />,
     <SecondLevel
       key="4"
       imgs={[imagesArr[3], imagesArr[4], imagesArr[5]]}
+      sound={soundsArr[0]}
       personageNums={[4, 5, 6]}
       backgoundImg={backgroundArr[2]}
     />,
     <SecondLevel
       key="5"
       imgs={[imagesArr[6], imagesArr[7], imagesArr[8]]}
+      sound={soundsArr[0]}
       personageNums={[7, 8, 9]}
       backgoundImg={backgroundArr[3]}
     />,
@@ -74,6 +81,7 @@ function App(props: AppProps) {
           {arrComps[activeLevel]}
 
           {/* <Template />         */}
+          <MusicLevel />
         </div>
       </HotkeysLayout>
     </ThemeLayout>

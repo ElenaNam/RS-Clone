@@ -102,7 +102,7 @@ function DialogWithQuestion(props: DialogWithQuestionProps) {
             <ListItemAvatar>
               <Avatar alt='avatar' src={avaSrc} style={{ border: '1px solid red' }} />
             </ListItemAvatar>
-            <ListItemText primary={`${index + 1  } _ ${  email}`} />
+            <ListItemText primary={`${index + 1  } _ ${  email.replaceAll('{namePlayer}', userName)}`} />
           </ListItem>
         ))}
       </List>
@@ -216,7 +216,7 @@ const SimpleDialogDemo = (props: SimpleDialogDemoProps) => {
         color="primary"
         onClick={handleClickOpen}
       >
-        <Tooltip title="???" classes={classes} arrow>
+        <Tooltip title={personage[personageNum][lang]?.name || 'pers'} classes={classes} arrow>
           <img src={imgSrc} alt="mother" className={classes.imgUser} />
         </Tooltip>
         

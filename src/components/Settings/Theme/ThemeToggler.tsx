@@ -2,7 +2,13 @@ import React, { useContext } from 'react';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
 import { makeStyles, Theme } from '@material-ui/core/styles';
+import { connect } from 'react-redux';
 import ThemeContext from './ThemeContext';
+
+
+import { AppState, GameState, Gender, Lang } from '../../../store/types';
+// import { titleArr } from '../data/textSettings';
+import { nightMode } from '../../data/textSettings';
 
 const useStyles = makeStyles((theme:Theme)=>({
   root: {
@@ -37,13 +43,21 @@ const useStyles = makeStyles((theme:Theme)=>({
   },
 }));
 
-const ThemeToggler = () => {
+export interface ThemeTogglerProps {
+  lang?: Lang;
+}
+
+
+const ThemeToggler = ( props: ThemeTogglerProps ) => {
+  const { lang = 'ru' } = props;
+  // const lang = 'ru';
+
   const context = useContext(ThemeContext);
   const classes = useStyles();
 
   return (
     <FormControlLabel      
-      label='Ночной режим'
+      label={nightMode[lang]}
       style={{ marginLeft: 5, marginRight: 5 }}
       control={
         <Switch
@@ -61,4 +75,8 @@ const ThemeToggler = () => {
   );
 };
 
-export default ThemeToggler;
+const mapStateToProps = (state: AppState) => ({
+  lang: state.game.lang,
+});
+
+export default connect(mapStateToProps, null)(ThemeToggler);

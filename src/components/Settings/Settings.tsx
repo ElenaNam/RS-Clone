@@ -1,6 +1,7 @@
 import { Grid, makeStyles } from '@material-ui/core';
 import React from 'react';
 /* import { HotKeys } from 'react-hotkeys'; */
+import { connect } from 'react-redux';
 import AudioApp from './AudioApp';
 import './Settings.module.css';
 import ThemeToggler from './Theme/ThemeToggler';
@@ -9,6 +10,8 @@ import LangApp from './Lang/LangApp';
 import HotkeysList from './Hotkeys/HotkeysList';
 import { titleArr } from '../data/textSettings';
 
+
+import { AppState, GameState, Gender, Lang } from '../../store/types';
 
 
 /* const keyMap = {
@@ -36,10 +39,15 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
+export interface SettingsProps {
+  lang?: Lang;
+}
 
 
-export default function Settings(): JSX.Element {
-  const lang = 'ru';
+const Settings = ( props: SettingsProps ) => {
+  const { lang = 'ru' } = props;
+  // const lang = 'ru';
+
   const classes = useStyles();
 
   return (    
@@ -69,4 +77,10 @@ export default function Settings(): JSX.Element {
     </div>
 
   );
-}
+};
+
+const mapStateToProps = (state: AppState) => ({
+  lang: state.game.lang,
+});
+
+export default connect(mapStateToProps, null)(Settings);

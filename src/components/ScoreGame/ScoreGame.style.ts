@@ -5,7 +5,7 @@ export const useStyles = makeStyles(() => ({
     marginLeft: '20px',
     width: '20vw',
     // border: '1px solid red',
-    backgroundColor: 'rgba(100, 100, 100, 0.5)'
+    backgroundColor: 'rgba(150, 150, 150, 0.5)'
   },
 
   root: {
